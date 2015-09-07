@@ -20,16 +20,28 @@ class Handler(webapp2.RequestHandler):
 
 class MainPage(Handler):
     def get(self):
-        items = self.request.get_all("food")
-        self.render("shopping_list.html", items = items)
+        self.render("IPND_notes.html")
 
-class FizzBuzzHandler(Handler):
+class StageOne(Handler):
     def get(self):
-        n = self.request.get("n", 0)
-        n = n and int(n)
-        self.render("fizzbuzz.html", n = n)
+        self.render("stage_one.html")
+
+class StageTwo(Handler):
+    def get(self):
+        self.render("stage_two.html")
+
+class StageThree(Handler):
+    def get(self):
+        self.render("stage_three.html")
+
+class StageFour(Handler):
+    def get(self):
+        self.render("stage_four.html")
 
 app = webapp2.WSGIApplication([('/', MainPage),
-                              ('/fizzbuzz', FizzBuzzHandler)
-                              ],
+                               ('/stage1', StageOne),
+                               ('/stage2', StageTwo),
+                               ('/stage3', StageThree),
+                               ('/stage4', StageFour),
+                               ],
                               debug=True)
