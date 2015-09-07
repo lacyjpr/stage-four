@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IPND Notes</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>IPND Notes Stage 3: Create a Movie Website</h1>
+	<div class="sidebar">
+		<nav>
+			<h2>Table of Contents</h2>
+				<ul>
+					<li><a href="#stage-3-0"><strong>Stage 3.0 Intro: Create a Movie Website</strong></a>
+						<ol>
+							<li><a href="#stage-3-0-1">Welcome to Stage 3</a> </li>
+							<li><a href="#stage-3-0-2">What You'll Make</a> </li>
+						</ol>
+					<li><a href="#stage-3-1"><strong>Stage 3.1 Introduction to Abstraction</strong></a>
+						<ol>
+							<li><a href="#stage-3-1-1">What Will We Create?</a></li>
+							<li><a href="#stage-3-1-2">Comfort Level</a></li>
+							<li><a href="#stage-3-1-3">What Should I Know?</a> </li>
+							<li><a href="#stage-3-1-4">What Will We Learn?</a>
+							</li>
+						</ol>
+					</li>
+					<li><a href="#stage-3-2"><strong>Stage 3.2 Use Functions</strong></a>
+						<ol>
+							<li><a href="#stage-3-2-1">Course Map</a></li>
+							<li><a href="#stage-3-2-2">Take a Break (Output)</a></li>
+							<li><a href="#stage-3-2-3">How Would You Do This?</a></li>
+							<li><a href="#stage-3-2-4">One Way of Doing This</a></li>
+							<li><a href="#stage-3-2-5">Launching Python</a></li>
+							<li><a href="#stage-3-2-6">What Is The Error?</a></li>
+							<li><a href="#stage-3-2-7">Squashing The Bug</a></li>
+							<li><a href="#stage-3-2-8">Making the Program Wait</a></li>
+							<li><a href="#stage-3-2-9">Adding a Loop</a></li>
+							<li><a href="#stage-3-2-10">Adding a Loop Solution</a></li>
+							<li><a href="#stage-3-2-11">Making the Program Wait Longer</a></li>
+							<li><a href="#stage-3-2-12">Where Does Webbrowser Come From</a></li>
+							<li><a href="#stage-3-2-13">Reading Webbrowser Documentation</a></li>
+							<li><a href="#stage-3-2-14">Course Map</a></li>
+							<li><a href="#stage-3-2-15">Secret Message (Story) </a></li>
+							<li><a href="#stage-3-2-16">Secret Message (Output)</a></li>
+							<li><a href="#stage-3-2-17">Planning a Secret Message</a></li>
+							<li><a href="#stage-3-2-18">Opening a File</a></li>
+							<li><a href="#stage-3-2-19">Changing Filenames</a></li>
+							<li><a href="#stage-3-2-20">Renaming Files</a></li>
+							<li><a href="#stage-3-2-21">What Is the Error</a></li>
+							<li><a href="#stage-3-2-22">Squashing the Bug</a></li>
+							<li><a href="#stage-3-2-23">Rename Troubles</a></li>
+							<li><a href="#stage-3-2-24">Where Does Os Come From</a></li>
+							<li><a href="#stage-3-2-25">Reading Os Documentation</a></li>
+							<li><a href="#stage-3-2-26">Edge Case</a></li>
+							<li><a href="#stage-3-2-27">When Functions Do Not Suffice</a></li>
+						</ol>
+					</li><!--Stage 3.2 table ends here-->
+					<li><a href="#stage-3-3a"><strong>Stage 3.3a Use Classes-Draw Turtles</strong></a>
+						<ol>
+							<li><a href="#stage-3-3a-1">Course Map</a></li>
+							<li><a href="#stage-3-3a-2">Drawing Turtles (Story) </a></li>
+							<li><a href="#stage-3-3a-3">Drawing Turtles (Output)</a></li>
+							<li><a href="#stage-3-3a-4">How to Draw a Square </a></li>
+							<li><a href="#stage-3-3a-5">How to Draw a Square (Solution)</a></li>
+							<li><a href="#stage-3-3a-6">Drawing a Square</a></li>
+							<li><a href="#stage-3-3a-7">Change Turtle Shape, Color and Speed</a></li>
+							<li><a href="#stage-3-3a-8">Where Does Turtle Come From?</a></li>
+							<li><a href="#stage-3-3a-9">Reading Turtle Documentation</a></li>
+							<li><a href="#stage-3-3a-10">Two Turtles</a></li>
+							<li><a href="#stage-3-3a-11">Improving Code Quality</a></li>
+							<li><a href="#stage-3-3a-12">What Is a Class?</a></li>
+							<li><a href="#stage-3-3a-13">Making a Circle out of Squares</a></li>
+							<li><a href="#stage-3-3a-14">They Look So Similar</a></li>
+						</ol>
+					</li><!--Stage 3.3a table ends here-->
+					<li><a href="#stage-3-3b"><strong>Stage 3.3b Use Classes-Send Text</strong></a>
+						<ol>
+							<li><a href="#stage-3-3b-1">Send Text Messages (Story)</a></li>
+							<li><a href="#stage-3-3b-2">Send Text Messages (Output)</a></li>
+							<li><a href="#stage-3-3b-3">Introducing Twilio</a></li>
+							<li><a href="#stage-3-3b-4">Setting Up Our Code</a></li>
+							<li><a href="#stage-3-3b-5">Registering With Twilio</a></li>
+							<li><a href="#stage-3-3b-6">Running Our Code</a></li>
+							<li><a href="#stage-3-3b-7">Python Keyword From</a></li>
+							<li><a href="#stage-3-3b-8">Inventigating the Code</a></li>
+							<li><a href="#stage-3-3b-9">Where Does Twilio Come From?</a></li>
+							<li><a href="#stage-3-3b-10">Connecting Turtle and Twilio</a></li>
+						</ol>
+					</li><!--Stage 3.3b table ends here-->
+					<li><a href="#stage-3-3c"><strong>Stage 3.3c Use Classes-Profanity Editor</strong></a>
+						<ol>
+							<li><a href="#stage-3-3c-1">Profanity Editor (Story)</a></li>
+							<li><a href="#stage-3-3c-2">Profanity Editor (Output)</a></li>
+							<li><a href="#stage-3-3c-3">Planning Profanity Editor</a></li>
+							<li><a href="#stage-3-3c-4">One Way of Doing Things </a></li>
+							<li><a href="#stage-3-3c-5">Reading from a File</a></li>
+							<li><a href="#stage-3-3c-6">Where Does Open Come From?</a></li>
+							<li><a href="#stage-3-3c-7">Reading Open Documentation</a></li>
+							<li><a href="#stage-3-3c-8">Connecting Turtle and Open</a></li>
+							<li><a href="#stage-3-3c-9">Checking for Curse Words</a></li>
+							<li><a href="#stage-3-3c-10">Accessing a Website with Code</a></li>
+							<li><a href="#stage-3-3c-11">Where Does Urllib Come From</a></li>
+							<li><a href="#stage-3-3c-12">Reading Urllib Documentation</a></li>
+							<li><a href="#stage-3-3c-13">Printing a Better Output</a></li>
+							<li><a href="#stage-3-3c-14">Connecting Turtle, Open and Urllib</a></li>
+						</ol>
+					</li><!--Stage 3.3c table ends here-->
+					<li><a href="#stage-3-4a"><strong>Stage 3.4a Make Classes-Movie Website</strong></a>
+						<ol>
+							<li><a href="#stage-3-4a-1">Course Map</a></li>
+							<li><a href="#stage-3-4a-2">What Should Class Movie Remember?</a></li>
+							<li><a href="#stage-3-4a-3">Our Take on Class Movie</a></li>
+							<li><a href="#stage-3-4a-4">Defining Class Movie</a></li>
+							<li><a href="#stage-3-4a-5">What Happens When</a></li>
+							<li><a href="#stage-3-4a-6">Defining __init__</a></li>
+							<li><a href="#stage-3-4a-7">What Is Going On Behind The Scenes</a></li>
+							<li><a href="#stage-3-4a-8">What Will Be the Output?</a></li>
+							<li><a href="#stage-3-4a-9">Behind the Scenes</a></li>
+							<li><a href="#stage-3-4a-10">Is Self Important?</a></li>
+							<li><a href="#stage-3-4a-11">Next Up: Show_trailer</a></li>
+							<li><a href="#stage-3-4a-12">Playing Movie Trailer</a></li>
+							<li><a href="#stage-3-4a-13">Recap Vocab</a></li>
+							<li><a href="#stage-3-4a-14">Designing the Movie Website</a></li>
+							<li><a href="#stage-3-4a-15">Coding the Movie Website</a></li>
+							<li><a href="#stage-3-4a-16">fresh_tomatoes</a></li>
+						</ol>
+					</li><!--Stage 3.4a table ends here-->
+					<li><a href="#stage-3-4b"><strong>Stage 3.4b Make Classes-Advanced Topic</strong></a>
+						<ol>
+							<li><a href="#stage-3-4b-1">Class Variables</a></li>
+							<li><a href="#stage-3-4b-2">Doc Strings</a></li>
+							<li><a href="#stage-3-4b-3">Inheritance</a></li>
+							<li><a href="#stage-3-4b-4">Class Parent</a></li>
+							<li><a href="#stage-3-4b-5">What's the Output?</a></li>
+							<li><a href="#stage-3-4b-6">Updating the Design for Class Movie</a></li>
+							<li><a href="#stage-3-4b-7">Reusing Methods</a></li>
+							<li><a href="#stage-3-4b-8">Method Overriding</a></li>
+						</ol>
+					</li><!--Stage 3.4b table ends here-->
+				</ul>
+		</nav>
+	</div><!--sidebar div-->
+
+	<div class="lesson" id="stage-3-0">
+		<h2>Stage 3.0 Intro: Create a Movie Website</h2>
+
+		<div class="concept" id="stage-3-0-1">
+			<div class="concept-title">Welcome To Stage 3</div>
+			<div class="concept-content"><p>In this stage, you'll embed
+			YouTube videos into your web page. But, really what you're going
+			to be doing is learning how to massively increase your power as a
+			programmer because what you'll be doing is finding and using other
+			people's already written, freely available code to really speed up
+			how quickly you can make things.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-0-2">
+			<div class="concept-title">What You'll Make</div>
+			<div class="concept-content"><p>In this stage, you'll learn to use
+			other people's code to save time and effort. This will let you
+			quickly add powerful functionality, like embedded movies. At the
+			end of this stage, you'll write code to store a list of your
+			favorite movies, including box art imagery and a movie trailer .
+			You will then use your code to generate a static web page allowing
+			visitors to browse the movies and watch the trailers.</p></div>
+		</div>
+	</div>
+
+	<div class="lesson" id="stage-3-1">
+		<h2>Stage 3.1 Introduction to Abstraction</h2>
+
+		<div class="concept" id="stage-3-1-1">
+			<div class="concept-title">What Will We Create?</div>
+			<div class="concept-content"><p>We will use the Python programming
+			language to create a bunch of projects.</p>
+			<p>The first one is Project Take a Break: We will write a program
+			that schedules breaks throughout the day.</p>
+			<p>Another one is called Project Profanity Editor: Say you email
+			your boss, accidentally including an "awkward" word. We will write
+			a short program that detects curse words and saves you from
+			embarrassing moments.</p>
+			<p>The final project is Project Movie Database: In this project,
+			we will learn how to make a web page that lists your favorite
+			movies and shows their trailers.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-1-2">
+			<div class="concept-title">Comfort Level</div>
+			<div class="concept-content"><p>In many introductory computer
+			science classes, the instructor starts out slow, then boom, the
+			difficulty level skyrockets. This makes many students feel
+			frustrated and intimidated by code, and ultimately, they quit.</p>
+			<p>We will avoid that. We will make challenging projects, but at
+			the same time ensure that you are comfortable with the learning
+			curve.</p> </div>
+		</div>
+
+		<div class="concept" id="stage-3-1-3">
+			<div class="concept-title">What Should I Know?</div>
+			<div class="concept-content"><p>Prerequisites: Basic computing
+			ideas</p>
+				<div class="tab"><p>if statements</p></div>
+				<div class="tab"><p>loops</p></div>
+				<div class="tab"><p>functions</p></div>
+			<p>If you need a refresher on any one of these topics, see the
+			Instructor Notes.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-1-4">
+			<div class="concept-title">What Will We Learn?</div>
+			<div class="concept-content"><p>What programming concepts will we
+			learn? We'll start with ideas we are somewhat familiar with. These
+			include functions, like the simple "hello world." Soon, we will
+			move on to new ideas. These ideas include Classes and Object
+			oriented programming. This is a technique thats used by software
+			engineers on a daily basis. They can use this technique to write
+			and share code amongst each other. While we will start with
+			functions we will spend most of our time learning about classes.
+			</p></div>
+		</div>
+	</div>
+
+	<div class="lesson" id="stage-3-2">
+		<h2>Stage 3.2 Use Functions</h2>
+
+		<div class="concept" id="stage-3-2-1">
+			<div class="concept-title">Course Map</div>
+			<div class="concept-content"><p>In this stage, we will build 2
+			main projects while using functions. Towards the end of the stage,
+			we will present a scenario where functions don't quite present an
+			elegant solution. That will pave the way for us to learn new stuff
+			in future lessons.</p>
+			<p>Lets write a program that schedules breaks from the computer
+			throughout the day, reminding you to listen to music, get up and
+			dance, or just walk away from the computer every once in a while.
+			</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-2">
+			<div class="concept-title">Take a Break (Output)</div>
+			<div class="concept-content"><p>When we run the program, it starts
+			to keep track of time, and after every two hours of work on the
+			computer, it opens a browser to play a favorite song. After
+			another two hours of work, it prompts you to take another break,
+			and so on.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-3">
+			<div class="concept-title">How Would You Do This?</div>
+			<div class="concept-content"><p>If you were writing the &quot;Take
+			a Break&quot; program, what steps would you take to get to the
+			output?</p>
+			<p>Step 1: Time two hours</p>
+			<p>Step 2: Open browser to music video</p>
+			<p>Step 3: Repeat 1 &amp; 2</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-4">
+			<div class="concept-title">One Way of Doing This</div>
+			<div class="concept-content"><p>Repeat 3 Times:</p>
+				<div class="tab"><p>1. Wait for 2 hours</p></div>
+				<div class="tab"><p>2. Open browser to play song</p></div>
+			<p>Because we want this to happen multiple times, we need to put
+			these two steps inside some sort of a loop.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-5">
+			<div class="concept-title">Launching Python</div>
+			<div class="concept-content"><p>Go to Start menu, All Programs,
+			Python 2.7, &amp; launch IDLE.</p>
+			<p>You can think of IDLE as a notepad or a place where we write
+			Python programs.</p>
+			<p>Click on File, then New File, and boom! You get a fresh new
+			place where you can write your code.</p>
+			<p>The other window is where we'll see the output of our program.
+			</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-6">
+			<div class="concept-title">What Is the Error?</div>
+			<div class="concept-content"><p>Here is our program design: We're
+			going to start by opening a browser and playing a song. Google how
+			to open a web browser in Python. You'll discover a function called
+			<code>webbrowser.open</code>. This function takes in the link you
+			want to open:</p>
+			<p><code>webbrowser.open("http://www.albinoblacksheep.com/flash/vikingkittens)</code></p>
+			<p>Save the program and run it. Call it <code>break_time.py</code>.
+			</p>
+			<p>To run it, click run then click run module.</p>
+			<p>When we run it, we get an error: <code>EOL while scanning
+			string literal</code>. Python highlights the error in your code.
+			It seems like we missed the closing quote. So, add that and run
+			the program to see if it works.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-7">
+			<div class="concept-title">Squashing The Bug</div>
+			<div class="concept-content"><p>Another error: <code>NameError:
+			name 'webbrowser' is not defined.</code></p>
+			<p>Python is having difficulty understanding what
+			<code>webbrowser</code> is. We can fix this by saying
+			<code>import webbrowser</code> at the top. This is our way of
+			telling Python &quot;we want to use <code>webbrowser</code> and
+			all of its functionality in our program.&quot;</p>
+			<p>Save &amp; run. This time the program works.</p>
+			<p>We can check off one of the things we have to do: Open browser
+			and play a song</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-8">
+			<div class="concept-title">Making the Program Wait</div>
+			<div class="concept-content"><p>Next, we will attempt to make our
+			program wait for a certain period of time.</p>
+			<p>To find out about this, go back to Google, and search &quot;
+			python make my program wait.&quot; One of the first links is a
+			website called stackoverflow.com. This will soon become one of
+			your favorite websites as a programmer. It suggests to use
+			something called <code>time.sleep</code> which suspends the
+			program for a given number of seconds.</p>
+			<p>Back to the program. Since we're still in the testing phase
+			we'll try to suspend the program for only 10 seconds: Add <code>
+			time.sleep(10)</code> above the <code>webbrowser.open line</code>.
+			</p>
+			<p>We also have to import the <code>time</code> module: add <code>
+			import time</code> to the top of the program.</p>
+			<p>Save &amp; run. It seems to be working.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-9">
+			<div class="concept-title">Adding a Loop</div>
+			<div class="concept-content"><p>The next thing we have to do is to
+			put our two steps in a loop so our program can prompt the user to
+			take a break multiple times during the day.</p>
+			<p>Try and add a loop to this code so it prompts the user to take
+			3 breaks.</p>
+<pre><code>import time
+import webbrowser
+
+counter = 0
+while counter &lt; 3:
+	time.sleep(10)
+	webbrowser.open("http://www.albinoblacksheep.com/flash/vikingkittens")
+	counter = counter + 1</code></pre></div>
+		</div>
+
+	   <div class="concept" id="stage-3-2-10">
+			<div class="concept-title">Adding a Loop Solution</div>
+			<div class="concept-content">
+<pre><code>import time
+import webbrowser
+
+total_breaks = 3
+break_count = 0
+while break_count &lt; total_breaks:
+	time.sleep(10)
+	webbrowser.open("http://www.albinoblacksheep.com/flash/vikingkittens")
+	break_count = break_count + 1</code></pre>
+			<p>Another handy addition can be a <code>print</code> statement
+			that tells us when our program began:</p>
+			<p>Add this line above the while loop: <code>print ("This program
+			started on "+time.ctime())</code></p>
+			<p>Now, when we run the program, we get a prompt stating when we
+			started the program. 10 seconds after that, a video is played.
+			Another 10 seconds and another suggestion to take a break.</p>
+			<p>If you want to stop the program midway, you can restart IDLE or
+			use control+c in the shell window, which will stop the execution
+			of the program when it comes back from sleep.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-11">
+			<div class="concept-title">Making the Program Wait Longer</div>
+			<div class="concept-content"><p>Our program is lacking one more
+			thing: Lets say we want to prompt the user to take a break every
+			two hours on the computer.</p>
+			<p>We could change the <code>sleep</code> function to <code>sleep(
+			2*60*60)</code>, but since we're still testing our program, we'll
+			keep the wait time at 10 seconds.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-12">
+			<div class="concept-title">Where Does Webbrowser Come From</div>
+			<div class="concept-content"><p>Inside the Python Standard Library
+			(which we got when we downloaded Python) is a file called <code>
+			webbrowser</code>, and inside <code>webbrowser</code> is a
+			function called <code>open</code>. This is the function that
+			allowed us to play the video.</p>
+			<p>Much like <code>webbrowser</code>, there is another file or
+			module inside the Python Standard Library called <code>time</code>.
+			 <code> time</code> has several functions defined inside of it.
+			 Two of them are <code>ctime</code>, which gives you the current
+			 time, and <code>sleep</code>, which suspends program animation
+			 for a little bit.</p>
+			<p>Here's a thought: How the function <code>sleep</code> actually
+			pauses program flow for a given number of seconds, we don't really
+			know. In much the same way, how the function <code>open</code>
+			actually opens up a web browser, we don't quite know how it does
+			that behind the scenes either. That detail is hidden from us.</p>
+			<p>This hiding of detail in programming is called <em>Abstraction
+			</em>. This idea of abstraction is a really powerful one in
+			programming because it allows us to focus on the program that we
+			actually want to write. It empowers us to use these functions
+			simply by reading their documentation.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-13">
+			<div class="concept-title">Reading Webbrowser Documentation</div>
+			<div class="concept-content"> <p>Google &quot;python standard
+			library &quot; &amp; get to this documentation page: <a href="
+			https://docs.python.org/2/library/"> https://docs.python.org/2/library/</a></p>
+			<p>Check to make sure you are reading documentation for the
+			version of Python you downloaded.</p>
+			<p>On the page, you can scroll down to <code>webbrowser</code>.</p>
+			<p>You will notice that is says here &quot;The
+			<code>webbrowser</code> module provides a high-level interface to
+			allow displaying Web- based documents to users,&quot; which is
+			really a fancy way of saying
+			&quot;it will show you web sites.&quot;</p>
+			<p>If you scroll down, you can find the function <code>webbrowser.
+			open</code>, which takes in a url and displays that url using the
+			default browser.</p>
+			<p>If we go back, we can also find the module named
+			<code>time</code>. If you click on it, you can read its
+			documentation. It says &quot;This module provides various time-
+			related functions. &quot; We used two of those functions. If you
+			scroll down, you'll find <code>time.ctime</code>, which gives the
+			current time of the computer, and <code>time.sleep</code>, which
+			&quot;suspend[s] execution for a given number of seconds.&quot;</p>
+			</div>
+		</div>
+
+		<div class="concept" id="stage-3-2-14">
+			<div class="concept-title">Course Map</div>
+			<div class="concept-content"><p>We've just seen one example of how
+			functions can help us design the Take a Break program. Lets see
+			another example of how functions can help make things easier.</p>
+			</div>
+		</div>
+
+		<div class="concept" id="stage-3-2-15">
+			<div class="concept-title">Secret Message (Story)</div>
+			<div class="concept-content"><p>Kunal and his friends play a lot
+			of pranks on each other, and today he was on the receiving end of
+			one. This morning, he could not find his house keys. Just then, he
+			got a text message from a friend: &quot;We have hidden your house
+			keys, to find them, you have to solve a puzzle. On your computer,
+			there is a folder with several photos. If you rename all the files
+			by removing the numbers from the filename, the photos will reveal
+			a secret message and lead you to the house keys.&quot; Renaming 50
+			files will take a long time.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-16">
+			<div class="concept-title">Secret Message (Output)</div>
+			<div class="concept-content"><p>Here Kunal has a folder on his
+			computer with a bunch of photos. The message in these photos is
+			all jumbled up, we can't quite read it just yet. If you zoom in to
+			these photos, you'll notice that the names of the photos have
+			numbers in them. Its our task to remove those numbers.</p> <p>
+			Kunal wrote a program that does just that. Run it &amp; if you
+			look at the folder again, you'll notice that the photos have been
+			renamed. Their names don't have any numbers in them anymore. If
+			you zoom out, you'll notice that the photos are now revealing a
+			message. In this case its just &quot;some secret message.&quot;
+			</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-17">
+			<div class="concept-title">Planning a Secret Message</div>
+			<div class="concept-content"><p>What steps would you take to
+			rename a bunch of files on your computer?</p>
+			<p>One way of doing this:</p>
+			<p>We have to write a program that looks at the right folder and
+			gets all of the filenames from that folder.</p>
+			<p>1. Get all the filenames.</p>
+			<p>Once we have all the filenames, what we want the program to do
+			is rename those files.</p>
+			<p>2. For each file, rename it.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-18">
+			<div class="concept-title">Opening a File</div>
+			<div class="concept-content"><p>To follow this example, download
+			the zip file in the instructor notes. When you unzip that file,
+			you'll have a folder with about 50 photos. Create a new file in
+			IDLE called <code>rename_files.py</code>. Inside that file create
+			an empty function <code>def rename_files():</code>. Then, add
+			comments of the two main things we have to do:</p>
+			<p><code>#1 get file names from a folder</code></p>
+			<p><code>#2 for each file rename filename</code></p>
+			<p>Notice that the function right now is empty. If you save and
+			run the program, it would essentially do nothing.</p>
+			<p>The first thing we have to do is get the file names from a
+			given folder. Google can help with that: Search &quot;file names
+			in a folder in Python.&quot;&quot; Stack Overflow says that there
+			is this thing called <code>os.listdir()</code> which will get you
+			everything thats in a given directory. There is a module in Python
+			called <code>os</code>, short for operating system, and it has a
+			function called <code>listdir</code> which lists everything thats
+			in a given directory.</p>
+			<p><code>os.listdir</code> takes in the path of the folder that
+			contains our photos. So, go back to your folder, copy its path
+			address and paste it in <code>os.listdir()</code>. Be sure to put
+			it between double quotes. On a Windows machine, right before where
+			the path begins, add the letter <code>r</code>. <code>r</code>
+			stands for raw path. It tells Python &quot;take this string as it
+			is, and don't interpret it any other way&quot; Save this in a
+			variable.</p>
+			So now we have:
+<pre><code>import os
+def rename_files():
+	#1 get file names from a folder
+	file_list = os.listdir(r"C:\Users\Lacy\Dropbox\School\Intro To
+	Programming\prank")
+	print(file_list)
+	#2 for each file rename filename
+rename_files()</code></pre>
+			<p>Run the program and the output is a list of filenames in Python
+			list format.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-19">
+			<div class="concept-title">Changing Filenames</div>
+			<div class="concept-content"><p>Lets do step 2 now, which is
+			rename files. Scan the documentation for the module <code>os</code>
+			 in the instructor notes. Find out which function we can use to
+			 rename files.</p>
+			<p>By the way, this sort of a search is done quite commonly by
+			software engineers.</p>
+			<p><code>os.rename(src, dst)</code> is the answer. It takes in the
+			source or the current name of the file and changes it to the
+			destination or the new filename. Lets use this function.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-20">
+			<div class="concept-title">Renaming Files</div>
+			<div class="concept-content"><p>We know we want to rename all of
+			the files, and there are about 50 photos in that folder we
+			downloaded. To rename 50 photos, we'll have to use some sort of a
+			loop.</p>
+			<p><code>for file_name in file_list:</code></p>
+			<p>What this for loop is going to allow us to do is work with each
+			file one at a time.</p>
+			<p><code>for file_name in file_list:</code></p>
+				<div class="tab"><p><code>os.rename(file_name, ???</code></p>
+				</div>
+			<p>There is a string function <code>translate</code> that takes up
+			to 2 arguments. The first argument is a table, which translates
+			one set of characters to another set of characters. Since we don't
+			have that we can use the keyword <code>None</code>: <code>
+			file_name .translate(None, )</code>. The second argument is a list
+			of all characters that we want to remove from the string. Those we
+			know are numbers.
+			<code>file_name.translate(None, "0123456789")</code>
+			Lets add this to our code.</p>
+			Now we have:
+<pre><code>import os
+def rename_files():
+	#1 get file names from a folder
+	file_list = os.listdir(r"C:\Users\Lacy\Dropbox\School\Intro To
+	Programming\prank")
+	print(file_list)
+	#2 for each file rename filename
+	for file_name in file_list:
+		os.rename(file_name,file_name.translate(None, "0123456789"))
+rename_files()</code></pre></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-21">
+			<div class="concept-title">What Is the Error?</div>
+			<div class="concept-content"><p>Lets try to run our program.</p>
+			<p><code>WindowsError: [Error 2] The system cannot find the file
+			specified</code></p>
+			<p>The error suggest the program cannot find the file specified.
+			That is really interesting, because at one point we were able to
+			find all of the files. In fact, we printed out all of the file
+			names.</p>
+			<p>Lets continue to read the error message. It says the error is
+			happening around line 9, in <code>rename_files</code> around <code>
+			os.rename</code>. This makes us wonder if the program is actually
+			looking at the right folder when its trying to rename the files.
+			</p>
+			<p>Going back to our code, add <code>os.getcwd()</code> after
+			<code> print(file_list)</code>:</p>
+			<p><code>saved_path = os.getcwd()</code></p>
+				<div class="tab"><p><code>print ("Current Working Directory is
+				"+saved_path)</code></p></div>
+			 <p>Comment everything else out for now.</p>
+			 <p>Run the program. The working directory is <em>not</em> the one
+			 with the photos.</p></div>
+		</div>
+
+
+		<div class="concept" id="stage-3-2-22">
+			<div class="concept-title">Squashing the Bug</div>
+			<div class="concept-content"><p>To fix this, we can use the change
+			directory function: <code>os.chdir(path to files)</code></p>
+			<p>Now we have:</p>
+<pre><code>import os
+def rename_files():
+	#1 get file names from a folder
+	file_list = os.listdir(r"C:\Users\Lacy\Dropbox\School\Intro To
+	Programming\prank")
+	#print(file_list)
+	saved_path = os.getcwd()
+	print ("Current Working Directory is "+saved_path)
+	os.chdir(r"C:\Users\Lacy\Dropbox\School\Intro To Programming\prank")
+	#2 for each file rename filename
+	for file_name in file_list:
+		print("Old Name - "+file_name)
+		print("New Name - "+file_name.translate(None, "0123456789"))
+		os.rename(file_name,file_name.translate(None, "0123456789"))
+	os.chdir(saved_path) #change back to the old working directory
+rename_files()</code></pre>
+			<p>The program runs this time. Now we want to check to see if the
+			files have actually been renamed.</p>
+			<p>Back at our folder, you'll notice that the names of our files
+			don't have any numbers anymore. If you zoom out, you'll notice
+			that the photos, of letters of the alphabet, reveal a secret
+			message because the filenames are alphabetized.&quot;keys are in
+			the closet behind the shoe box&quot;</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-23">
+			<div class="concept-title">Rename Troubles</div>
+			<div class="concept-content"><p>What would happen if:</p>
+			<p>a. We try to rename a file that does not exist</p>
+			<p>b. We try to rename a file to a name that already exists in the
+			folder.</p>
+			<p>The program will throw an error. We call this error an <em>
+			exception</em>. We will return to this important idea later.</p>
+			</div>
+		</div>
+
+		<div class="concept" id="stage-3-2-24">
+			<div class="concept-title">Where Does Os Come From?</div>
+			<div class="concept-content"><p>Much like <code>webbrowser</code>
+			and <code>time</code>, Python has another module inside it called
+			<code>os</code>, which is short for operating system. Inside <code>
+			 os</code> are several functions. Two of them are
+			<code>listdir</code>, which lists out all the files in a given
+			directory, and <code> rename</code>, which renames a given file.
+			</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-25">
+			<div class="concept-title">Reading Os Documentation</div> <div
+			class="concept-content"><p>Go to the the Python documentation: <a
+			href="docs.python.org/2/library/">docs.python.org/2/library/</a>
+			</p>
+			<p>If you scroll down, you can find the <code>os</code> module.
+			Click on it to go to the documentation. In there, we can find all
+			of the <code>os</code> related functions that we used.</p>
+			<p>Even though we don't know how functions like <code>rename</code>
+			 really work behind the scenes, we can read their documentation
+			 and use them just fine. This hiding of detail behind
+			 documentation is called <em>Abstraction</em>.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-26">
+			<div class="concept-title">Edge Case</div>
+			<div class="concept-content"><p>Thus far what we've been doing is
+			writing a lot of functions. We generally start by creating an
+			empty Python file, lets call it <code>some_module.py</code>, then
+			we add functions to it. Functions like <code>def do_this</code> or
+			<code>def do_that</code>. Essentially what we are doing is writing
+			code one line at a time, almost like a recipe. Frankly, that
+			technique has been working for us thus far. Lets try to use
+			functions to write our movie website.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-2-27">
+			<div class="concept-title">When Functions Do Not Suffice</div>
+			<div class="concept-content"><p>Lets assume we want to make a
+			movie website. If we were to make this based on what we've been
+			doing thus far, what we would do is start with an empty
+			programming file and call it something like <code>movies.py</code>.
+			</p>
+			<p>Since a movie has a lot of data associated with it, like the
+			title, its storyline, we would add that to our program. Also, we
+			would want to do things with our movies. Like, show the movie's
+			trailer or show or print all of the movie's information. So, we'd
+			add those functions to our code as well.</p>
+			<p>Further imagine that we want to run this program and show a
+			movie trailer. But which movie's trailer. We'd have to provide the
+			function some information like the movie title and trailer url.</p>
+			<p>Now lets try to print out a movie's information. We would have
+			to supply some information or arguments to the function: The
+			movie's title, date, storyline, release date rating, youtube url,
+			director, box office, etc. This function is already getting too
+			convoluted. Imagine what happens if we have to supply more
+			information to it, like the cast, or the movie's reviews.</p>
+			<p>What we really want to do is define a template for our movie,
+			and record all of the data that needs to go into that template.
+			Then we can say show me Toy Story's information, or Avatar's
+			trailer, no arguments necessary. One way of doing this, just by
+			using functions, is to take the template we've defined and make
+			multiple copies, one for each movie.</p>
+			<p>This doesn't seem like a very smart solution. Imagine what
+			happens if we have to add more pieces of data to our template or
+			if we have to rename one of our functions. If that happens, we
+			will have to make those changes in each and every copy that we made
+			. That doesn't seem like a very smart thing to do.</p>
+			<p>What we really need is a way of making copies of a template
+			without having multiple files. We need the ability to define a
+			template for something, like we did for movies, and then be able
+			to say &quot;Toy Story is a type of that template, and so is
+			Avatar .&quot; We need something new. That new thing in
+			programming is called a <em>class</em>.</p></div>
+		</div>
+	</div>
+	<div class="lesson" id="stage-3-3a">
+		<h2>Stage 3.3a Use Classes-Draw Turtles</h2>
+
+		<div class="concept" id="stage-3-3a-1">
+			<div class="concept-title">Course Map</div>
+			<div class="concept-content"><p>We started out Stage 3.2 using a
+			lot of different functions. We built 2 main projects. In our first
+			one we helped our friends take a break, and in the second one, we
+			sent a secret message to our loved ones. Then we came across a
+			scenario while building a movie website, where using functions
+			didn't quite present a very elegant solution. That solution
+			requires something new. That new idea in programming is called <em>
+			classes</em>. Here in stage 3, we will spend a lot of time and
+			build a lot of different examples showcasing the power of using
+			classes. We will return to our movie database example in Stage 3.4
+			but here in Stage 3.3 we will start out with ideas and examples
+			that are the easiest for me (Kunal) to explain the power of
+			classes to you.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3a-2">
+			<div class="concept-title">Drawing Turtles (Story)</div>
+			<div class="concept-content"><p>I (Kunal) have been thinking about
+			how to introduce this topic called classes. I went back to how it
+			was explained to me in college. I realized that those ideas were
+			filled with jargon and were really confusing. Then, I landed on
+			this thing in Python that can help us draw shapes. Shapes like
+			squares, circles and fractals. It turns out that drawing these
+			shapes is one of the easiest ways to learn about classes. Lets
+			begin by drawing some shapes.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3a-3">
+			<div class="concept-title">Drawing Turtles (Output)</div>
+			<div class="concept-content"><p>I wrote a program that is
+			currently hidden. If I run it, it begins to draw squares. Out of
+			those squares, emerges a circle.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3a-4">
+			<div class="concept-title">How to Draw a Square</div>
+			<div class="concept-content"> <p>One way to draw a whole bunch of
+			squares is to start by drawing just the one square. So, I'm going
+			to step away from my computer, and draw on this red carpet which
+			will be my canvas. When I move around on it, you will notice that
+			I can draw. In this case, I drew a triangle. Here's a task for
+			you: If you were to ask me to draw a square on this red carpet,
+			what step by step instructions would you give me?</p>
+			<p>Walk two steps</p>
+			<p>Turn left</p>
+			<p>Walk two steps</p>
+			<p>Turn left</p>
+			<p>Walk two steps</p>
+			<p>Turn left</p>
+			<p>Walk two steps</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3a-5">
+			<div class="concept-title">How to Draw a Square (Solution)</div>
+			<div class="concept-content"><p>Here is one way to draw a square:
+			Move forward, turn right, move forward, turn right, move forward,
+			turn right again, move forward, and turn right.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3a-6">
+			<div class="concept-title">Drawing a Square</div>
+			<div class="concept-content"><p>Time to draw the square, but this
+			time using the computer.</p>
+			<p>I (Kunal) created a new Python file and called it <code>
+			mindstorms.py</code>. In the file, I created a function called
+			<code>draw_square():</code>, which for now is empty.</p>
+			<p>I know there is this module in Python called <code>turtle</code>
+			. So, <code>import turtle.</code> This is the actual thing that
+			moves around and draws stuff on the computer. (I encourage you to
+			find out why this thing is called turtle and not dog or cat.)</p>
+			<p>One way to start to draw is by saying
+			<code>turtle.Turtle()</code> in our function definition. This
+			syntax is a little weird and we will understand it by the end of
+			this video. Suffice to say that this is how we &quot;grab&quot; a
+			turtle. I will call it brad: <code>brad = turtle.Turtle()</code>
+			</p>
+			<p>The first thing we want to do is move <code>brad</code> forward.
+			 We can use the forward function for that:
+			<code>brad.forward(100)</code>. This function takes in a number
+			which is the distance we want to move forward. I just want to run
+			this program to see if its working.</p>
+			<p>The one thing we forgot is that we still don't have a screen on
+			which this turtle, aka <code>brad</code> is going to move around.
+			That is done by adding a window screen:</p>
+			<p><code>window = turtle.Screen()</code></p>
+			<p>This window is going to have a red background:</p>
+			<p><code>window.bgcolor(&quot;red&quot;)</code></p>
+			<p>And I want to exit the window any time I click on it:</p>
+			<p><code>window.exitonclick()</code></p>
+			<p>So we have:</p>
+<pre><code>import turtle
+
+def draw_square():
+	window = turtle.Screen()
+	window.bgcolor(&quot;red&quot;)
+	brad = turtle.Turtle()
+	brad.forward(100)
+
+	window.exitonclick()
+
+draw_square()</code></pre>
+			<p>Lets save &amp; run it. It seems that we have a window with a
+			red background and a turtle named <code>brad</code> which has
+			moved 100 steps forward.</p>
+			<p>Back at the code:</p>
+			<p>Now I'm going to finish making the square. After
+			<code>brad</code> has moved 100 steps forward, I want to turn it
+			right by 90 degrees. I can say <code>brad.right(90)</code>.</p>
+			<p>Because I want to do these two steps here:</p>
+			<p><code>brad.forward(100)</code></p>
+			<p><code>brad.right(90)</code></p>
+			<p>Four times to draw a square, I'll just copy &amp; past them a
+			few times.</p>
+			<p>So now we have:</p>
+<pre><code>import turtle
+
+def draw_square():
+	window = turtle.Screen()
+	window.bgcolor(&quot;red&quot;)
+	brad = turtle.Turtle()
+	brad.forward(100)
+	brad.right(90)
+	brad.forward(100)
+	brad.right(90)
+	brad.forward(100)
+	brad.right(90)
+	brad.forward(100)
+	brad.right(90)
+
+	window.exitonclick()
+
+draw_square()</code></pre>
+			<p>Save &amp; run. We get a square!</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3a-7">
+			<div class="concept-title">Change Turtle Shape, Color, and Speed
+			</div>
+			<div class="concept-content"><p>The next thing for us to
+			understand is how Python knows about this thing called the turtle.
+			Before we do that, here is your task: Reproduce this entire code
+			on your computer.</p>
+			<p>BTW, you can customize this turtle. You can change its shape:
+			<code>brad.shape(&quot;turtle&quot;)</code>. You can also change
+			its color: <code>brad.color(&quot;yellow&quot;)</code> and you can
+			change the speed at which it moves: <code>brad.speed(2)</code>. If
+			you need more information about how to customize your turtle,
+			there are some helpful links in the instructor notes.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3a-8">
+			<div class="concept-title">Where Does Turtle Come From?</div>
+			<div class="concept-content"><p>I now want to talk about how
+			Python knows about this thing called the <code>turtle</code>.
+			Inside the Python Standard Libary there is this file called
+			<code>turtle</code> (with a lower case t.) Inside that file is
+			something new. That something new is called a class: class
+			<code>Turtle</code> (with an upper case T.) This is a little
+			different than what we have seen thus far. What we have done so
+			far is some sort of file like <code>webbrowser</code>, that has
+			some sort of a function, like <code>open</code>. We haven't seen
+			this thing called a class.</p>
+			<p>What is a class? For now you can think of a class as a neatly
+			packaged box that puts things together really well. It allows us
+			to write code like <code>turtle.Turtle()</code> with these strange
+			looking brackets as if we were calling a function.</p>
+			<p>In fact, when we do run this piece of code, we are in fact
+			calling a function. A function called <code>__init__</code> which
+			is defined inside the class <code>Turtle</code>.
+			<code>__init__</code> stands for initialize, and what it does is
+			creates space in memory for a new instance or a new object of the
+			class <code> Turtle</code>. This instance we called
+			<code>brad</code>. <code> brad</code> can now access all of the
+			methods that are inside class <code>Turtle</code>. Like
+			<code>forward</code> and <code>right</code>.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3a-9">
+			<div class="concept-title">Reading Turtle Documentation</div>
+			<div class="concept-content"><p>Here we are in the Python
+			Documentation at <a href="http://docs.python.org/2/library/">
+			http://docs.python.org/2/library/</a> and if I scroll down I can
+			find a module named <code>turtle</code>. There is a lot of helpful
+			information about the module here. Including information about why
+			<code>turtle</code> is actually called <code>turtle</code>. If I
+			scroll down on this page, I will find a class <code>Turtle</code>
+			with a capital T, which is the class we used. I'm going to go back
+			to the top, and if I scroll down again, I can see all of the
+			methods we used, like <code>forward</code>, <code>right</code>,
+			and a lot of others.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3a-10">
+			<div class="concept-title">Two Turtles</div>
+			<div class="concept-content"><p>So now that we know where turtle
+			exists within Python, I want to return back to our code.</p>
+<pre><code>import turtle
+
+def draw_square():
+	window = turtle.Screen()
+	window.bgcolor(&quot;red&quot;)
+	brad = turtle.Turtle()
+	brad.shape(&quot;turtle&quot;)
+	brad.color(&quot;yellow&quot;)
+	brad.speed(2)
+	brad.forward(100)
+	brad.right(90)
+	brad.forward(100)
+	brad.right(90)
+	brad.forward(100)
+	brad.right(90)
+	brad.forward(100)
+	brad.right(90)
+
+	window.exitonclick()
+
+draw_square()</code></pre>
+			<p>What we've done so far is created an instance of a class called
+			<code>Turtle</code>, we called it <code>brad</code>, and
+			<code>brad</code> draws a square. If we can do that we can make
+			another example or instance of the class turtle and we can call it
+			<code>angie</code>:</p>
+			<p><code>angie = turtle.Turtle()</code></p>
+			<p>I want <code>angie</code> to draw a circle of radius 100:</p>
+			<p><code>angie.circle(100)</code></p>
+			<p>I also want <code>angie's</code> shape to be in the form of an
+			arrow:</p>
+			<p><code>angie.shape(&quot;arrow&quot;)</code></p>
+			<p>And I want <code>angie's</code> color to be blue:</p>
+			<p><code>angie.color(&quot;blue&quot;)</code></p>
+			<p>So now what we have is:</p>
+<pre><code>import turtle
+
+def draw_square():
+	window = turtle.Screen()
+	window.bgcolor(&quot;red&quot;)
+	brad = turtle.Turtle()
+	brad.shape(&quot;turtle&quot;)
+	brad.color(&quot;yellow&quot;)
+	brad.speed(2)
+	brad.forward(100)
+	brad.right(90)
+	brad.forward(100)
+	brad.right(90)
+	brad.forward(100)
+	brad.right(90)
+	brad.forward(100)
+	brad.right(90)
+
+	angie = turtle.Turtle()
+	angie.shape(&quot;arrow&quot;)
+	angie.color(&quot;blue&quot;)
+	angie.circle(100)
+
+	window.exitonclick()
+
+draw_square()</code></pre>
+			<p>Save &amp; run. We have <code>brad</code> making a yellow
+			square and <code>angie</code> making a blue circle.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3a-11">
+			<div class="concept-title">Improving Code Quality</div>
+			<div class="concept-content"><p>What's wrong with Kunal's code?</p>
+			<p>First, he's repetitive:</p>
+			<p><code>brad.forward(100)</code></p>
+			<p><code>brad.right(90)</code></p>
+			<p>Is repeated four times. He doesn't use any sort of a loop.
+			Second, the name of his function is <code>draw_square</code>,
+			which he does, but then he goes ahead and draws a circle in the
+			same function. I (Jean-Paul) made these improvements (for extra
+			credit I added a triangle)</p>:
+<pre><code>import turtle
+
+def draw_square():
+	window = turtle.Screen()
+	window.bgcolor(&quot;red&quot;)
+	brad = turtle.Turtle()
+	brad.shape(&quot;turtle&quot;)
+	brad.color(&quot;yellow&quot;)
+	brad.speed(2)
+	counter = 0
+	while counter &lt; 4:
+		brad.forward(100)
+		brad.right(90)
+		counter = counter + 1
+
+def draw_circle():
+	angie = turtle.Turtle()
+	angie.shape(&quot;arrow&quot;)
+	angie.color(&quot;blue&quot;)
+	angie.circle(100)
+
+def draw_triangle():
+	window = turtle.Screen()
+	drew = turtle.Turtle()
+	drew.shape(&quot;triangle&quot;)
+	drew.color(&quot;green&quot;)
+	drew.speed(3)
+	drew.right(120)
+	count = 0
+	while count &lt; 3:
+		drew.forward(150)
+		drew.right(120)
+		count = count + 1
+
+	window.exitonclick()
+
+draw_square()
+draw_circle()
+draw_triangle()</code></pre>
+			<p>Kunal (the instructor) made these changes:</p>
+			<p>In the draw_square function, he now uses a loop. This loop does
+			his repetitive tasks, like move the turtle forward, turn right.
+			This loop runs 4 times.</p>
+			<p>Then, he created a new function called <code>draw_art</code>.
+			In this function he creates the window screen, with the background
+			color as red. Then he creates his first turtle, named
+			<code>brad</code>, he changes <code>brad's</code> shape, color and
+			speed, and then he calls the <code>draw_square</code> function, so
+			that he can actually draw his first square. After that, he creates
+			his second turtle, <code>angie</code>. He changes her shape and
+			color. Then <code>angie</code> draws a circle.</p>
+			<p>Towards the end he calls the <code>draw_art</code> function.</p>
+			<p>Here is his code:</p>
+<pre><code>import turtle
+
+def draw_square(some_turtle):
+		for i in range(1,5):
+			some_turtle.forward(100)
+			some_turtle.right(90)
+
+def draw_art():
+	window = turtle.Screen()
+	window.bgcolor(&quot;red&quot;)
+	#Create the turtle Brad - Draws a square
+	brad = turtle.Turtle()
+	brad.shape(&quot;turtle&quot;)
+	brad.color(&quot;yellow&quot;)
+	brad.speed(2)
+	draw_square(brad)
+	#Create the turtle Angie - Draws a circle
+	angie = turtle.Turtle()
+	angie.shape(&quot;arrow&quot;)
+	angie.color(&quot;blue&quot;)
+	angie.circle(100)
+
+	window.exitonclick()
+
+draw_art()</code></pre></div>
+		</div>
+
+		<div class="concept" id="stage-3-3a-12">
+			<div class="concept-title">What Is a Class?</div>
+			<div class="concept-content"><p>Before we continue with this
+			project, I (Kunal) want to highlight a few new words that we've
+			used in the code thus far.</p>
+			<p>We've identified Turtle as a class, and <code>brad</code> and
+			<code>angie</code> as instances of that class. I want to take a
+			moment and talk about these new words.</p>
+			<p>You can think of a Class as a blueprint of a building. A
+			blueprint contains certain pieces of information about the building
+			. For instance, the height of the building, the number of rooms in
+			the building, we also know that the same blueprint can be used to
+			build multiple different buildings. For instance an office with
+			yellow walls and a residential complex with blue walls.</p>
+			<p>Lets take the example of class <code>Turtle</code>. The class
+			<code>Turtle</code> contains certain pieces of information about
+			the turtle. The turtle's size, its color, the fact that the turtle
+			can move forward and turn right. From this class or blueprint, we
+			can create multiple different instances of that class. For
+			example, <code>brad</code> is an instance of class
+			<code>Turtle</code> that draws a yellow square, and
+			<code>angie</code> is also an instance of class <code>Turtle</code>
+			that draws a blue circle.
+			</p>
+			<p>In summation, you can think of a class as a blueprint. You can
+			think of its objects as examples or instances of that blueprint.
+			</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3a-13">
+			<div class="concept-title">Making a Circle out of Squares</div>
+			<div class="concept-content"><p>Back at the code. For now what I
+			will do is continue to draw the square, but comment the rest of
+			the code out. If you remember the original challenge, it was to
+			draw a circle out of squares. Thus far, all we have done is draw
+			just the one square.</p>
+			<p>Given that, here's a question for you: How would you build on
+			the code thus far to draw the circle out of squares image?</p>
+			<p>1. Draw a square.</p>
+			<p>2. Rotate right 10 degrees.</p>
+			<p>3. Draw a square.</p>
+			<p>4. Repeat until you've reached 360 degrees.</p>
+			<p>One way of doing this is to draw a square, then turn a little
+			to the right, then draw another square. Then turn a little to the
+			right again, and then draw another square, and keep doing that.
+			Lets build that.</p>
+			<p>Here's the piece of code that draws the square: <code>
+			draw_square(brad)</code>, and after I've done that what I want is
+			the turtle to turn a little bit to the right. Add <code>brad.right(
+			10)</code> after the <code>draw_square(brad)</code> line. Because
+			I want these two statements to happen over and over again, I will
+			put them inside a loop: <code>for i in range(1,5):</code> Save
+			&amp; run. The program will draw 4 squares as specified. All I
+			have to do is let the turtle keep going around the circle, which
+			has 360 degrees. This loop should run 36 times instead: <code>for
+			i in range(1,37)</code>. Save &amp; Run. The program draws a
+			circle out of squares.</p>
+			<p>Here is the final program:</p>
+<pre><code>import turtle
+
+def draw_square(some_turtle):
+		for i in range(1,5):
+			some_turtle.forward(100)
+			some_turtle.right(90)
+
+def draw_art():
+		window = turtle.Screen()
+		window.bgcolor(&quot;red&quot;)
+		brad = turtle.Turtle()
+		brad.shape(&quot;turtle&quot;)
+		brad.color(&quot;yellow&quot;)
+		brad.speed(2)
+		for i in range(1,37):
+				draw_square(brad)
+				brad.right(10)
+
+		window.exitonclick()
+
+draw_art()</code></pre></div>
+		</div>
+
+		<div class="concept" id="stage-3-3a-14">
+			<div class="concept-title">They Look So Similar</div>
+			<div class="concept-content"><p>Now that we've used classes for
+			the very first time, I want to highlight something that took me a
+			really long time to understand. When we wanted to use functions
+			previously, we wrote code like <code>webbrowser.open</code>. But
+			when we wanted to create instances of class <code>Turtle</code>,
+			we wrote code that said <code>turtle.Turtle</code>. Look at both
+			of these statements: <code>webbrowser.open</code> and <code>turtle.
+			Turtle</code>. They look rather similar. It seems like we're
+			calling a function in both of these cases. But, something
+			different is happening behind the scenes.</p>
+			<p>When we call <code>webbrowser.open</code>, all we are doing is
+			calling a function. When we call <code>turtle.Turtle</code>, the
+			<code>__init__</code> function inside class <code>Turtle</code>,
+			thats the function that gets called, and it creates or initializes
+			space in memory for a new instance which we called
+			<code>brad</code>. Even though it seems like we called functions
+			in both cases, we called open in the first case and the function
+			<code>__init__</code> in the second. Not all functions are created
+			equal. When we called <code>webbrowser.open</code>, all we did was
+			call a function. When we called <code>turtle.Turtle</code> it in
+			turn called the <code>__init__</code> function, which created or
+			initialized space in memory that did not exist before.</p></div>
+		</div>
+	</div>
+
+	<div class="lesson" id="stage-3-3b">
+		<h2>Stage 3.3b Use Classes-Send Text</h2>
+
+		<div class="concept" id="stage-3-3b-1">
+			<div class="concept-title">Send Text Messages (Story)</div>
+			<div class="concept-content"><p>We've all used our phones to send
+			out text messages. But sometimes, there is a need for code to send
+			texts. Consider the following: Taxi companies send out text
+			messages to their passengers informing them of the cab driver's
+			location. Dating websites help potential couples communicate with
+			each other while using texts but without sharing phone numbers. To
+			make authentication more secure, Gmail sends its users a security
+			code via text message. Retail organizations communicate daily
+			deals to their customers while using texts. This use case seems
+			important to a lot of different companies. But, what does it have
+			to do with classes and objects?</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3b-2">
+			<div class="concept-title">Send Text Messages (Output)</div>
+			<div class="concept-content"><p>So I (Kunal) wrote this program
+			that sends out text messages. Here is the phone were I want to
+			recieve my text message. Let me just go ahead and run my code. It
+			works! New text message! Lets build this program.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3b-3">
+			<div class="concept-title">Introducing Twilio</div>
+			<div class="concept-content"><p>Our goal is to send a text message
+			using code. I know of a Python package that does exactly that. Its
+			called Twilio. Twilio does not come with the Python Standard
+			Library. Twilio is one of the thousands of external Python
+			packages that are available for you to download and use. There is
+			a link in the instructor notes that points out some of the more
+			popular external Python packages. For now, download and install
+			Twilio.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3b-4">
+			<div class="concept-title">Setting Up Our Code</div>
+			<div class="concept-content"><p>Lets begin writing code. The first
+			thing I've done is created a new file called
+			<code>send_text.py</code>. If you go to Twilio's installation
+			page, if you scroll down on this page, you will notice that Twilio
+			has provided some sample code that allows us to send text messages
+			to our phone. I just want to run it and see if this code actually
+			works. If the code works, only then will I try to understand how
+			it actually sends a text message to our phone. For now I'm going
+			to copy and paste the code to my <code>send_text</code> file.</p>
+<pre><code># Download the twilio-python library from http://twilio.
+com/docs/libraries from twilio.rest import TwilioRestClient
+
+# Find these values at https://twilio.com/user/account
+account_sid = "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+auth_token =  "99xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+client = TwilioRestClient(account_sid, auth_token)
+
+message = client.messages.create(to="+19999999999", from_="+18888888888",
+									 body="Hello there!")
+print message.sid</code></pre>
+			<p>It seems that the code is importing <code>Twilio</code>,
+			although it is a little different than we have seen thus far.
+			There is the keyword <code>from</code> on the first line, which we
+			haven't seen before. I will return to this later. The next two
+			lines in the program talk about <code>account_sid</code> and <code>
+			auth_token</code>. These are for Twilio to figure out who I am,
+			like a user name and password. Next, we'll go to the Twilio
+			website and find out those two values.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3b-5">
+			<div class="concept-title">Registering With Twilio</div>
+			<div class="concept-content"><p>Register for Twilio for free at
+			<a href="https://www.twilio.com/try-twilio">
+			https://www.twilio.com/try-twilio</a>. Twilio wants your cell
+			phone number, which you should provide. Then, Twilio texts you a
+			verification code. Enter it. Twilio will now give you a phone
+			number. Find the link to go to your account and you'll find the
+			<code>account_sid</code> and <code>auth_token</code>. Copy those
+			into your program.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3b-6">
+			<div class="concept-title">Running Our Code</div>
+			<div class="concept-content"><p>Back at the code. We've pasted
+			both the <code>account_sid</code> and <code>auth_token</code> into
+			the program. The next thing I want to change is the body of the
+			text message. Replace it with something you like. For the
+			<code>to</code> number, replace it with your phone number, the one
+			you used when you registered for Twilio. The <code>from</code>
+			number needs to be replaced with your Twilio number. If you don't
+			remember it, go back to the Twilio web page. Save and run. It
+			works! Text message received!</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3b-7">
+			<div class="concept-title">Python Keyword From</div>
+			<div class="concept-content"><p>Now that our code works, lets
+			figure our whats actually going on with the program. The first
+			thing that stands out is the first line of code, which is: <code>
+			from twilio.rest import TwilioRestClient</code>. So far, we've
+			been doing statements like <code>import turtle</code>. Here we
+			have a new word: <code>from</code>.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3b-8">
+			<div class="concept-title">Investigating the Code.</div>
+			<div class="concept-content"><p>The best way to find out about
+			anything is to Google it. Type in &quot;Python keyword from.&quot;
+			Go here: <a href="http://www.tutorialspoint.com/python/python_modules.htm">http://www.tutorialspoint.com/python/python_modules.htm.</a>
+			It says &quot;Python's <code>
+			from</code> statement lets you <code>import</code> specific
+			attributes from a module&quot; So, it lets you say
+			<code>from</code> module or filename <code>import</code> something.
+			 <code> from twilio.rest import TwilioRestClient</code>. This code
+			 means we want to <code>import</code> <code>TwilioRestClient</code>
+			  <code> from</code> <code>twilio.rest</code>. What are
+			<code>twilio.rest</code> and <code>TwilioRestClient</code>? Go
+			back to Google. Enter &quot;Twilio Python Code.&quot; Go to the
+			website called github. Here, you can read all of the code that
+			makes Twilio work behind the scenes. In the code, you'll find a
+			folder <code>twilio</code>. Open it. In that folder is another
+			folder called <code> rest</code>. In <code>rest</code>, there is a
+			Python file, which if you look through, you will find a class
+			called <code> TwilioRestClient</code>. So when we write this line
+			of code, <code> from twilio.rest import TwilioRestClient</code>,
+			we're telling the computer: in <code>twilio</code>, there is a
+			folder called <code> rest</code>, and in that folder is a class
+			called <code> TwilioRestClient</code> , and we are going to use
+			that class in our code.</p>
+			<p>If we were writing the code from scratch, we
+			probably wouldn't have written this line of code: <code>from twilio
+			.rest import TwilioRestClient</code>. We would have said
+			<code>from twilio import rest</code>. With that line, we are
+			telling the computer &quot;In the folder <code>twilio</code> is
+			another folder <code>rest</code>, import that because we are going
+			to use it. &quot; We know that in the folder <code>rest</code> is
+			the class <code>TwilioRestClient</code>. You would now access that
+			class by saying <code>rest.TwilioRestClient</code>. Make those
+			changes, save &amp; run, and see if it works. It does!
+			</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3b-9">
+			<div class="concept-title">Where Does Twilio Come From?</div>
+			<div class="concept-content"><p>When we downloaded Twilio, we got
+			a folder called <code>Twilio</code>. In that folder is a folder
+			called <code>rest</code>. In <code>rest</code> is a Python file
+			with a class called <code>TwilioRestClient</code>. When we say
+			<code>rest.TwilioRestClient()</code>, what were really doing is
+			calling the <code>__init__</code> function defined in the class.
+			That creates an instance. We call that instance <code>client</code>
+			. Then we do a bunch of stuff with that instance, like send a text
+			message.</p>
+			<p>We know that <code>TwilioRestClient</code> is a class, and
+			we've seen another class before, which is class <code>Turtle</code>
+			. Are there any similarities between these classes?</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3b-10">
+			<div class="concept-title">Connecting Turtle and Twilio</div>
+			<div class="concept-content"><p>We've seen two examples of
+			classes, one where we drew shapes using turtles, and the other,
+			where we sent out text messages using Twilio.</p>
+			<p>When we drew shapes using turtle, we wrote a line that
+			<code>brad = turtle.Turtle().</code> What that line of code means
+			is &quot;in Python, there is a file called <code>turtle</code>,
+			and in that file is a class called <code>Turtle</code>.&quot; When
+			we access that class using <code>brad = turtle.Turtle()</code>,
+			what we are really doing is calling the <code>__init__</code>
+			function defined in the class. <code>__init__</code> initializes
+			or creates space in memory for a new instance which we called
+			<code>brad</code>. <code>brad</code> is an object or instance of
+			the class <code>Turtle</code>. This instance <code>brad</code> can
+			then do things defined in the class <code>Turtle</code> , like
+			move forward or turn right.</p> <p>Similarly, in Twilio, when we
+			write a line of code that says
+			<code>client = rest.TwilioRestClient()</code> what we are saying
+			is that in <code>Twilio</code>, there is a folder called
+			<code>rest</code>. In that folder is a Python file that has a
+			class called <code>TwilioRestClient()</code>. When we call this
+			line of code, <code>client = rest.TwilioRestClient()</code>, what
+			we are really doing is calling a function <code>__init__</code>
+			defined in the class <code>TwilioRestClient</code>. Again,
+			<code>__init__</code> initializes or creates space in memory for
+			an object or instance of that class <code>TwilioRestClient</code>.
+			We call that object <code>client</code>. The object
+			<code>client</code> can now do things defined in
+			<code>TwilioRestClient</code> like send sms or text.</p> <p>You
+			can think of a class as a blueprint of a building. The blueprint
+			will have certain information about the building: Number of rooms,
+			Area under the building, etc. We can use the same blueprint to
+			build multiple buildings. Like a residential complex with yellow
+			walls and an office building with blue walls. Similarly, a class,
+			like class <code>Turtle</code>, has information about the turtle:
+			How to make the turtle move forward, How to make the turtle turn
+			right, etc. We can use one class as a blueprint or template to
+			create multiple instances, like
+			<code>brad</code> and <code>angie</code>. These instances can do
+			things defined in our class. Things like move forward, turn right,
+			and draw a circle.</p>
+			<p>Recently, we've seen another class:
+			<code>TwilioRestClient</code>. This class has information about
+			how to connect with Twilio and send a text message. From this
+			blueprint, we can create an instance called <code>client</code>.
+			<code>client</code> can then do things defined in the class, like
+			send out text messages.
+			</p>
+			<p>Think of a class as a blueprint, which has some basic
+			information defined in it. Think of its objects as examples or
+			instances of that blueprint.</p></div>
+		</div>
+	</div>
+
+	<div class="lesson" id="stage-3-3c">
+		<h2>Stage 3.3c Use Classes-Profanity Editor</h2>
+
+		<div class="concept" id="stage-3-3c-1">
+			<div class="concept-title">Profanity Editor (Story)</div>
+			<div class="concept-content"><p>Today was an embarrassing day. At
+			8 am, my (Kunal's) boss sent out an email to everyone in the
+			company asking for volunteers to help him proofread some marketing
+			documents. Since I had some time available, I replied by saying
+			&quot;I can take a shot at it.&quot; At least, that is what I
+			wanted to say. I misspelled one key word in that sentence and
+			instead wrote something really embarrassing: &quot;I can take a
+			sh*t at it.&quot; Why do the i and o keys have to be so close to
+			each other? I was so embarrassed. I wish my spell checker caught
+			curse words to alert clumsy writers like myself.</p>
+			<p>Lets write a program that detects curse words in a text.</p>
+			</div>
+		</div>
+
+		<div class="concept" id="stage-3-3c-2">
+			<div class="concept-title">Profanity Editor (Output)</div>
+			<div class="concept-content"><p>Here is a document with some text
+			that I (Kunal)want to check for profanity. The program I've
+			written reads the text from this document and then scans it for
+			curse words. When I run my program, It says &quot;This document
+			has no curse words.&quot; If I go back to my document, and add a
+			curse word, then save it, when I run my program again, it detects
+			the curse word and prints &quot;Profanity Alert!!&quot;</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3c-3">
+			<div class="concept-title">Planning Profanity Editor</div>
+			<div class="concept-content"><p>If you were writing the
+			&quot;Check Profanity&quot; program, what steps would you take to
+			get to the output? Don't worry about writing code, in plain
+			English, describe the steps you would take to get to the output.
+			</p>
+			<p>1. Open a file to be checked</p>
+			<p>2. Scan it for profanity</p>
+			<p>3. If it contains profanity, alert the user, otherwise assure
+			the user that no profanity is found.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3c-4">
+			<div class="concept-title">One Way of Doing Things</div>
+			<div class="concept-content"><p>There are two main steps to making
+			this work:</p>
+			<p>1. Read text from a document.</p>
+			<p>2. Check the text for curse words.</p>
+			<p>Lets begin by reading text from a document.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3c-5">
+			<div class="concept-title">Reading from a File</div>
+			<div class="concept-content"><p>Our plan for the project: Start
+			with step 1, reading text. In the instructor notes is the file we
+			want to check for curse words. It has some famous movie quotes.
+			The file could have contained some other text, like the text of an
+			email. The file is named movie_quotes.txt. Feel free to use any
+			other text file.</p>
+			<p>Lets start writing code. Create a file called
+			<code>check_profanity.py</code>. In the file, create a function
+			called <code>def read_text():</code>. There is a function in
+			Python called <code>open</code>, which lets you work with files on
+			your computer. This function takes in the address or the location
+			of the file you want to open. On a windows machine, browse to your
+			file, copy its location, paste that, then add the filename you
+			want to open (don't forget the double quotes):</p>
+			<p>open(&quot;C:\path\to\file\movie_quotes.txt&quot;)</p>
+			<p>If you're on a Mac, there is a document in the instructor notes
+			that will show you how to get the location of a file.</p>
+			<p>Refer to the file as <code>quotes</code>:</p>
+			<p><code>quotes = open(&quot;C:\path\movie_quotes.txt&quot;)</code>
+			</p>
+			<p>Now that we have a way to access our file, we'll use a function
+			called <code>read</code>.</p>
+			<p><code>quotes.read()</code></p>
+			<p>This will allow us to read the contents of movie_quotes.txt.</p>
+			<p>Save that in a variable called <code>contents_of_file</code>:
+			</p>
+			<p><code>contents_of_file = quotes.read()</code></p>
+			<p>Print out the contents:</p>
+			<p><code>print(contents_of_file)</code></p>
+			<p>Its also a good convention to close any file we've opened with
+			a program:</p>
+			<p><code>quotes.close()</code></p>
+			<p>So now our program is:</p>
+<pre><code>def read_text():
+	quotes = open(&quot;C:\path\to\file\movie_quotes.txt&quot;)
+	contents_of_file = quotes.read()
+	print(contents_of_file)
+	quotes.close()
+read_text()</code></pre>
+			<p>Save and run. The output is all of the movie quotes we read
+			from the text file.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3c-6">
+			<div class="concept-title">Where Does Open Come From?</div>
+			<div class="concept-content"><p>Where would you place
+			<code>open</code> in our model of the Python Standard Library?
+			Would it be inside <code>os</code> or would it be in a space all
+			by itself or would it be outside the Python Standard Library?</p>
+			<p>The first thing to notice about <code>open</code> is that we
+			did not say <code>import</code> anything in our code. When we used
+			a function like <code>rename</code>, we typed
+			<code>import os</code>. But not with <code>open</code>. This is
+			because functions like <code>open</code> are so commonly used in
+			Python, that they are always available. So, <code>open</code> goes
+			in a space all by itself in the Python Standard Library.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3c-7">
+			<div class="concept-title">Reading Open Documentation</div>
+			<div class="concept-content"><p>Go to the Python Standard Library
+			at <a href="http://docs.python.org/2/library/">http://docs.python.
+			org/2/library/</a>. If you scroll down a little, you will come to
+			&quot;Built-in Functions.&quot; Click on it. You'll find many
+			functions that are always available in Python. One of those
+			functions is <code>open</code>. If you click on <code>open</code>,
+			the documentation says that it opens a file. Thats exactly what we
+			did in our program. If you keep reading, it says that
+			<code>open</code> returns &quot;an object of the file type.&quot;
+			The word <em>object</em> is very curious. Where have we come
+			across this word object before?</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3c-8">
+			<div class="concept-title">Connecting Turtle and Open</div>
+			<div class="concept-content"><p>The Python Standard Library says
+			&quot;<code>open</code> returns an object of the file type.&quot;
+			The word object is very interesting, because we've seen it before.
+			</p>
+			<p>Remember when we were drawing squares using the class
+			<code>Turtle</code>? We were writing lines of code like this:</p>
+			<p><code>brad = turtle.Turtle()</code></p>
+			<p>This line meant that <code>brad</code> was an object or
+			instance of the class Turtle.</p>
+			<p>Similarly, when we write lines like:</p>
+			<p><code>quotes = open(file_location)</code></p>
+			<p>We are saying that quotes is an object or instance of File.</p>
+			<p>What happens when we run:</p>
+			<p><code>brad = turtle.Turtle()</code></p>
+			<p>A function, <code>__init__</code> is called from inside the
+			class <code>Turtle</code>. What that does is create space in
+			memory for the object <code>brad</code>.</p>
+			<p>In the case of <code>open</code>, even though on the surface it
+			looks like we are merely calling a function, if you look deep in
+			the code for how <code>open</code> was implemented in Python,
+			you'll find that <code>open</code> is calling some
+			<code>__init__</code> like function to create an object of file.
+			</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3c-9">
+			<div class="concept-title">Checking for Curse Words</div>
+			<div class="concept-content"><p>The next step is to check the text
+			we've read for profanity. To do this, Kunal searched the Internet
+			and found a website called
+			<a href="http://www.wdyl.com">www.wdyl.com</a>.
+			Or &quot;What Do You Love.&quot; One of the things it does is it
+			can tell us if a word is a curse word or not. If you go to the
+			website's profanity link, which is
+			<a href="http://www.wdyl.com/profanity?q=">
+			www.wdyl.com/profanity?q=</a> and try out the word shot:
+			<a href="http://www.wdyl.com/profanity?q=shot">
+			www.wdyl.com/profanity?q=shot</a>, the website's response is
+			false, which means the word shot is not a curse word. If you
+			change shot by just one letter, the response is true. You can even
+			give this website a sentence or a paragraph. In place of one word,
+			type in &quot;I can take a shot at it.&quot; Hit enter, and the
+			response is false. If you change one word in that sentence, the
+			response is true. All we have to do now is do what we've been
+			doing, but using code.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3c-10">
+			<div class="concept-title">Accessing a Website with Code</div>
+			<div class="concept-content"><p>Back at the code, Kunal has added
+			a function:</p>
+			<p><code>def check_profanity(text_to_check):</code></p>
+			<p>It takes in one argument, which is the text we want to check
+			for profanity.</p>
+			<p>There is a module in Python called <code>urllib</code> which
+			gets information from the internet. It has a function called
+			<code>urlopen</code>, which takes in a link to a website. So,
+			we're going to give it the full WDYL url and add the text we want
+			to check:</p>
+			<p><code>urllib.urlopen(&quot;http://www.wdyl.com/profanity?q=&quot;+text_to_check)</code></p>
+			<p><code>urlopen</code> is going to help us make a connection to
+			this website. Call this <code>connection</code>.</p>
+			<p><code>connection = urllib.urlopen(&quot;http://www.wdyl.com/profanity?q=&quot;+text_to_check)</code></p>
+			<p><code>urlopen</code> is very similar to the other function
+			we've used, <code>open</code>. <code>open</code> helps us read
+			contents from a file on a computer. <code>urlopen</code> helps
+			open a connection to a website on the internet. Then, we can do
+			things with that connection.</p>
+			<p>Things like read a response from that website. We're going to
+			read the response from the website, then print the output. After
+			you do that, close the connection:</p>
+			<p><code>output = connection.read()</code></p>
+			<p><code>print (output)</code></p>
+			<p><code>connection.close()</code></p>
+			<p>Now we need to call the function <code>check_profanity</code>.
+			We'll do that after we've successfully read the text of the file
+			we want to check. We'll pass in the contents that we read in
+			from the file. Add this line to the end of the
+			<code>read_text</code> function:</p>
+			<p><code>check_profanity(contents_of_file)</code></p>
+			<p>So now we have:</p>
+<pre><code>def read_text():
+	quotes = open(&quot;C:\path\to\file\movie_quotes.txt&quot;)
+	contents_of_file = quotes.read()
+	print(contents_of_file)
+	quotes.close()
+	check_profanity(contents_of_file)
+
+def check_profanity(text_to_check):
+	connection = urllib.urlopen(&quot;http://www.wdyl.com/profanity?q=&quot;
+	+text_to_check)
+	output = connection.read()
+	print (output)
+	connection.close()
+read_text()</code></pre>
+			<p>Save &amp; Run. We get an error. We forgot to
+			<code>import urllib</code>. Go back to the code and add
+			<code>import urllib</code> at the very top. Save &amp; run again.
+			This time, the program works! The program's response is false,
+			which means the movie quotes have no curse words. Go back to your
+			movie quotes file, and change the word Shot, then save the file
+			and run your code one more time. Now the response is true, which
+			means that there is a curse word in the file.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3c-11">
+			<div class="concept-title">Where Does Urllib Come From?</div>
+			<div class="concept-content"><p>Much like <code>webbrowser</code>,
+			<code>time</code>, <code>os</code>, <code>urllib</code> is also a
+			module or file in Python. <code>urlopen</code> is a function
+			inside it.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3c-12">
+			<div class="concept-title">Reading Urllib Documentation</div>
+			<div class="concept-content">Go to the Python Standard Library
+			documentation at <a href="http://docs.python.org/2/library/">
+			http://docs.python.org/2/library/</a> If you scroll down, you can
+			find a module name <code>urllib</code>. Click on it. It says &quot;
+			This module provides a high-level interface for fetching data
+			across the World Wide Web.&quot; It helps get data from websites.
+			If you scroll down, you'll get to <code>urlopen</code>.
+			</div>
+		</div>.
+
+		<div class="concept" id="stage-3-3c-13">
+			<div class="concept-title">Printing a Better Output</div>
+			<div class="concept-content"><p>Kunal added an <code>if</code>
+			statement to better output the results. So now we have:</p>
+<pre><code>import urllib
+
+def read_text():
+	quotes = open(&quot;C:\path\to\file\movie_quotes.txt&quot;)
+	contents_of_file = quotes.read()
+	#print(contents_of_file)
+	quotes.close()
+	check_profanity(contents_of_file)
+
+def check_profanity(text_to_check):
+	connection = urllib.urlopen(&quot;http://www.wdyl.com/profanity?q=&quot;
+	+text_to_check)
+	output = connection.read()
+	#print (output)
+	connection.close()
+	if &quot;true&quot; in output:
+		print (&quot;Profanity Alert!!&quot;)
+	elif &quot;false&quot; in output:
+		print (&quot;This document has no curse words!&quot;)
+	else:
+		print (&quot;Could not scan the document properly.&quot;)
+
+read_text()</code></pre>
+			<p>Lets run the code now. Profanity Alert!! The program says that
+			there is a curse word in the file. If you go back to your
+			movie_quotes.txt file, you can find the culprit word. Go ahead and
+			change it. Now if you run the code, you get a message saying
+			&quot;This document has no curse words!&quot;</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-3c-14">
+			<div class="concept-title">Connecting Turtle, Open, and Urllib
+			</div>
+			<div class="concept-content"><p>We started out by creating squares.
+			We wrote a line of code that said <code>brad=turtle.Turtle</code>.
+			What we were really doing was creating an object or an instance of
+			the class <code>Turtle</code>. What we could then do with that
+			instance is things like <code>brad.forward(100)</code>.</p>
+			<p>We then wanted to read contents from a file on our computer. we
+			wrote a line of code that said <code>quotes = open(file)</code>.
+			What we were really doing behind the scenes is creating an object
+			of the type file. We could then do things with that object, like
+			<code>quotes.read()</code>.</p>
+			<p>When we wanted to access a website on the internet, we wrote a
+			line of code that said <code>connection = urllib.urlopen()</code>.
+			This line of code also returned a file like object or instance. We
+			could then do things with that instance, like
+			<code>connection.read()</code>.</p>
+			<p>In all three of these examples, we created instances or objects.
+			Then we used those objects. Some of you may say that in the
+			Profanity Editor example, all we used were functions, functions
+			like <code>open</code> and <code>urlopen</code>, and there was no
+			class, like we saw with <code>Turtle</code>. Even though on the
+			surface it looks like we didn't use any classes, if we look at how
+			functions like <code>open</code> and <code>urlopen</code> are
+			actually implemented in Python, we will find that some classes
+			<code>__init__</code> like function is being called to return the
+			objects.</p></div>
+		</div>
+	</div>
+
+	<div class="lesson" id="stage-3-4a">
+		<h2>Stage 3.4a Make Classes-Movie Website</h2>
+
+		<div class="concept" id="stage-3-4a-1">
+			<div class="concept-title">Course Map</div>
+			<div class="concept-content"><p>We started this stage using functions. In stage 3.2, we built a couple of different projects. Then, we came accross a scenario where using functions didn't work really well. This was when we were trying to build a movie website. This led us to stage 3.3, where we were introduced to classes and we built a bunch of different projects using classes. Here, in stage 3.4, we will write our very first class, and we will return to our movie website example.</p>
+			<p>The output of the program we are about to build will look like this: A movie website with all of your favorite movies. If you click on one of them, its trailer will play.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4a-2">
+			<div class="concept-title">What Should Class Movie Remember?</div>
+			<div class="concept-content"><p>We will use classes to build the movie website. Lets begin by recalling what we already know about classes.</p>
+			<p>Remember the blueprint analogy? We compared a blueprint to a class. We said a blueprint of a building contains information about the building, like the number of rooms and the height and width of the walls. We can use one blueprint to build several buildings. These buildings we called examples or instances of that blueprint.</p>
+			<p>Classes are like a blueprint. We've seen before that a class like <code>Turtle</code> contains information about what a turtle can do: Move forward, Turn right. We used that information to create multiple examples or instances of that class. We called them <code>brad</code> and <code>angie</code>, that drew different shapes.</p>
+			<p>We now want to create a class called <code>Movie</code>, which will allow us to create multiple instances of itself, instances like Toy Story and Avatar.</p>
+			<p>The next big question is: What data should the class <code>Movie</code> contain?</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4a-3">
+			<div class="concept-title">Our Take on Class Movie</div>
+			<div class="concept-content"><p>Here are the data points that class <code>Movie</code> should remember: title, youtube_trailer, storyline, poster_image.</p>
+			<p>That means when we say something like <code>toy_story.storyline</code>, the program will print this: &quot;A story of a boy and his toys that come to life&quot;</p>
+			<p>If we say <code>avatar.show_trailer()</code>, the program will play Avatar's youtube trailer.</p>
+			<p>In designing the class <code>Movie</code>, we want to remember</p>
+			<p>--title</p>
+			<p>--storyline</p>
+			<p>--poster_image</p>
+			<p>--youtube_trailer</p>
+			<p>One thing we may want to do with this data is to have a <code>show_trailer()</code> function which opens a movie's youtube trailer.</p>
+			<p>Lets turn this design into code.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4a-4">
+			<div class="concept-title">Defining Class Movie</div>
+			<div class="concept-content"><p>Begin with a blank programming file. Name it <code>media.py</code> and save it in a folder called movies.</p>
+			<p>To write a new class, use the Python keyword class. Name it <code>Movie()</code>.</p>
+			<p><code>class Movie():</code></p>
+			<p>The first letter of the name of the class is in upper case. The Google Style Guide for Python suggests that it should be.</p>
+			<p>What is the The Google Style Guide for Python? Google it. Go to the fist link <a href="https://google-styleguide.googlecode.com/svn/trunk/pyguide.html">https://google-styleguide.googlecode.com/svn/trunk/pyguide.html</a>. This style guide provides conventions to programmers all over the world. If you scroll down, you will see that there are conventions on everything, from how to name things to how to write comments. Click on the Naming link. You will see that when defining a class name, Google recommends that the first letter be capitalized.</p>
+			<p>Back to the code. We've come across one new keyword called class. We are going to come across several new words in this stage. We'll keep listing them so we can go over them later:</p>
+			<p>New Vocabulary Words</p>
+			<p>--class</p>
+			<p>Our class is empty so far. To figure out what to do next, go back to the design. We know that eventually, we want to create multiple instances of the class <code>Movie</code>, like Toy Story and Avatar. We also know that we've previously created instances of class <code>Turtle</code>. Instances like <code>brad</code>. To do that, we had to write a line of code that read <code>brad=turtle.Turtle()</code>. So, we will have to write a line of code like that to create Toy Story, an instance of class <code>Movie</code>.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4a-5">
+			<div class="concept-title">What Happens When</div>
+			<div class="concept-content"><p>Go back to the code. Attempt to make an instance of the class <code>Movie</code> the way we did with class <code>Turtle</code>.</p>
+			<p>Start by making a new Python file, save the file in the same folder as <code>media.py</code>. Call the file <code>entertainment_center.py</code></p>
+			<p>In <code>entertainment_center.py</code>, type the line <code>import media</code>. This tells Python &quot;Here, I want to use the contents of <code>media.py</code>.&quot; Then add this line:</p>
+			<p><code>toy_story = media.Movie()</code></p>
+			<p><code>media</code> is the name of our previous Python file, and <code>Movie</code> is the name of the class defined in the file <code>media.py</code>.</p>
+			<p>We did not need to create a new file, but its good practice to keep your class definition separate from where you call the class.</p>
+			<p><code>toy_story = media.Movie()</code></p>
+			<p>This line of code is pretty similar to how we created the turtle <code>brad</code>. In both cases we are saying &quot;some module or file name dot a class name.&quot;</p>
+			<p>The next thing we have to do is figure out exactly what happens when we run this line of code: <code>toy_story = media.Movie()</code>.</p>
+			<p>Remember what happened behind the scenes when we created the turtle <code>brad</code>? A function named <code>__init__</code> is called; it initializes or creates space in memory for the new instance <code>brad</code>.</p>
+			<p>We started out by defining a file called <code>media.py</code>. In that file, we defined a class called <code>Movie</code>. Then we wrote a line of code that said <code>toy_story = media.Movie()</code>. What that did was call the <code>__init__</code> function defined in class <code>Movie</code>. That created a new instance called <code>toy_story</code>. The function <code>__init__</code> initializes or creates space in memory for the new instance <code>toy_story</code>. This function <code>__init__</code> is also called a constructor, because it constructs space in memory for the new instance.</p>
+			<p>Put constructor and instance on the list of new words:</p>
+			<p>New Vocabulary Words</p>
+			<p>--class</p>
+			<p>--instance</p>
+			<p>--constructor</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4a-6">
+			<div class="concept-title">Defining __init__</div>
+			<div class="concept-content"><p>In <code>media.py</code>, go to class <code>Movie():</code>, in it, we'll start to define our <code>__init__</code> function:</p>
+			<p><code>def __init__</code></p>
+			<p>There is something strange about the function already. There are two underscores on either side of the function name. These underscores are a way for Python to tell programmers that the word <code>__init__</code> is essentially reserved in Python, and that it is a special function or method. What is special about <code>__init__</code> is that it initializes or creates space in memory to remember details like title, storyline and so on for new movies we are about to create.</p>
+			<p><code>__init__</code> takes a few pieces of information, or arguments. The first is always the Python keyword <code>self</code>.</p>
+			<p><code>def __init__(self)</code></p>
+			<p>What is <code>self</code>? <code>self</code> is the object being created.</p>
+			<p>So when we run this line: <code>toy_story = media.Movie()</code>, the <code>__init__</code> function gets called, and <code>self</code> is <code>toy_story</code>.</p>
+			<p>Lets add the keyword <code>self</code> to our list of new words:</p>
+			<p>New Vocabulary Words</p>
+			<p>--class</p>
+			<p>--instance</p>
+			<p>--constructor</p>
+			<p>--self</p>
+			<p>Go back to the class <code>Movie</code> and keep defining the function <code>__init__</code>. We want <code>__init__</code> to initialize pieces of information like title, storyline, etc. that we want to remember in our class. Here is how to do that:</p>
+<pre><code>def __init__(self):
+	self.title
+	self.storyline
+	self.poster_image_url
+	self.trailer_youtube_url</code></pre>
+			<p>We have to somehow initialize these variables with information <code>__init__</code> is going to receive:</p>
+			<p><code>def __init__(self, movie_title, movie_storyline, poster_image, trailer_youtube):</code></p>
+			<p>Once you've received these four pieces of information as arguments to the <code>__init__</code> function, you can initialize your movie variables:</p>
+<pre><code>def __init__(self, movie_title, movie_storyline, poster_image,trailer_youtube):
+	self.title = movie_title
+	self.storyline = movie_storyline
+	self.poster_image_url = poster_image
+	self.trailer_youtube_url = trailer_youtube</code></pre>
+			<p>One key point before we execute our code. If we go to <code>entertainment_center.py</code> and run this piece of code: <code>toy_story = media.Movie()</code> we'll get an error. When we try to create <code>toy_story</code>, the <code>__init__</code> function gets called, which is looking for several arguments or pieces of information. We are not sending it any information at all. Lets change that.</p>
+			<p>The first argument for the <code>__init__</code> function is <code>self</code>, which is added by default in Python. Add in the rest:</p>
+<pre><code>toy_story = media.Movie(&quot;Toy Story&quot;,
+						&quot;A story of a boy and his toys that come to life&quot;,
+						&quot;https://upload.wikimedia.org/
+						 wikipedia/en/1/13/Toy_Story.jpg&quot;,
+						&quot;https://www.youtube.com/watch?v=KYz2wyBy3kc&quot;)</code></pre>
+			<p>The last thing we're going to do is print Toy Story's storyline:</p>
+			<p><code>print(toy_story.storyline)</code></p>
+			<p>Save both <code>entertainment_center.py</code> and <code>media.py</code>. Go back to <code>entertainment_center.py</code>. If everything goes right, the program should print out Toy Story's storyline. Run it. It worked! The storyline is printed.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4a-7">
+			<div class="concept-title">What Is Going On Behind the Scenes</div>
+			<div class="concept-content"><p>Here is the code for the class Movie:</p>
+<pre><code>class Movie():
+	def __init__(self, movie_title, movie_storyline, poster_image,
+				 trailer_youtube):
+		self.title = movie_title
+		self.storyline = movie_storyline
+		self.poster_image_url = poster_image
+		self.trailer_youtube_url = trailer_youtube</code></pre>
+			<p>What happens behind the scenes when we run this line of code:</p>
+			<p><code>toy_story=media.Movie(&quot;Toy Story&quot;, &quot;Toys come to life&quot;, &quot;Toy Story Poster Link&quot;, &quot;Toy Story Youtube Link&quot;)</code></p>
+			<p>What happens when you create an instance called <code>toy_story</code> by providing those 4 arguments?</p>
+			<p>The first thing that happens is the <code>__init__</code> function is called. Values are assigned to variables.</p>
+<pre><code>self = toy_story
+movie_title = &quot;Toy Story&quot;
+movie_storyline = &quot;Toys come to life&quot;
+poster_image = &quot;Toy Story Poster Link&quot;
+trailer_youtube = &quot;Toy Story Youtube Link&quot;</code></pre>
+			<p>Once <code>__init__</code> gets called, and all of these arguments <code>(self, movie_title, movie_storyline, poster_image, trailer_youtube)</code> receive their correct values, all of the variables associated with the instance toy_story get initialized appropriately:</p>
+<pre><code>title = &quot;Toy Story&quot;
+storyline = &quot;Toys come to life&quot;
+poster_image_url = &quot;Toy Story Poster Link&quot;
+trailer_youtube_url = &quot;Toy Story Youtube Link&quot;</code></pre>
+			<p>At this point, if you try to <code>print(toy_story.storyline)</code>, it prints out the correct value.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4a-8">
+			<div class="concept-title">What Will Be the Output?</div>
+			<div class="concept-content"><p>So far, we've only created one instance of our class <code>Movie</code>. The next thing to do is create another instance of the class, Avatar.</p>
+			<p>Go back to your code. Create the instance Avatar by calling <code>media.Movie</code> in <code>entertainment_center.py</code> and supply the arguments:</p>
+<pre><code>avatar = media.Movie(&quot;Avatar&quot;,
+					&quot;A marine on an alien planet&quot;,
+					&quot;https://upload.wikimedia.org/wikipedia/
+					 en/b/b0/Avatar-Teaser-Poster.jpg&quot;,
+					&quot;https://www.youtube.com/watch?v=5PSNL1qE6VY&quot;)</code></pre>
+			<p>Next, print out its storyline:</p>
+			<p><code>print(avatar.storyline)</code></p>
+			<p>Comment out the old print statement:</p>
+			<p><code># print(toy_story.storyline)</code></p>
+			<p>Save &amp; run. The program prints out the correct storyline: A marine on an alien planet.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4a-9">
+			<div class="concept-title">Behind the Scenes</div>
+			<div class="concept-content"><p>Here is the code for the class <code>Movie</code> again:</p>
+<pre><code>class Movie():
+	def __init__(self, movie_title, movie_storyline, poster_image,
+				 trailer_youtube):
+		self.title = movie_title
+		self.storyline = movie_storyline
+		self.poster_image_url = poster_image
+		self.trailer_youtube_url = trailer_youtube</code></pre>
+			<p>What goes on behind the scenes when we create the instance <code>avatar</code> by providing these 4 arguments:</p>
+			<p><code>avatar = media.Movie(&quot;Avatar&quot;,&quot;A marine on an alien planet&quot;, &quot;Avatar Poster Link&quot;, &quot;Avatar Youtube Link&quot;)</code></p>
+			<p>As soon as we run this line of code, the <code>__init__</code> function is called.</p>
+<pre><code>self = avatar
+movie_title = &quot;Avatar&quot;
+movie_storyline = &quot;A marine on an alien planet&quot;
+poster_image = &quot;Avatar Poster Link&quot;
+trailer_youtube = &quot;Avatar Youtube Link&quot;</code></pre>
+			<p>Once <code>__init__</code> gets called and all these variables <code>(self, movie_title, movie_storyline, poster_image, trailer_youtube)</code> get their appropriate values, all of the variables associated with the instance <code>avatar</code> get initialized too:</p>
+<pre><code>title = &quot;Avatar&quot;
+storyline = &quot;A marine on an alien planet&quot;
+poster_image_url = &quot;Avatar Poster Link&quot;
+trailer_youtube_url = &quot;Avatar Youtube Link&quot;</code></pre>
+			<p>At this point, if you say <code>avatar.storyline</code>, the program will print out the correct value.</p>
+			<p>Lets take a step back to tie together some pieces of information. After defining our class <code>Movie</code>, we created two of its instances, <code>toy_story</code> and <code>avatar</code>. When we created each instance, what we were doing behind the scenes was setting aside space for each instance. Within that space, each instance had their own copy of variables. Because these variables are unique to each instance of class Movie, they are called instance variables. Add instance variables to our list of new words:</p>
+			<p>New Vocabulary Words</p>
+			<p>--class</p>
+			<p>--instance</p>
+			<p>--constructor</p>
+			<p>--self</p>
+			<p>--instance variables</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4a-10">
+			<div class="concept-title">Is Self Important?</div>
+			<div class="concept-content"><p>So far, we've defined a class <code>Movie</code> and defined a couple of instances of that class.</p>
+			<p>Lets run a quick thought experiment: What would happen if we removed the keyword <code>self</code> from in front of one of the instance variables? Lets go ahead and try it by deleting the <code>self.</code> in front of storyline in our class Movie definition.</p>
+			<p>What we are really doing is changing storyline from being an instance variable accessible via instances like <code>toy_story</code> and <code>avatar</code> to a simple local variable in the function <code>__init__</code>. You will still be able to access the variable <code>storyline</code> from within the function <code>__init__</code>, but not with an instance like <code>avatar</code>. Since we are trying to do that with our print statement, Python will throw an error and say that <code>avatar</code> has no <code>storyline</code>. When we save &amp; run, we get an error: <code>Movie instance has no attribute 'storyline.'</code> To fix it, go back to the code and put <code>self.</code> back in front of <code>storyline</code>.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4a-11">
+			<div class="concept-title">Next Up: Show_trailer</div>
+			<div class="concept-content"><p>So far, we've defined the class <code>Movie</code> and taken care of the instance variables we want to remember. We also defined a couple of instances of the class <code>Movie</code>: <code>toy_story</code> and <code>avatar</code>.</p>
+			<p>The thing we still haven't done is define the function <code>show_trailer()</code>. This function will open a browser and play the trailer of a movie.</p>
+			<p>We want to run a line of code like this: <code>avatar.show_trailer()</code>. When that runs, we want it to play the trailer of Avatar.</p>
+			<p>A function that is defined in a class, and is associated with an instance, is called an instance method. Add that to our list of new words:</p>
+			<p>New Vocabulary Words</p>
+			<p>--class</p>
+			<p>--instance</p>
+			<p>--constructor</p>
+			<p>--self</p>
+			<p>--instance variables</p>
+			<p>--instance method</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4a-12">
+			<div class="concept-title">Playing Movie Trailer</div>
+			<div class="concept-content"><p>Go to the code for the class <code>Movie</code>. Define a new function there called <code>show_trailer</code>:</p>
+			<p><code>def show_trailer</code></p>
+			<p>Each instance method takes the first argument as self.</p>
+			<p><code>def show_trailer(self):</code></p>
+			<p>All show_trailer has to do is open the web browser with the correct url. The url is stored in the instance variable <code>trailer_youtube_url</code>. The way to access this variable is through the <code>self</code> keyword:</p>
+			<p><code>webbrowser.open(self.trailer_youtube_url)</code></p>
+			<p>The last thing we need to make the code work is to <code>import webbrowser</code>. Add that at the top.</p>
+			<p>The next thing to do is call the function using our other file, <code>entertainment_center.py</code>. Add <code>avatar.show_trailer()</code> to the end of the file.</p>
+			<p>Save &amp; run. It plays the trailer!</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4a-13">
+			<div class="concept-title">Recap Vocab</div>
+			<div class="concept-content"><p>In writing all of this code, we've seen a lot of new words.</p>
+			<p>New Vocabulary Words</p>
+			<p>--class</p>
+			<p>--instances</p>
+			<p>--constructor</p>
+			<p>--self</p>
+			<p>--instance variables</p>
+			<p>--instance method</p>
+			<p><em>Class:</em> We started out by defining a new class: <code>Movie</code>. The class keyword allows us to make classes. You can think of a class as a blueprint. A class can have both data and methods.</p>
+			<p><em>Instances:</em> We can create multiple instances of a class. In this case we created instances like <code>toy_story</code> and <code>avatar</code>. We could have created many more.</p>
+			<p><em>Constructor:</em> When we create an instance of a class, the classes constructor gets called. This is the <code>__init__</code> function in the class. It is here that we initialize all the data associated with the instance.</p>
+			<p><em>Self:</em> The constructor uses the keyword <code>self</code>. Think of <code>self</code> as itself or the instance in question. When the instance <code>toy_story</code> is created, <code>self</code> is <code>toy_story</code>.</p>
+			<p><em>Instance Variables:</em> All of the variables associated with a particular instance are called instance variables. These are unique to an object, and can be accessed using the <code>self</code> keyword inside the class, and the instance name outside the class.</p>
+			<p><em>Instance Methods:</em> All of the functions inside the class that are associated with an instance and have the first argument as <code>self</code>, are called instance methods.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4a-14">
+			<div class="concept-title">Designing the Movie Website</div>
+			<div class="concept-content"><p>The final output we are after is: All of our favorite movies on a website, with their posters displayed. If you click on any one of these movies, we see its trailer.</p>
+			<p>Back at the code. So far, we've made only two movie objects, <code>toy_story</code> and <code>avatar</code>. Kunal is going to make 4 more. Before that, he'll comment out the old output statements. First he adds a movie object for <code>school_of_rock</code>, then an object for <code>ratatouille</code>, then <code>midnight_in_paris</code>, and finally <code>hunger_games</code>.</p>
+			<p>To turn this into a movie website, you'll need a piece of code that Udacity wrote. The code is called <code>fresh_tomatoes.py</code>. This file is available to download in the instructor notes.</p>
+			<p>Before we use it, lets see what the file does. The file has a function inside it called <code>open_movies_page</code>. This function takes in a list of movies as input. As output, it creates and opens an html website that shows the movies you gave it.</p>
+			<p>What we're going to do next, is use <code>fresh_tomatoes.py</code> and its function <code>open_movies_page</code> in our code.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4a-15">
+			<div class="concept-title">Coding the Movie Website</div>
+			<div class="concept-content"><p>First, download the file <code>fresh_tomatoes.py</code> from the instructor notes. Save it in the exact same folder where you created all of your movie instances.</p>
+			<p>In <code>entertainment_center.py</code>, we're going to use the <code>fresh_tomatoes</code> file and call the function <code>open_movies_page</code>:</p>
+			<p><code>fresh_tomatoes.open_movies_page</code></p>
+			<p>The function takes in a list or an array of movies. We have a bunch of movies, but we need to put them in a list or array. Define an empty list called <code>movies</code>:</p>
+			<p><code>movies = []</code></p>
+			<p>To this list, add all of the movies you've created previously.</p>
+			<p><code>movies = [toy_story, avatar, apocalypse_now]</code></p>
+			<p>Now we can give this list as input to the <code>open_movies_page</code> function. Provide movies as the argument to <code>open_movies_page</code>:</p>
+			<p><code>fresh_tomatoes.open_movies_page(movies)</code></p>
+			<p>Before we save &amp; run, we need to <code>import fresh_tomatoes</code>. Add that to the top of the file. That line of code will only work if <code>fresh_tomatoes.py</code> is in the exact same directory as the current Python file.</p>
+			<p>Save &amp; run. Our movies website appears and works!</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4a-16">
+			<div class="concept-title">fresh_tomatoes</div>
+			<div class="concept-content"><p><code>fresh_tomatoes.py</code> has a function in it called <code>open_movies_page</code>. This function receives a list of movies, then creates and opens a website that showcases those movies. It stores that HTML file in the exact same folder as all of your other movie program files. Go to that folder and open <code>fresh_tomatoes.py</code>. Try to read the file and understand how it takes in a list of movies and how it creates a web page to show those movies.</p></div>
+		</div>
+	</div> <!--lesson div-->
+
+	<div class="lesson" id="stage-3-4b">
+		<h2>Stage 3.4b Make Classes-Advanced Topic</h2>
+
+		<div class="concept" id="stage-3-4b-1">
+			<div class="concept-title">Class Variables</div>
+			<div class="concept-content"><p>Start by remembering &quot;Instance Variables.&quot; In the case of class <code>Movie</code>, there were several: <code>title</code>, <code>storyline</code>, <code>poster_image_url</code> and <code>trailer_youtube_url</code>. These variables are associated with every instance we create. Both <code>toy_story</code> and <code>avatar</code> have their own copies of these variables. Sometimes we need variables that we want all of our instances to share.</p>
+			<p>Consider the variable <code>valid_ratings=[&quot;G&quot;, &quot;PG&quot;, &quot;PG-13&quot;, &quot;R&quot;]</code> this is an array or list of all possible ratings a movie could have. It wouldn't make sense to say &quot;Here are Toy Story's Valid Ratings and here are Avatar's Valid Ratings.&quot; They would be the same for all instances. So, this variable is really associated with the class <code>Movie</code>, and is called a Class Variable.</p>
+			<p>Example of a class variable in our class <code>Movie</code>:</p>
+<pre><code>class Movie():
+	valid_ratings=[&quot;G&quot;, &quot;PG&quot;, &quot;PG-13&quot;, &quot;R&quot;]
+
+	def __init__(self, movie_title, movie_storyline, poster_image,
+				 trailer_youtube):
+		self.title = movie_title
+		self.storyline = movie_storyline
+		self.poster_image_url = poster_image
+		self.trailer_youtube_url = trailer_youtube</code></pre>
+			<p>Notice that the variable <code>valid_ratings</code> is defined at the level of the class and is outside of the <code>__init__</code> function.</p>
+			<p>Now, go to the bottom of <code>entertainment_center.py</code>. Comment out any print or output statements. Add the line <code>print media.Movie(valid_ratings)</code>. Save &amp; run. A list of valid ratings prints out.</p>
+			<p>We used the class name <code>Movie</code> to access this variable. That means all instances of <code>Movie</code> can share the list to see if their individual rating is a valid one.</p>
+			<p>The value of <code>valid_ratings=[&quot;G&quot;, &quot;PG&quot;, &quot;PG-13&quot;, &quot;R&quot;]</code> is probably a constant. The value of the variable isn't going to change. When we define a constant, The Google Style Guide for Python recommends that we use all caps to define the variable. So go ahead and make that change. <code>VALID_RATINGS=[&quot;G&quot;, &quot;PG&quot;, &quot;PG-13&quot;, &quot;R&quot;]</code></p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4b-2">
+			<div class="concept-title">Doc Strings</div>
+			<div class="concept-content"><p>In Python, all classes come with some pre-existing class variables. One of them is called <code>__doc__</code>. This variable has two underscores on both sides of it.</p>
+			<p>At the Python Shell, <code>import turtle</code>, then input <code>turtle.Turtle.__doc__</code>. We get some documentation on the class Turtle.</p>
+			<p>How to use the variable with our class <code>Movie</code>: Add your documentation at the beginning of the class movie:</p>
+<pre><code>class Movie():
+	&quot;&quot;&quot;This class provides a way to store movie related information.&quot;&quot;&quot;</code></pre>
+			<p>Use triple quotes to define your documentation. Triple quotes let us create documentation that spans multiple lines.</p>
+			<p>Go back to your <code>entertainment_center.py</code> file and add the line <code>print (media.Movie.__doc__)</code>. The output when you save and run is the documentation we just wrote for the class <code>Movie</code>.</p>
+			<p>Like <code>__doc__</code>, Python has a few more pre-defined variables, including <code>__name__</code> and <code>__module__</code>. <code>__name__</code> is the name of the method. <code>__module__</code> is the name of the module in which the method was defined.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4b-3">
+			<div class="concept-title">Inheritance</div>
+			<div class="concept-content"><p>Think about how we use the word inheritance in English. A child can inherit traits from their parents: Last name, eye color, maybe some money.</p>
+			<p>To model this in programming, we would create a class called <code>Parent</code>, which would have attributes like <code>last_name</code> and <code>eye_color</code>. Then we would make a class called <code>Child</code>, which would inherit the attributes of the class <code>Parent</code>. The class <code>Child</code> could have another variable of its own called <code>number_of_toys</code>.</p>
+			<p>If we design code like this, we are beginning to reuse code, which is a huge advantage of Object Oriented Programming.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4b-4">
+			<div class="concept-title">Class Parent</div>
+			<div class="concept-content"><p>Create a new Python file called <code>inheritance.py</code></p>
+			<p>Based on our design, create a class called <code>Parent</code>: <code>class Parent():</code></p>
+			<p>Next, initialize the variables of class <code>Parent</code>:</p>
+<pre><code>class Parent ():
+	def __init__(self, last_name, eye_color):
+		self.last_name = last_name
+		self.eye_color = eye_color</code></pre>
+			<p>To make sure our code works, define an instance of the class <code>Parent</code> at the end of the file:</p>
+			<p><code>billy_cyrus = Parent (&quot;Cyrus&quot;, &quot;blue&quot;)</code></p>
+			<p><code>print (billy_cyrus.last_name)</code></p>
+			<p>(Ordinarily, we do this in a separate Python file. For simplicities sake, we're doing it this way just this once)</p>
+			<p>Billy Cyrus' last name prints out correctly.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4b-5">
+			<div class="concept-title">What's the Output?</div>
+			<div class="concept-content"><p>Now we'll start to define class <code>Child</code>. Class <code>Child</code> inherits from class <code>Parent</code>. The way to indicate that in Python is this:</p>
+			<p><code>class Child (Parent):</code></p>
+			<p>class <code>Child</code> will now inherit or reuse everything publicly available in class <code>Parent</code>.</p>
+			<p>To initialize the variables we are inheriting from class <code>Parent</code>, we reuse class <code>Parent's</code> <code>__init__</code> method:</p>
+<pre><code>class Child (Parent):
+	def __init__(self, last_name, eye_color, number_of_toys):
+		Parent.__init__(self, last_name, eye_color)</code></pre>
+			<p>Finally, initialize <code>number_of_toys</code> and our class looks like this:</p>
+<pre><code>class Child (Parent):
+	def __init__(self, last_name, eye_color, number_of_toys):
+		Parent.__init__(self, last_name, eye_color)
+		self.number_of_toys = number_of_toys</code></pre>
+			<p>Next, create an instance of the class <code>Child</code> and print out their last name and number of toys:</p>
+<pre><code>miley_cyrus = Child(&quot;Cyrus&quot;, &quot;blue&quot;, 5)
+print(miley_cyrus.last_name)
+print(miley_cyrus.number_of_toys)</code></pre>
+			<p>So now, our code looks like this:</p>
+<pre><code>class Parent ():
+	def __init__(self, last_name, eye_color):
+		print(&quot;Parent Constructor Called&quot;)
+		self.last_name = last_name
+		self.eye_color = eye_color
+
+class Child (Parent):
+	def __init__(self, last_name, eye_color, number_of_toys):
+		print(&quot;Child Constructor Called&quot;)
+		Parent.__init__(self, last_name, eye_color)
+		self.number_of_toys = number_of_toys
+
+#billy_cyrus = Parent(&quot;Cyrus&quot;, &quot;blue&quot;)
+#print (billy_cyrus.last_name)
+
+miley_cyrus = Child(&quot;Cyrus&quot;, &quot;blue&quot;, 5)
+print(miley_cyrus.last_name)
+print(miley_cyrus.number_of_toys)</code></pre>
+			<p>The first thing we are doing with our code is creating an instance of class <code>Child</code>, called <code>miley_cyrus</code>. As soon as that line runs, the <code>__init__</code> method in class <code>Child</code> is called. The first line in the <code>__init__</code> method is the <code>print</code> statement <code>&quot;Child Constructor Called.&quot;</code> After that, the constructor for the class <code>Parent</code> is called. When the <code>__init__</code> method for class <code>Parent</code> is called, we print out <code>&quot;Parent Constructor Called.&quot;</code> Then the instance variables <code>last_name</code> and <code>eye_color</code> will be initialized. Once the <code>__init__</code> method for class <code>Parent</code> has run, control returns to class <code>Child</code>. The instance variable <code>number_of toys</code> will be initialized. At that point, the <code>__init__</code> method for class <code>Child</code> is done and the instance <code>miley_cyrus</code> has been successfully created.</p>
+			<p>Then, the following two print statements run: <code>print(miley_cyrus.last_name)</code></p>
+			<p><code>print(miley_cyrus.number_of_toys)</code></p>
+			<p>So, our output is:</p>
+			<p><code>Child Constructor Called</code></p>
+			<p><code>Parent Constructor Called</code></p>
+			<p><code>Cyrus</code></p>
+			<p><code>5</code></p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4b-6">
+			<div class="concept-title">Updating the Design for Class Movie</div>
+			<div class="concept-content"><p>Inheritance can help us reuse code. In our example, class <code>Child</code> reused code from class <code>Parent</code>. Lets see if we can use inheritance to improve the design of class <code>Movie</code>.</p>
+			<p>Previously, we created class <code>Movie()</code>, with the following attributes: <code>title</code>, <code>storyline</code>, <code>poster_image</code>, <code>youtube_trailer</code>. After we defined the class <code>Movie</code>, we created several instances of it, like <code>toy_story</code> and <code>avatar</code>.</p>
+			<p>Imagine that we wanted to create another class called <code>TvShow():</code> This class would have details like <code>title</code>, <code>season</code>, <code>episode_number</code> and <code>tv_station</code>. The class could also have a function called <code>get_local_listing()</code>. Once we've created a class called <code>TvShow</code>, we can create multiple instances of it. Instances like Season 1, Episode 1 of Breaking Bad and The Final Episode of Seinfeld.</p>
+			<p>There are several items that these two classes can share: Title and Duration in minutes.</p>
+			<p>The best way to structure this code would be to create another class called <code>Video():</code>, which would have 2 attributes: <code>title</code> and <code>duration</code>. The class <code>Movie</code> could inherit from class <code>Video</code>. To do this, we would have to add the class name <code>Video</code> inside the parentheses: <code>Movie(Video)</code>. Also, the class <code>TvShow()</code> could also inherit from class <code>Video</code>. We would also have to add the class name <code>Video</code> to <code>TvShow</code>: <code>TvShow(Video)</code>. This would mean that the class <code>TvShow</code> would inherit <code>title</code> and <code>duration</code> from class <code>Video</code>.</p>
+			<p>Another big benefit to writing code this way, besides reusing it, is that it allows us to follow an intuitive model of how things exist in our brain. Intuitively speaking, we know what videos are, we also know what TV shows and movies are. Writing code this way lets programmers map how things exist in our brain.</p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4b-7">
+			<div class="concept-title">Reusing Methods</div>
+			<div class="concept-content"><p>Besides instance variables, inheritance can also help with reusing methods.</p>
+			<p>Go back to <code>inheritance.py</code>. Add a function to print out the last name and eye color of the parent:</p>
+<pre><code>	def show_info(self):
+		print(&quot;Last Name - &quot;+self.last_name)
+		print(&quot;Eye Color - &quot;+self.eye_color)</code></pre>
+			<p>To see if the method actually works, call the method <code>show_info</code> using the <code>Parent's</code> instance <code>billy_cyrus</code>: <code>billy_cyrus.show_info()</code></p></div>
+		</div>
+
+		<div class="concept" id="stage-3-4b-8">
+			<div class="concept-title">Method Overriding</div>
+			<div class="concept-content"><p>Go back to your code in <code>inheritance.py</code>. Because class <code>Child</code> inherits from class <code>Parent</code>, the method <code>show_info</code> is also inherited. Instances of class <code>Child</code>, like <code>miley_cyrus</code>, can also call <code>show_info</code>, even though the method isn't explicitly defined in class <code>Child</code>. Add this line after your definition of <code>miley_cyrus</code>: <code>miley_cyrus.show_info()</code>. Save and run. The last name and eye color of the instance <code>miley_cyrus</code> print out.</p>
+			<p>The next thing we'll do is create a method called <code>show_info</code> within the class <code>Child</code> that shows all three pieces of information about the child:</p>
+<pre><code>	def show_info(self):
+		print(&quot;Last Name - &quot;+self.last_name)
+		print(&quot;Eye Color - &quot;+self.eye_color)
+		print(&quot;Number of toys - &quot;+str(self.number_of_toys))</code></pre>
+			<p>When you save and run, the output is all 3 pieces of information. The <code>show_info</code> method from class <code>Child</code> is called, not the one from class <code>Parent</code>.</p>
+			<p>What we've done is defined a method with the same name, <code>show_info</code>, in class <code>Child</code> and class <code>Parent</code>. The ability of a subclass to override a method that it inherited from its parent class, is called <em>Method Overriding</em>.</p></div>
+		</div>
+	</div>
+</body>
+</html>

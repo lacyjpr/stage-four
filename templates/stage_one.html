@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IPND Notes</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>IPND Notes Stage 1: Make Your Web Page</h1>
+	<div class="sidebar">
+		<nav>
+			<h2>Table of Contents</h2>
+				<ul>
+					<li><a href="#stage-1-1"><strong>Stage 1.1 The Basics of the Web and HTML</strong></a>
+						<ol>
+							<li><a href="#stage-1-1-1">The World Wide Web</a>
+							<li><a href="#stage-1-1-2">HTML</a></li>
+							<li><a href="#stage-1-1-3">HTML Markup</a></li>
+							<li><a href="#stage-1-1-4">Computers Are Stupid</a>
+							</li>
+							<li><a href="#stage-1-1-5">HTML Attributes</a></li>
+							<li><a href="#stage-1-1-6">Whitespace</a></li>
+							<li><a href="#stage-1-1-7">HTML Documents</a></li>
+						</ol>
+					</li>
+					<li><a href="#stage-1-2"><strong>Stage 1.2 Creating a Structured Document</strong></a>
+						<ol>
+							<li><a href="#stage-1-2-1">HTML, CSS &amp;
+							Javascript</a></li>
+							<li><a href="#stage-1-2-2">Tree Like Structure</a>
+							</li>
+							<li><a href="#stage-1-2-3">HTML-CSS-DOM</a></li>
+							<li><a href="#stage-1-2-4">Boxes</a></li>
+						</ol>
+					</li>
+					<li><a href="#stage-1-3"><strong>Stage 1.3 Adding CSS Style and HTML Structure</strong></a>
+						<ol>
+							<li><a href="#stage-1-3-1">Avoid Repetition</a>
+							</li>
+							<li><a href="#stage-1-3-2">Tool Tips</a></li>
+							<li><a href="#stage-1-3-3">How CSS Allows
+							Programmers To Avoid Repetition</a></li>
+							<li><a href="#stage-1-3-4">Inheritance</a></li>
+							<li><a href="#stage-1-3-5">Selectors</a></li>
+							<li><a href="#stage-1-3-6">General CSS Reference
+							</a></li>
+							<li><a href="#stage-1-3-7">The Box Model</a></li>
+							<li><a href="#stage-1-3-8">Sizing Boxes</a></li>
+							<li><a href="#stage-1-3-9">Positioning Boxes</a>
+							</li>
+							<li><a href="#stage-1-3-10">Code, Test &amp; Refine
+							</a></li>
+							<li><a href="#stage-1-3-11">Validation</a></li>
+						</ol>
+					</li>
+				</ul>
+		</nav>
+	</div>
+
+	<div class="lesson" id="stage-1-1">
+		<h2>Stage 1.1 The Basics of the Web and HTML</h2>
+
+		<div class="concept" id="stage-1-1-1">
+			<div class="concept-title">The World Wide Web</div>
+			<div class="concept-content"><p>The WWW is a collection of html
+			documents. HTML is the basis for most every web page. Hyperlinks
+			link the web together. Major Pieces of the web: You, Your computer
+			and browser, The Internet, Servers, HTTP. HTTP (Hyper text
+			transfer protocol) moves HTML files from servers to your browser.
+			</p></div>
+		</div>
+
+		<div class="concept" id="stage-1-1-2">
+			<div class="concept-title">HTML</div>
+			<div class="concept-content"><p>Hypertext Markup Language. Made up
+			of: Text, content, markup, references to other documents, links to
+			other pages.</p></div>
+		</div>
+
+		<div class="concept" id="stage-1-1-3">
+			<div class="concept-title">HTML Markup</div>
+			<div class="concept-content"><p>Plain text is rendered as plain
+			text in HTML. For something different, we need <em>markup:</em></p>
+			<p><code>&lt;name&gt;</code> contents <code>&lt;/name&gt;</code>
+			</p>
+				<p><code>&lt;b&gt;</code>bold<code>&lt;/b&gt;</code></p>
+				<p><code>&lt;em&gt;</code>emphasis (italics)
+				<code>&lt;/em&gt;</code></p></div>
+		</div>
+
+		<div class="concept" id="stage-1-1-4">
+			<div class="concept-title">Computers Are Stupid</div>
+			<div class="concept-content"><p>Computers only reflect the given
+			input. They can only interpret things literally. Typos and other
+			mistakes won't be corrected by a computer, magnifying errors.</p>
+			</div>
+		</div>
+
+
+		<div class="concept" id="stage-1-1-5">
+			<div class="concept-title">HTML Attributes</div>
+			<div class="concept-content"><p>
+			<code>&lt;TAG ATTR="value"&gt;</code>
+			contents <code>&lt;/tag&gt;</code></p>
+			anchor tag (for making links): <p><code>&lt;a href="www.reddit.com"
+			&gt;</code> derp <code>&lt;/a&gt;</code></p>
+			image tag (for including images) <p><code>&lt;img src="url"
+			alt="text"&gt;</code></p></div>
+		</div>
+
+		<div class="concept" id="stage-1-1-6">
+			<div class="concept-title">Whitespace</div>
+			<div class="concept-content"><p>In HTML, all text and white space
+			is rendered on a single line until formatted with tags.</p>
+				<p><code>&lt;br&gt;</code> line break <code>&lt;/br&gt;</code>(
+				void)[inline]</p>
+				<p><code>&lt;p&gt;</code> paragraph <code>&lt;/p&gt;</code>[
+				block]</p>
+
+				<p><code>&lt;span&gt;</code> text <code>&lt;/span&gt;</code>
+				inline</p>
+				<p><code>&lt;div&gt;</code> text <code>&lt;/div&gt;</code>
+				block</p></div>
+		</div>
+
+		<div class="concept" id="stage-1-1-7">
+			<div class="concept-title">HTML Documents</div>
+			<div class="concept-content"><p>HTML documents are structured like
+			this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	content
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+		</div>
+	</div>
+
+	<div class="lesson" id="stage-1-2">
+		<h2>Stage 1.2 Creating a Structured Document</h2>
+
+		<div class="concept" id="stage-1-2-1">
+			<div class="concept-title">HTML, CSS &amp; Javascript</div>
+			<div class="concept-content"><p>Think of a website like your
+			house: HTML files are like the structure, CSS files are the style (
+			decorating.) Javascript files are the interactive components (
+			garage door opener.) Example: Wikipedia--to see the inner
+			structure use Chrome: Hamburger Menu, More Tools, Developer Tools.
+			Shows you the structure of a web page.</p></div>
+		</div>
+
+		<div class="concept" id="stage-1-2-2">
+			<div class="concept-title">Tree Like Structure</div>
+			<div class="concept-content"><p>HTML uses a tree like structure,
+			sort of like a family tree, a branching hierarchical structure.</p>
+			</div>
+		</div>
+
+		<div class="concept" id="stage-1-2-3">
+			<div class="concept-title">HTML-CSS-DOM</div>
+			<div class="concept-content"><p>How the browser knows what style
+			to apply &amp; where that style comes from:</p>
+			<p>HTML: Language of the web (Tags) Defines the structure &amp;
+			content of the page.</p>
+			<p>CSS: Defines the style. Changes how elements on the page look.
+			</p>
+			<p>DOM: Document Object Model -- Tree like structure. Tags make up
+			the elements of the tree.</p></div>
+		</div>
+
+		<div class="concept" id="stage-1-2-4">
+			<div class="concept-title">Boxes</div>
+			<div class="concept-content"><p>Everything on a web page is a <em>
+			box.</em> This makes things easy to rearrange. To boxify a design,
+			cut up the boxes physically or conceptually. Work from big to small
+			. Boxes are defined with div tags. (And &lt;p&gt; tags and many
+			new semantic ones)</p>
+			<p>To mark div tags to apply style later, give each element a
+			class attribute. (Like labels on boxes for movers.) Use class
+			names that make sense, so you know the purpose by glancing at the
+			code: See <a href="https://www.udacity.com/course/viewer#!/c-d000/l-4137489485/m-2635788572">
+			www.udacity.com/course/viewer#!/c-nd000/l-4137489485/m-2635788572
+			</a></p>
+<pre><code>&lt;div class="title"&gt;My App&lt;/div&gt;
+&lt;div class="app"&gt;
+	&lt;div class="screenshot"&gt;image&lt;/div&gt;
+	&lt;div class="description"&gt;text&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+			</div>
+		</div>
+	</div>
+
+	<div class="lesson" id="stage-1-3">
+		<h2>Stage 1.3 Adding CSS Style and HTML Structure</h2>
+
+		<div class="concept" id="stage-1-3-1">
+			<div class="concept-title">Avoid Repetition</div>
+			<div class="concept-content"><p>Its essential in all areas of
+			programming. It saves time and effort, leading to efficient code
+			and reducing errors. CSS allows programmers to avoid repetition,
+			improving their code.</p></div>
+		</div>
+
+		<div class="concept" id="stage-1-3-2">
+			<div class="concept-title">Tool Tips</div>
+			<div class="concept-content"><p> We'll be downloading Sublime Text.
+			 As you learn each new tool during this Nanodegree, you'll need to
+			 spend time with each one learning now to set it up and use it.</p>
+			 </div>
+		</div>
+
+		<div class="concept" id="stage-1-3-3">
+			<div class="concept-title">How CSS Allows Programmers To Avoid
+			Repetition</div>
+			<div class="concept-content"><p>CSS Stands for "Cascading Style
+			Sheets," with "Cascading" being the most important concept. You
+			can have several CSS files referenced in HTML. All of them will be
+			used to determine the final style for the page. Analogy: Laws--
+			National, State laws, Municipal laws, house rules. CSS is different
+			. With CSS the most specific rule is applied to every element. If
+			a house rule addresses the same topic as a National law, then the
+			house rule would be what counts. Cascading means "most specific
+			rule applied."</p></div>
+		</div>
+
+		<div class="concept" id="stage-1-3-4">
+			<div class="concept-title">Inheritance</div>
+			<div class="concept-content"><p>According to wikipedia <a href="
+			https://en.wikipedia.org/wiki/Cascading_Style_Sheets#Inheritance">
+			https://en.wikipedia.org/wiki/Cascading_Style_Sheets#Inheritance
+			</a> "Inheritance is the mechanism by which properties are applied
+			not only to a specified element, but also to its descendants.[11]
+			Inheritance relies on the document tree, which is the hierarchy of
+			(X)HTML elements in a page based on nesting. Descendant elements
+			may inherit CSS property values from any ancestor element
+			enclosing them."</p></div>
+		</div>
+
+		<div class="concept" id="stage-1-3-5">
+			<div class="concept-title">Selectors</div>
+			<div class="concept-content"><p>In CSS, you first write a selector.
+			 This defines what elements of a page a particular style will
+			 apply to. You can select an html tag and that rule will apply to
+			 all tags on the page. Or, you can select elements by class:</p>
+			<p><code>.class {</code></p>
+			<div class="tab"><p><code>attribute:value</code></p></div>
+			<code>}</code>
+			<p><code>.description {</code></p>
+			<div class="tab"><p><code>color: red;</code></p></div>
+			<p><code>}</code></p>
+			<p>CSS Selector Reference: <a href="https://css-tricks.com/how-css-selectors-work">
+			https://css-tricks.com/how-css-selectors-work/</a>
+			</p>
+			<p>CSS Attribute reference: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">
+			https://developer.mozilla.org/en-US/docs/Web/CSS/Reference </a></p>
+			</div>
+		</div>
+
+		<div class="concept" id="stage-1-3-6">
+			<div class="concept-title">General CSS Reference</div>
+			<div class="concept-content"><p>Here is a good summary and
+			reference for CSS: <a href="https://www.udacity.com/course/viewer#!/c-nd000/l-4131369051/m-3611108698">
+			https://www.udacity.com/course/viewer#!/c-nd000/l-4131369051/m-3611108698</a>
+			</p></div>
+		</div>
+
+		<div class="concept" id="stage-1-3-7">
+			<div class="concept-title">The Box Model</div>
+			<div class="concept-content"><p>The box is made up of Margin,
+			Border, Padding and Content.</p>
+			<p>Content: Image or text on the website. Think of it as the
+			nucleus </p>
+			<p>Padding: Clears an area around the content.</p>
+			<p>Border: Goes around padding and content. Color inherited from
+			the color property of the box.</p>
+			<p>Margin: Clears an area around the border. Doesn't have a
+			background color, completely transparent. Think of as space
+			between boxes.</p></div>
+		</div>
+
+		<div class="concept" id="stage-1-3-8">
+			<div class="concept-title">Sizing Boxes</div>
+			<div class="concept-content"><p>The size of the element is equal
+			to the sum of the border padding and content widths. This makes
+			recalculating element size difficult.</p>
+			<p>Easier method: CSS style</p>
+<pre><code>* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}</code></pre>
+			<p>This makes the calculation of the element size include both the
+			border and padding, making it easier to do layouts.</p>
+			<p>Setting the size of a box: Usually in pixels, also possible to
+			do as a percentage. That way the element resizes with the screen
+			size.</p></div>
+		</div>
+
+		<div class="concept" id="stage-1-3-9">
+			<div class="concept-title">Positioning Boxes</div>
+			<div class="concept-content"><p>One of many techniques: Flex box
+			layout. If you want display elements to be next to each other, you
+			can change the display attribute of the parent container to value
+			flex.</p>
+			<p>For example: <code>&lt;div class="app" style="display: flex;"
+			&gt;</code></p></div>
+		</div>
+
+		<div class="concept" id="stage-1-3-10">
+			<div class="concept-title">Code, Test &amp; Refine</div>
+			<div class="concept-content"><p>Write code, test &amp; see how it
+			looks vs the design mock up, make refinements and modifications so
+			it looks closer to the design. Repeat this process until the page
+			looks like the design. How do you know where to start testing? How
+			do you know what to refine? First, get the structure of the page
+			right by boxifying it. Then move on to the tags: If something
+			needs to be a heading, make it one. Then, think about the size of
+			the boxes. Then, how to position them where you want them. So:</p>
+			<ol>
+				<li><p>Look for natural boxes.</p></li>
+				<li><p>Look for repeated styles &amp; semantic elements.</p>
+				</li>
+				<li><p>Write your html.</p></li>
+				<li><p>Apply styles (from biggest to smallest.)</p></li>
+				<li><p>Fix things. Developer tools in your web browser can
+				also be a big help without messing with the html editor.</p>
+				</li>
+			</ol>
+			<p>Refining the Design: As you refine the design answer the
+			following questions:</p>
+			<ol>
+				<li><p>What margin size gets the design closer to the mock?</p>
+				</li>
+				<li><p>What is the background color for the header?</p></li>
+			</ol></div>
+		</div>
+
+		<div class="concept" id="stage-1-3-11">
+			<div class="concept-title">Validation</div>
+			<div class="concept-content"><p>Its very important that the html
+			and css you write is correct and complies with standards. If
+			incorrect, it might display right in one browser but not another.
+			</p>
+			<p>HTML verifier:
+			<a href="http://validator.w3.org/#validate_by_input">
+			http://validator.w3.org/#validate_by_input</a></p>
+			<p>CSS verifier:
+			<a href="http://jigsaw.w3.org/css-validator/#validate_by_input">
+			http://jigsaw.w3.org/css-validator/#validate_by_input</a></p></div>
+		</div>
+
+	</div>
+
+</body>
+</html>

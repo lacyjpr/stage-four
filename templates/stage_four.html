@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IPND Notes</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>IPND Notes Stage 4: Allow Comments</h1>
+	<div class="sidebar">
+		<nav>
+			<h2>Table of Contents</h2>
+				<ul>
+					<li><a href="#stage-4-1"><strong>Stage 4.1 Introduction to Networks</strong></a>
+						<ol>
+							<li><a href="#stage-4-1-1">Networks</a></li>
+							<li><a href="#stage-4-1-2">Network History</a></li>
+							<li><a href="#stage-4-1-3">Smoke Signals</a></li>
+							<li><a href="#stage-4-1-4">Latency</a></li>
+							<li><a href="#stage-4-1-5">Bandwidth</a></li>
+							<li><a href="#stage-4-1-6">Bits</a></li>
+							<li><a href="#stage-4-1-7">Buckets of Bits</a></li>
+							<li><a href="#stage-4-1-8">Making a Network</a></li>
+							<li><a href="#stage-4-1-9">Protocols</a></li>
+						</ol>
+					</li><!--Stage 4.1 table ends here-->
+					<li><a href="#stage-4-2"><strong>Stage 4.2 Make the Internet Work for You</strong></a>
+						<ol>
+							<li><a href="#stage-4-2-1">Document Structure</a></li>
+							<li><a href="#stage-4-2-2">Introducing URLs</a></li>
+							<li><a href="#stage-4-2-3">Query Parameters</a></li>
+							<li><a href="#stage-4-2-4">Fragments</a></li>
+							<li><a href="#stage-4-2-5">Port</a></li>
+							<li><a href="#stage-4-2-6">Get</a></li>
+							<li><a href="#stage-4-2-7">Making Requests</a></li>
+							<li><a href="#stage-4-2-8">User Agent Header</a></li>
+							<li><a href="#stage-4-2-9">HTTP Responses</a></li>
+							<li><a href="#stage-4-2-10">Response Headers</a></li>
+							<li><a href="#stage-4-2-11">Web Applications</a></li>
+						</ol>
+					</li><!--Stage 4.2 table ends here-->
+					<li><a href="#stage-4-3"><strong>Stage 4.3 Forms</strong></a>
+						<ol>
+							<li><a href="#stage-4-3-1">Introduction</a></li>
+							<li><a href="#stage-4-3-2">Forms</a></li>
+							<li><a href="#stage-4-3-3">Naming Input</a></li>
+							<li><a href="#stage-4-3-4">Submitting Input</a></li>
+							<li><a href="#stage-4-3-5">The Action Attribute</a></li>
+							<li><a href="#stage-4-3-6">URL Encoding</a></li>
+							<li><a href="#stage-4-3-7">Passwords</a></li>
+							<li><a href="#stage-4-3-8">Checkboxes</a></li>
+							<li><a href="#stage-4-3-9">Multiple Checkboxes</a></li>
+							<li><a href="#stage-4-3-10">Radio Buttons</a></li>
+							<li><a href="#stage-4-3-11">Radio Button Values</a></li>
+							<li><a href="#stage-4-3-12">Label Elements</a></li>
+							<li><a href="#stage-4-3-13">Dropdowns</a></li>
+							<li><a href="#stage-4-3-14">Dropdowns and Values</a></li>
+						</ol>
+					</li><!--Stage 4.3 table ends here-->
+					<li><a href="#stage-4-4"><strong>Stage 4.4 Python Break-Modulus &amp; Dictionaries</strong></a>
+						<ol>
+							<li><a href="#stage-4-4-1">The Modulus Operator</a></li>
+							<li><a href="#stage-4-4-2">Dictionaries</a></li>
+							<li><a href="#stage-4-4-3">Using Dictionaries</a></li>
+							<li><a href="#stage-4-4-4">A Noble Gas</a></li>
+						</ol>
+					</li><!--Stage 4.4 table ends here-->
+					<li><a href="#stage-4-5"><strong>Stage 4.5 Working with App Engine</strong></a>
+						<ol>
+							<li><a href="#stage-4-5-1">Hello Webapp World</a></li>
+							<li><a href="#stage-4-5-2">Content Type</a></li>
+							<li><a href="#stage-4-5-3">More Handlers</a></li>
+							<li><a href="#stage-4-5-4">The Method Attribute</a></li>
+							<li><a href="#stage-4-5-5">Differences Between Get and Post</a></li>
+							<li><a href="#stage-4-5-6">Problems with Get</a></li>
+						</ol>
+					</li><!--Stage 4.5 table ends here-->
+					<li><a href="#stage-4-6"><strong>Stage 4.6 Validation</strong></a>
+						<ol>
+							<li><a href="#stage-4-6-1">Validation</a></li>
+							<li><a href="#stage-4-6-2">What Is Your Birthday</a></li>
+							<li><a href="#stage-4-6-3">Handling Bad Data</a></li>
+							<li><a href="#stage-4-6-4">Valid Month</a></li>
+							<li><a href="#stage-4-6-5">Valid Day</a></li>
+							<li><a href="#stage-4-6-6">Valid Year</a></li>
+							<li><a href="#stage-4-6-7">Checking Validation</a></li>
+							<li><a href="#stage-4-6-8">Responding Based On Verification</a></li>
+							<li><a href="#stage-4-6-9">String Substitution</a></li>
+							<li><a href="#stage-4-6-10">Substituting Multiple Strings</a></li>
+							<li><a href="#stage-4-6-11">Advanced String Substitution</a></li>
+							<li><a href="#stage-4-6-12">Substituting Into Our Form</a></li>
+							<li><a href="#stage-4-6-13">Preserving User Input</a></li>
+							<li><a href="#stage-4-6-14">Problems With HTML Input</a></li>
+							<li><a href="#stage-4-6-15">Handling HTML Input</a></li>
+							<li><a href="#stage-4-6-16">HTML Escaping</a></li>
+							<li><a href="#stage-4-6-17">Using HTML Escaping</a></li>
+							<li><a href="#stage-4-6-18">Implementing HTML Escaping</a></li>
+							<li><a href="#stage-4-6-19">Problems Reinventing the Wheel</a></li>
+							<li><a href="#stage-4-6-20">Current Limitations</a></li>
+							<li><a href="#stage-4-6-21">Redirection</a></li>
+							<li><a href="#stage-4-6-22">Redirection Advantages</a></li>
+							<li><a href="#stage-4-6-23">Implementing Redirection</a></li>
+						</ol>
+					</li><!--stage 4.6 table ends here-->
+					<li><a href="#stage-4-7"><strong>Stage 4.7 HTML Templates</strong></a>
+						<ol>
+							<li><a href="#stage-4-7-1">Writing a Basic Form</a></li>
+							<li><a href="#stage-4-7-2">Hidden Inputs</a></li>
+							<li><a href="#stage-4-7-3">Shopping List Take 1</a></li>
+							<li><a href="#stage-4-7-4">Possible Problems</a></li>
+							<li><a href="#stage-4-7-5">Introducing Templates</a></li>
+							<li><a href="#stage-4-7-6">Template Refactor</a></li>
+							<li><a href="#stage-4-7-7">Variable Substitution</a></li>
+							<li><a href="#stage-4-7-8">Statement Syntax</a></li>
+							<li><a href="#stage-4-7-9">Templates and Types</a></li>
+							<li><a href="#stage-4-7-10">For Loop Syntax</a></li>
+							<li><a href="#stage-4-7-11">FizzBuzz</a></li>
+							<li><a href="#stage-4-7-12">Shopping List Take 2</a></li>
+							<li><a href="#stage-4-7-13">Escaping Templates</a></li>
+							<li><a href="#stage-4-7-14">Helpful Tips</a></li>
+							<li><a href="#stage-4-7-15">Template Inheritance</a></li>
+							<li><a href="#stage-4-7-16">Conclusion</a></li>
+						</ol>
+					</li>
+				</ul>
+		</nav>
+	</div><!--sidebar div-->
+
+	<div class="lesson" id="stage-4-1">
+		<h2>Stage 4.1 Introduction to Networks</h2>
+
+		<div class="concept" id="stage-4-1-1">
+			<div class="concept-title">Networks</div>
+			<div class="concept-content"><p>First, we'll talk about networks in general. The internet is just a special kind of network.</p>
+			<p>Definition: A network is a group of entities that can communicate, even though they are not all directly connected.</p>
+			<p>Examples:</p>
+			<p>Alice and Bob talk to each other. The way they talk we call the channel. It could be in person or via phone. This is not enough to be a network, its just two people who converse.</p>
+			<p>Now take Alice, Bob and Charlie. Alice can communicate with Bob. Bob can communicate with Charlie and Charlie can communicate with Alice, forming a triangle. They can do all this communication directly. If Alice wants to talk to Charlie, she has a direct link, she doesn't have to go through Bob. This is not a network.</p>
+			<p>Third Example: Alice communicates with Bob, who communicates with Charlie. Alice is not directly connected to Charlie, but she can send a message to Charlie by having Bob forward the message for her. Once a message goes through a hop, we call it a network.</p>
+			<p>To be a network, there have to be at least 3 entities, and there has to be a way that entities that are not directly connected can still communicate.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-1-2">
+			<div class="concept-title">Network History</div>
+			<div class="concept-content"><p>Networks are over 3000 years old. They might have just been networks where people talk to each other, but networks where they were using technology to communicate go back at least 3000 years.</p>
+			<p>Homer's <cite>Illiad</cite> describes the network the ancient Greeks used. They had a line of beacons spread over the Greek Islands. They could use their beacons to warn neighboring islands when there was an enemy attacking. He wrote <cite>The Illiad</cite> in 800 BC, but the beacons he described were from events in 1200 BC.</p>
+			<p>The ancient Greek network was made up of signal fires. Soldiers on one island could light a fire, soldiers on the next island would light their own fire, signalling the next island to do the same, and so on until the message traversed the 600 km across the Greek Islands.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-1-3">
+			<div class="concept-title">Smoke Signals</div>
+			<div class="concept-content"><p>What does it take to make a network like the ancient Greeks work?</p>
+			<p>Suppose we wanted to send a message from Rhodes to Sparta. We have many points along the way where we can send smoke signals. We'd start a Rhodes, sending our message (visible to several islands,) to Naxos. The one at Naxos would need to resend it (also visible to many other points,) to Melos. The one at Melos would need to see it and resend it, finally making a signal visible to Sparta.</p>
+			<p>We need several things to make a network like this work: We need a way to encode messages, a way to convert the message we want to send (like &quot;The Trojans are coming!&quot;) into a smoke signal. We need a way to do routing, we need to figure out where the message should go. Probably the way the ancient Greek network worked was that all the nodes resent every message. They didn't have a way to do routing selectively. That's very wasteful. What we'd like is a way to send a message only to the destination. For the kinds of messages the ancient Greeks were sending (the enemy is arriving,) &quot;flooding the network&quot; is ok. If we want to send a message just between two points, we've got to know which nodes should resend the message and which direction to send it in. The final thing we need is we need to decide who gets to use the network. What if two people want to send smoke signals simultaneously?</p>
+			<p>All of these are the same things we need to consider if we want to send messages on the internet.</p>
+			<p>Here are the things we need to make a network:</p>
+			<p>1. A way to encode and interpret messages</p>
+				<div class="tab"><p>Greeks: &quot;Agamennon is arriving&quot; they needed to encode that in a smoke signal.</p></div>
+			<p>2. A way to route messages</p>
+				<div class="tab"><p>Greeks: No real way to do this, plus they wanted to send the message everywhere.</p></div>
+			<p>3. Rules for deciding who gets to use resources.</p>
+				<div class="tab"><p>Greeks: Generals have priority</p></div></div>
+		</div>
+
+		<div class="concept" id="stage-4-1-4">
+			<div class="concept-title">Latency</div>
+			<div class="concept-content"><p>There are two main ways to measure a network: Latency &amp; Bandwidth. They are very different things.</p>
+			<p>Latency is the time it takes a message to get from the source to the destination.</p>
+			<p>That time is for the start of the message. We can measure latency from the time you start sending to the time the receiver starts receiving. This is a unit of time, measured in seconds. For a fast network today, its most often measured in milliseconds. (There are 1000 milliseconds in a second.)</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-1-5">
+			<div class="concept-title">Bandwidth</div>
+			<div class="concept-content"><p>Bandwidth is the amount of information that can be transmitted per unit time. What is the rate at which you can send information?</p>
+			<p>This is measured in units of information divided by units of time. It can be measured in terms of bits per second. On the internet, its often measured in Mbps, which is megabits per second, or million bits per second.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-1-6">
+			<div class="concept-title">Bits</div>
+			<div class="concept-content"><p>What is a bit? A bit is the smallest unit of information.</p>
+			<p>Suppose we have two boxes, a green box and a blue box, and in one of the boxes is a gold star, its equally likely to be in either box. One bit is the answer to one yes or no question.</p>
+			<p>If you ask one yes/no quesion, is the gold star in the green box? You get one bit back as a response: yes or no. That one bit allows you to go from two choices down to one choice.</p>
+			<p>When we think about bits in computing, we don't usually call them yes or no. We call them 0 and 1. 0 most readily maps to no and 1 to yes. If we have two things, and the choice is yes or no, knowing which one to choose is one bit of information. For the ancient Greeks network, maybe thats all it could transmit. There was either the no bit which meant there were no enemies arriving, or if there was a smoke signal, that was one bit saying an enemy was arriving.</p>
+			<p>If all we can send is 0 and 1, can we send anything more interesting, or can we just send one thing? We can send everything we want just by using bits.</p>
+			<p>Instead of picking between two boxes, now suppose there are four: green, blue, purple and red, one with a gold star. Can we fiure out which box the star is in with just yes/no questions?</p>
+			<p>One way to do that is to ask three questions:</p>
+			<p>Is it in the green box?</p>
+			<p>Is it in the purple box?</p>
+			<p>Is it in the blue box?</p>
+			<p>We don't need to ask if its in the red box, because if we get three no answers, we know its there.</p>
+			<p>Here, we needed up to three questions to find the gold star.</p>
+			<p>We don't need three questions. If we're smarter about our questions, we only need two. The way to do it in two questions is to ask a question that gives us more information.</p>
+			<p>The problem with asking &quot;Is it in the green box&quot; first is that 3/4 of the time, the answer is no. We want to ask questions where the answer is equally likely to be yes as it is no.</p>
+			<p>Here is another approach:</p>
+			<p>1. Is the gold star in either the green or purple box? If the answer is yes, its in one of those two, if the answer is no, its in either the blue or red box.</p>
+			<p>If the answer is yes, we need to ask one more question to find the star: Is it in the green box? If the answer is yes, the star is in the green box. If the answer is no, we know the star is in the purple box.</p>
+			<p>So far, we only needed two questions to get to the right box.</p>
+			<p>If the answer to #1 is no, then we can ask &quot;Is is in the blue box?&quot; If the answer is yes, its in the blue box. If the answer is no, the star is in the red box.</p>
+			<p>Now, we can cover all four boxes without using three questions. Instead, we only need two.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-1-7">
+			<div class="concept-title">Buckets of Bits</div>
+			<div class="concept-content"><p>You can encode any number of things in bits, we just need more bits. With four bits, you can encode 16 different numbers. The reason is that 2 to the 4<sup>th</sup> power is 16. Every time you add one more bit, you double the number of things, because you add one more yes/no question.</p>
+			<p>Thats a way to measure information. Once we can distinguish any number of things, we can send any kind of data we want. Anything that is discrete, we can turn into a number, so we can turn letters into numbers, if we have a long string we can have a sequence of numbers, which we can turn into one really big number. Once we can send bits, we can send anything we want.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-1-8">
+			<div class="concept-title">Making a Network</div>
+			<div class="concept-content"><p>Go back to the things we need to operate a network</p>
+			<p>1. A way to encode and interpret messages</p>
+				<div class="tab"><p>Greeks: &quot;Agamennon is arriving&quot; they needed to encode that in a smoke signal. They probably did this ahead of time.</p></div>
+				<div class="tab"><p>Internet: We can encode any message we want in bits, then we can encode the bits on the wire into electrons and photons.</p></div>
+			<p>2. A way to route messages</p>
+				<div class="tab"><p>Greeks: No real way to do this, plus they wanted to send the message everywhere.</p></div>
+				<div class="tab"><p>Internet: Routers figure out the next hops.</p></div>
+			<p>3. Rules for deciding who gets to use resources.</p>
+				<div class="tab"><p>Greeks: Generals have priority.</p></div>
+				<div class="tab"><p>Internet: Wild West. &quot;Best Effort Service.&quot; Its up to the router to decide what to do.</p></div></div>
+		</div>
+
+		<div class="concept" id="stage-4-1-9">
+			<div class="concept-title">Protocols</div>
+			<div class="concept-content"><p>What we need to make a network work is a protocol. A protocol is a set of rules, that people agree to, that tell you how two entities can talk to each other.</p>
+			<p>For the web, the protocol gives rules for how a client and a server talk to each other. The client is the web browser, the server is the web server.</p>
+			<p>What the protocol says is, if you want to get the server to do something, the client has to send a message in a particular way. The protocol we use on the web is called Hyper Text Transfer Protocol, or HTTP. When you look in your browser, almost all the URLs you use start with HTTP. That indicates that the protocol you should use when communicating with the server is Hyper Text Transfer Protocol. Its a very simple protocol, there aren't many messages. There are only two main messages, and one we'll talk about.</p>
+			<p>That's the message called GET. The client sends a message GET &lt;object&gt;. The server will get that message, it will run some code on it, find a file that was requested, it might run some more code to get the result, then the server sends back a response, which is the contents of the requested &lt;object&gt;.</p></div>
+		</div>
+	</div><!--lesson div-->
+
+	<div class="lesson" id="stage-4-2">
+		<h2>Stage 4.2 Make the Internet Work for You</h2>
+
+		<div class="concept" id="stage-4-2-1">
+			<div class="concept-title">Document Structure</div>
+			<div class="concept-content"><p>HTML documents are structured like this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt; Title &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	content
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+		</div>
+
+		<div class="concept" id="stage-4-2-2">
+			<div class="concept-title">Introducing URLs</div>
+			<div class="concept-content"><p>URL stands for Uniform Resource Locater.</p>
+			<p>Example: http://www.udacity.com/.</p>
+			<p>The URL has 3 main parts:</p>
+			<p>Its got the protocol: http, separated by a colon and two slashes from the host, www.udacity.com, which precedes the path, in this case just /. If we didn't have the slash, the path would still be /, because that is the minimum path.</p>
+			<p>The protocol can be a number of things, but it will be http almost all the time. You'll also see https sometimes, you might see ftp or other things. HTTP basically means the web.</p>
+			<p>The host is the host name or domain name of the server we want to access. This can also be an ip address. The host name translates into an ip address as well. This is the description of the location of the physical machine we want to fetch.</p>
+			<p>The path is the document we are going to fetch. The path can be more complicated than just a slash: /cs253x/hipmunk.png. The path would be that whole thing if we were accessing that image.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-2-3">
+			<div class="concept-title">Query Parameters</div>
+			<div class="concept-content"><p>A query parameter is also known as a GET parameter.</p>
+			<p>Example: http://example.com/foo?p=1</p>
+			<p>We've got our normal URL, and at the end we've added ?p=1. This adds an extra parameter whose name is p and whose value is 1.</p>
+			<p>The format of a query parameter looks like this: Name = value, in our case p = 1. The value can be just about anything.</p>
+			<p>We can make things more complicated by adding more query parameters: http://example.com/foo?p=1&amp;q=neat. The first query parameter is separated from the URL using a question mark, all the following query parameters are separated from each other using ampersands. In this case the parameter is q and it equals the string neat.</p>
+			<p>What are query parameters for? When you make a request for a path, the query parameter is extra information the server gets. There are all sorts of things you can do with it. If this is a web application doing fancy things, these parameters might mean something to the application. It can affect caching, because technically it changes the entire URL. There are all sorts of uses for what query parameters can do that we'll discuss later. Remember, they are separate from the path, but included in the whole URL.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-2-4">
+			<div class="concept-title">Fragments</div>
+			<div class="concept-content"><p>Example: http://www.example.com/foo#fragment</p>
+			<p>A fragment is separated from the rest of the URL by a hash sign.</p>
+			<p>A fragment is generally used to reference a part of the page you are looking at. There are other fancier uses of you're going to do some complex JavaScript things.</p>
+			<p>The important thing to know is that it is not sent to the server when you make a request. Fragments are not included in the path when your request is sent to the server, they are handled on the client side.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-2-5">
+			<div class="concept-title">Port</div>
+			<div class="concept-content"><p>Example: http://localhost:8000/.</p>
+			<p>In this case, 8000 is the port.</p>
+			<p>To make an internet connection, you need two things: The address of the machine, and a port.</p>
+			<p>By default, the port is 80. If you want to use a different port, you can include it between the host and the path, separated by a colon.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-2-6">
+			<div class="concept-title">Get</div>
+			<div class="concept-content"><p>HTTP is the main protocol of the web, its what your browser uses to talk to web servers. HTTP stands for Hyper Text Transfer Protocol.</p>
+			<p>The request from your browser for http://www.example.com/foo begins with a request line: GET /foo HTTP/1.1.</p>
+			<p>The request line has 3 main parts: The method (GET,) The path (/foo,) and The version (HTTP/1.1.)</p>
+			<p>The method is what type of request you're making to the server. GET is the most common method by far. Its how you get a document from the server. The other popular method is POST. POST is most often used for sending data to the server. There are others, but these are the ones we'll use in this course.</p>
+			<p>The path, in this case /foo, is the actual document we're requesting from the server.</p>
+			<p>The version is always HTTP/ then a version number. Most browsers and servers now use 1.1, but 1.0 is used as well because it has a few uses of its own.</p>
+			<p>Where is the host name in the request line? Its not there. The browser connected to the host already. The path is used for making the request.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-2-7">
+			<div class="concept-title">Making Requests</div>
+			<div class="concept-content"><p>We had a request line like this: GET /foo HTTP/1.1</p>
+			<p>Its followed by a number of headers. Headers have this format:</p>
+			<p>Name: value</p>
+			<p>So lets add some headers to our request line:</p>
+			<p>Host: www.example.com</p>
+			<p>User-Agent: chrome</p>
+			<p>These aren't the only headers sent, but some of the more popular ones. You can make up all the headers you want, and often people do. If you have machines talking to other machines, its a good way to add extra meta-information to the request.</p>
+			<p>The first in our example is called Host. This is the host part of the URL. Its required in HTTP 1.1, but not strictly required in HTTP 1.0. Why is this useful? We're already connected to the machine, so why do we need to say what the host is again? Because web servers may have multiple names. One machine can host many websites. Udacity.com is hosted on Google's App Engine. Each of those machines hosts many sites, so we need to say which website we're requesting the document from.</p>
+			<p>The next header in our example is User-Agent. This describes who is making the request. Generally, this is your browser. This is very helpful for the server so it knows what type of machine is making the request.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-2-8">
+			<div class="concept-title">User Agent Header</div>
+			<div class="concept-content"><p>User-Agent is one of the most important headers in an HTTP request. User-Agents are important because sometimes a user will hit a server too hard or too fast, degrading the website for real users. If they have a legitimate User-Agent, the server administrator can look at them, rate limit them accordingly, or reach out to them. The Google Bot is a good example. The Google Bot is Google's web crawler that indexes web pages. Google Bot can sometimes hammer a popular website, slowing it down. To deal with that, the server can rate limit it or talk to Google.</p>
+			<p>When people use fake User-Agents, the server can look at their ip and block them altogether.</p>
+			<p>Using good User-Agents when writing software that interacts with other people's websites is a courteous thing to do that makes the web work well for everyone.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-2-9">
+			<div class="concept-title">HTTP Responses</div>
+			<div class="concept-content"><p>You've got you and your machine, and we've got some servers. Your browser makes a request to the server, and the server sends back a response.</p>
+			<p>A basic HTTP response looks very similar to the request.</p>
+			<p>For a basic request that looks like this: GET /foo HTTP/1.1, the response looks something like:</p>
+			<p>HTTP/1.1 200 OK.</p>
+			<p>This is called the Status Line, analogous to the Request line above.</p>
+			<p>The version (HTTP 1.1) matches the version of the request line. Its followed by the Status Code (200) and the Reason Phrase (OK,) an English language description of the Status Code.</p>
+			<p>There are some very common status codes:</p>
+			<p>200 Ok (Means the document is found)</p>
+			<p>302 Found (The document is located somewhere else)</p>
+			<p>404 Not found (The document wasn't found)</p>
+			<p>500 Server Error (The server broke trying to handle your request)</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-2-10">
+			<div class="concept-title">Response Headers</div>
+			<div class="concept-content"><p>Here is our basic response status line: HTTP/1.1 200 OK.</p>
+			<p>Just like the request, the status line is followed by headers:</p>
+			<p>Date: Tue Mar 2012 04:33:33 GMT</p>
+			<p>Server: Apache /2.2.3</p>
+			<p>Content-Type: text/html</p>
+			<p>Content-Length: 1539</p>
+			<p>The headers you see aren't always the same. Some are required (usually there.)</p>
+			<p>Date is there all the time. That's when the request happened.</p>
+			<p>Server is similar to the User-Agent header in the request. This is usually the name and version number of the server handling the response. The lecturer tries to never include it, or if he does, he makes something up. Otherwise, you're giving free information to would-be hackers looking for vulnerabilities. Content-Type is very popular, this is the type of document being returned so your browser knows how to display it. Text/html is a common one, you could see image/png or image/gif.</p>
+			<p>Content-Length is how long the document that follows is. Often included but not strictly required because the browser will know when its done receiving data because the connection will close.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-2-11">
+			<div class="concept-title">Web Applications</div>
+			<div class="concept-content"><p>Servers:</p>
+			<p>Purpose: Respond to http requests.</p>
+			<p>Your browser speaks http to the server to request documents.</p>
+			<p>There are two main classifications for the type of responses a server will make. They are called Static and Dynamic.</p>
+			<p>Content is considered static if its a pre-written file that the server just returns. Example: Images.</p>
+			<p>Dynamic requests are where the response is built on the fly by a program that is running. Just about all the content online today is dynamic. In the early 90s, most content was static. Almost every website today including Udacity, Reddit, Hipmunk, Wikipedia and Facebook, all build their pages dynamically.</p>
+			<p>These pages built on the fly are built by programs called web applications.</p>
+			<p>A web application is just a program that generates content. It lives on a web server, it speaks HTTP, and it generates content that your browser requests.</p></div>
+		</div>
+	</div><!--lesson div-->
+
+	<div class="lesson" id="stage-4-3">
+		<h2>Stage 4.3 Forms</h2>
+
+		<div class="concept" id="stage-4-3-1">
+			<div class="concept-title">Introduction</div>
+			<div class="concept-content"><p>Forms are all over the place on the internet. They're the text boxes, check boxes, radio buttons and so on that let websites get information from users. On Udacity, every quiz you do is submitting a form. We're going to spend a lot of time learning how to build them. We're also going to spend time learning how to make sure the data you get from users is actually secure. Forms are how you let users in to your website, so we have to be sure they only do what we want them to.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-3-2">
+			<div class="concept-title">Forms</div>
+			<div class="concept-content"><p>We're going to talk about forms &amp; how you get data from the browser to the web server.</p>
+			<p>First, open a text editor to a new file and put some text in it. Save it as a .html file and open it in your browser.</p>
+			<p>What you'll have is the text you entered showing in the browser.</p>
+			<p>If you go back to the editor and change something, save it, go back to the browser and reload, it live updates to show your new text.</p>
+			<p>Forms and the elements required to make them:</p>
+			<p>We have a new tag, form. It looks like this: <code>&lt;form&gt; &lt;/form&gt;</code>. Replace the text in your editor with those tags, save and reload your browser. Nothing is there because we don't have any content.</p>
+			<p>The content of a form: There are a few things that can go between the form tags. One is an element called input. <code>&lt;input&gt;</code> Enter that in your editor:</p>
+<pre><code>&lt;form&gt;
+	&lt;input&gt;
+&lt;/form&gt;</code></pre>
+			<p>Save and reload the browser. Now we have an input box.</p>
+			<p>The input tag can take a couple of attributes, one of which is called name. <code>&lt;input name=&quot;name&quot;&gt;</code></p></div>
+		</div>
+
+		<div class="concept" id="stage-4-3-3">
+			<div class="concept-title">Naming Input</div>
+			<div class="concept-content"><p>Add this <code>&lt;input name=&quot;q&quot;&gt;</code> to the file we've been editing. Go to the browser and reload.</p>
+			<p>Our input box hasn't changed, we added a name attribute to our html, but the appearance of the web page is the same. Put some text in the box and press enter.</p>
+			<p>What happened? Our URL changed. You can see q=&quot;text you entered&quot; at the end of the URL.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-3-4">
+			<div class="concept-title">Submitting Input</div>
+			<div class="concept-content"><p>Instead of requiring users to submit text by hitting enter, lets give them a button to click.</p>
+			<p><code>&lt;input type = &quot;submit&quot;&gt;</code> This will draw a little button that should allow us to submit the form. Add this second element to your html file. Save and reload your browser. We now have a new submit button next to our input box.</p>
+			<p>Clicking submit is no different from hitting enter in the form. When you click submit, the URL updates just like it did before.</p>
+			<p>What is happening when we push the button is that we're actually submitting the form. By default, the form submits to itself. Which is nice for playing around with the URL, isn't very useful.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-3-5">
+			<div class="concept-title">The Action Attribute</div>
+			<div class="concept-content"><p>The action attribute controls where a form submits to.</p>
+			<p>We currently have this:</p>
+<pre><code>&lt;form&gt;
+	&lt;input name=&quot;q&quot;&gt;
+	&lt;input type = &quot;submit&quot;&gt;
+&lt;/form&gt;</code></pre>
+			<p>We're going to add the action attribute to form. It looks like this:</p>
+			<p><code>&lt;form action = &quot;/foo&quot;&gt;</code>, <code>/foo</code> being the URL of where we want to submit to. We can put in any URL we want. When we click submit, it will send the data there.</p>
+			<p>If we edit our html file to say <code>&lt;form action = &quot;http://www.google.com/search&quot;&gt;</code>, the submit button sends the browser to Google search results.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-3-6">
+			<div class="concept-title">URL Encoding</div>
+			<div class="concept-content"><p>What happened? We set our form action to google.com/search, and our form added what we submitted with our form to the q parameter. q came from our input element, its the name of that text field, thats why we keep seeing it in the URL.</p>
+			<p>Lets go back to our form, and type in &quot;better flight search&quot; The value of the q parameter in the final URL is better+flight+search.</p>
+			<p>What are those pluses doing there? We didn't enter them in the search form.</p>
+			<p>The answer is that because URLs can't have spaces in them, your browser did what is called URL encoding. (Or form encoding or URL escaping.)</p>
+			<p>Now add an exclamation mark and hit submit. You can see in the URL a %21, because exclamation marks also usually get escaped. All browsers have slightly different behaviors when it comes to escaping URLs, so your results may vary.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-3-7">
+			<div class="concept-title">Passwords</div>
+			<div class="concept-content"><p>Go to your html file. First, remove the action parameter from the form element so we can submit the form to itself. Go to the browser and test the form. It works.</p>
+			<p>One thing we've been leaving off is the type parameter on the first input. <code>&lt;input type = &quot;text&quot; name = &quot;q&quot;&gt;</code> Text is the default type of an input parameter. We need to be specific with our types as we're about to learn more.</p>
+			<p>Instead of text, change the type to password: <code>&lt;input type = &quot;password&quot; name = &quot;q&quot;&gt;</code>. The password type is useful for entering passwords in a text box.</p>
+			<p>Reload your browser, now when you type in the text box, the text appears as dots instead of text.</p>
+			<p>When you hit the submit button, the value of the q parameter is the actual text you typed. Whatever you typed in the box appears in the URL. So, the password form element prevents shoulder surfing, but the password is not sent securely to the server.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-3-8">
+			<div class="concept-title">Checkboxes</div>
+			<div class="concept-content"><p>Now change type password to type checkbox: <code>&lt;input type = &quot;checkbox&quot; name = &quot;q&quot;&gt;</code> This will make a checkbox. A checkbox is for toggling something on and off</p>
+			<p>Go to the browser, hit reload, now we have a checkbox next to the submit button. Check the box and hit submit. In the URL, the q parameter equals on. That means the box was checked.</p>
+			<p>What happens when you hit submit while the checkbox isn't checked? The q parameter doesn't appear at all.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-3-9">
+			<div class="concept-title">Multiple Checkboxes</div>
+			<div class="concept-content"><p>You hardly ever see a single checkbox, you usually see them in a group. Lets add some more:</p>
+<pre><code>&lt;form&gt;
+	&lt;input type = &quot;checkbox&quot; name = &quot;q&quot;&gt;
+	&lt;input type = &quot;checkbox&quot; name = &quot;r&quot;&gt;
+	&lt;input type = &quot;checkbox&quot; name = &quot;s&quot;&gt;
+	&lt;br&gt;
+	&lt;input type = &quot;submit&quot;&gt;
+&lt;/form&gt;</code></pre>
+			<p>Now reload the page in your browser. We have three checkboxes. They can be toggled on &amp; off. What happens when you check the first two checkboxes and hit submit? The query section of the URL looks like this: q=on&amp;r=on</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-3-10">
+			<div class="concept-title">Radio Buttons</div>
+			<div class="concept-content"><p>Instead of checkboxes, lets use radio buttons. Change your 3 inputs from checkbox to radio:</p>
+<pre><code>	&lt;input type = &quot;radio&quot; name = &quot;q&quot;&gt;
+	&lt;input type = &quot;radio&quot; name = &quot;r&quot;&gt;
+	&lt;input type = &quot;radio&quot; name = &quot;s&quot;&gt;</code></pre>
+			<p>Now look at the form in your browser. You can turn on one, two or three radio buttons. That isn't what you expected, usually radio buttons behave as a group, but these aren't. Click all three and submit. They behave just like the checkboxes do: q=on&amp;r=on&amp;s=on. So we basically have checkboxes that can't be turned off. We should be able to select the second one and the first one will turn off.</p>
+			<p>How do you get radio buttons to behave as a group, where turning one on turns the other off? You give them all the same name.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-3-11">
+			<div class="concept-title">Radio Button Values</div>
+			<div class="concept-content">
+			<p>Lets give all our radio buttons the same name:</p>
+<pre><code>&lt;form&gt;
+	&lt;input type = &quot;radio&quot; name = &quot;q&quot;&gt;
+	&lt;input type = &quot;radio&quot; name = &quot;q&quot;&gt;
+	&lt;input type = &quot;radio&quot; name = &quot;q&quot;&gt;
+	&lt;br&gt;
+	&lt;input type = &quot;submit&quot;&gt;
+&lt;/form&gt;</code></pre>
+			<p>Save and reload the browser. When you select the first one, it behaves as expected, when you select the second, the first turns off. Now we can only select one option.</p>
+			<p>We have a major downside: No matter which radio button we select, q still says its equal to on. We want to know which radio button is selected.</p>
+			<p>That is what the value parameter is for:</p>
+<pre><code>	&lt;input type = &quot;radio&quot; name = &quot;q&quot; value = &quot;one&quot;&gt;
+	&lt;input type = &quot;radio&quot; name = &quot;q&quot; value = &quot;two&quot;&gt;
+	&lt;input type = &quot;radio&quot; name = &quot;q&quot; value = &quot;three&quot;&gt;</code></pre>
+			<p>Try this out in the browser. If you select the second radio button, the value of the q parameter equals two.</p>
+			<p>The meaning of these parameters is whatever we make of it on the server side. On the server, we can look for the parameter q and do what we want with it, we can check to see if it equals on or one, two or three, thats all up to us.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-3-12">
+			<div class="concept-title">Label Elements</div>
+			<div class="concept-content"><p>Now we have three radio buttons. How does the user know which is which? They're just three unlabeled buttons.</p>
+			<p>That is what the label element is for:</p>
+<pre><code>&lt;form&gt;
+	&lt;label&gt;
+		One
+		&lt;input type = &quot;radio&quot; name = &quot;q&quot; value = &quot;one&quot;&gt;
+	&lt;/label&gt;
+
+	&lt;label&gt;
+		Two
+		&lt;input type = &quot;radio&quot; name = &quot;q&quot; value = &quot;two&quot;&gt;
+	&lt;/label&gt;
+
+	&lt;label&gt;
+		Three
+		&lt;input type = &quot;radio&quot; name = &quot;q&quot; value = &quot;three&quot;&gt;
+	&lt;/label&gt;
+
+	&lt;br&gt;
+	&lt;input type = &quot;submit&quot;&gt;
+&lt;/form&gt;</code></pre>
+			<p>When you load this in the browser, you can see the labels next to the radio buttons. That makes it so the user can actually see what they are doing.</p>
+			<p>The label doesn't have to match the value of the radio button, but usually they are closely related.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-3-13">
+			<div class="concept-title">Dropdowns</div>
+			<div class="concept-content"><p>A dropdown has a form that looks like this:</p>
+<pre><code>&lt;form&gt;
+	&lt;select name=&quot;q&quot;&gt;
+		&lt;option&gt;one&lt;/option&gt;
+		&lt;option&gt;two&lt;/option&gt;
+		&lt;option&gt;three&lt;/option&gt;
+	&lt;/select&gt;
+
+	&lt;br&gt;
+	&lt;input type = &quot;submit&quot;&gt;
+&lt;/form&gt;</code></pre>
+			<p>We've got an opening select and a closing select, the opening select has the name attribute equal to q. We've got three option elements. Each has the text one, two or three.</p>
+			<p>Reload the browser to see how this looks. When we select two from the dropdown and submit, the value of the q parameter is two.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-3-14">
+			<div class="concept-title">Dropdowns and Values</div>
+			<div class="concept-content"><p>What if you want to have text appear in the dropdown, but a different parameter appear in the URL? Thats useful if you want more descriptive text in the dropdown.</p>
+			<p>We use the value parameter:</p>
+			<p><code>&lt;option value=&quot;1&quot;&gt;the number one&lt;/option&gt;</code></p>
+			<p>Our first element in the dropdown now has a value equal to the numeral 1 and contents of the words &quot;the number one.&quot;</p>
+			<p>Take a look at it in the browser. Our dropdown has changed. The first element now says &quot;the number one.&quot; The other two are the same because we didn't change them.</p>
+			<p>When we submit with &quot;the number one&quot; selected, q's value is 1. So if you want a different value from the contents in the dropdown, thats what the value parameter is for.</p></div>
+		</div>
+	</div><!--lesson div-->
+
+	<div class="lesson" id="stage-4-4">
+		<h2>Stage 4.4 Python Break-Modulus &amp; Dictionaries</h2>
+
+		<div class="concept" id="stage-4-4-1">
+			<div class="concept-title">The Modulus Operator</div>
+			<div class="concept-content"><p>The modulus operator is written with a <code>%</code> sign. It takes a number and maps it to the range based on the remainder when you divide that number: <code>&lt;number&gt; % &lt;modulus&gt; -&gt; remainder</code>.</p>
+			<p>The way modulo arithmetic works is like a clock: If we think of having a clock with 12 hours, arithmetic on the clock is 12 hours, so if we were to evaluate <code>14 % 12</code>, we'd start from zero and make 14 steps, where we end up is 2. Thats the same as the remainder we'd get by dividing 14 by 12, and thats the result of <code>14 % 12</code> -&gt; 2.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-4-2">
+			<div class="concept-title">Dictionaries</div>
+			<div class="concept-content"><p>We've seen two complex types in Python: The String and The List.</p>
+			<p>Now we're going to introduce the Dictionary type.</p>
+			<p>There are many things that are common among these three:</p>
+			<br>
+			<p>String:</p>
+			<p>String of characters inside quotes</p>
+			<p><code>'hello'</code></p>
+			<p>immutable</p>
+			<p>s[i] gives us the i<sup>th</sup> character in the string.</p>
+			<br>
+			<p>List:</p>
+			<p>Sequence of elements of any type inside square brackets</p>
+			<p><code>['alpha', 23]</code></p>
+			<p>mutable</p>
+			<p><code>p[i]</code> gives us the i<sup>th</sup> element of the list <code>p</code>.</p>
+			<p><code>p[i] = u</code> replaces the i<sup>th</sup> element of <code>p</code> with <code>u</code>.</p>
+			<br>
+			<p>Dictionary:</p>
+			<p>Set of key : value pairs in curly brackets</p>
+			<p><code>{'hydrogen' : 1, 'helium' : 23}</code></p>
+			<p>mutable</p>
+			<p><code>d[k]</code> where <code>k</code> is whatever the key value is, <code>d[k]</code> gives us the value associated with that key.</p>
+			<p><code>d[k] = v</code> updates the value associated with <code>k</code> to be <code>v</code>.</p>
+			<br>
+			<p><code>{'hydrogen' : 1, 'helium' : 23}</code></p>
+			<p>Here we've created a dictionary, each element the key is a string, and the value associated with that element is a number. The keys in a dictionary can be any immutable value. They don't need to be strings, they could be numbers, they could be other things. The values can be any value. The property a dictionary gives us is we can look up a key and get the value associated with that key</p>.</div>
+		</div>
+
+		<div class="concept" id="stage-4-4-3">
+			<div class="concept-title">Using Dictionaries</div>
+			<div class="concept-content"><p>Lets try some examples. Create a dictionary like this:</p>
+			<p><code>elements = { 'hydrogen': 1, 'helium': 2, 'carbon': 6 }</code></p>
+			<p>We use the curly brackets and enter key: value pairs. In this case the entries are the elements and their atomic numbers.</p>
+			<p>When we <code>print elements</code>, we see the elements of the dictionary. One thing to note it that they don't print out in the same order as we entered them. Unlike a list, where the elements are ordered, with a dictionary there is no order to the elements.</p>
+			<p>We can use the indexing to look up one of the elements:</p>
+			<p><code>print elements['hydrogen']</code> gives us the value associated with hydrogen, 1.</p>
+			<p>What if we look up a value thats not in the dictionary?</p>
+			<p><code>print elements['lithium']</code></p>
+			<p>We get an error, called a KeyError: <code>KeyError: 'lithium'</code>. That means that element is not in the dictionary.</p>
+			<p>To avoid errors like that we can use <code>in</code> to see if an element is in the dictionary: <code>print 'lithium' in elements</code> gives the result <code>False</code>.</p>
+			<p>The way to add an element to a dictionary is just to use an assignment: <code>elements['lithium'] = 3</code></p>
+			<p>We can add another element: <code>elements['nitrogen'] = 8</code></p>
+			<p>Now when we look up nitrogen: <code>print elements['nitrogen']</code> we get the value assigned to nitrogen, which is 8.</p>
+			<p>8 is not actually the correct atomic number for nitrogen, it should be 7. We can modify that value using another assignment: <code>elements['nitrogen'] = 7</code></p></div>
+		</div>
+
+		<div class="concept" id="stage-4-4-4">
+			<div class="concept-title">A Noble Gas</div>
+			<div class="concept-content"><p>So far in our example, we've been using just number as our values. But the values can be anything we want, including other dictionaries.</p>
+			<p>So, start with an empty dictionary, and add a new element. This time we'll use the atomic symbol, and we'll make the value a dictionary that provides some information about it:</p>
+<pre><code>elements = {}
+elements['H'] = {'name': 'Hydrogen', 'number': 1 'weight': 1.00794}
+elements['He'] = {'name': 'Helium', 'number': 2, 'weight': 4.00262, 'noble gas': True}</code></pre>
+			<p>For Helium, we have the same name, number and weight keys, but we have an extra entry that says its a noble gas and the value of noble gas is True.</p>
+			<p>We can look up the element H: <code>print elements['H']</code> and we'll see its entry: <code>{'name': 'Hydrogen', 'weight': 1.00794, 'number': 1}</code> Since its a dictionary, the order is different from what we entered.</p>
+			<p>We can do another lookup: <code>print elements['H']['name']</code>, that gets us the second dictionary, and in that dictionary we're looking up the value name. The program returns the name of the element, Hydrogen.</p>
+			<p>We could look up the weight of Helium: print elements<code>['He']['weight']</code>. We get the proper value: 4.00262</p>
+			<p>If we look up the noble gas property, print elements<code>['He']['noble gas']</code>, we get True for Helium.</p>
+			<p>What happens when we look up noble gas for Hydrogen? <code>print elements['H']['noble gas']</code>. We get the same error we got when we tried to look up Lithium in a dictionary that didn't include Lithium: <code>KeyError: 'noble gas'</code></p></div>
+		</div>
+	</div><!--lesson div-->
+
+	<div class="lesson" id="stage-4-5">
+		<h2>Stage 4.5 Working with App Engine</h2>
+
+		<div class="concept" id="stage-4-5-1">
+			<div class="concept-title">Hello Webapp World</div>
+			<div class="concept-content"><p>You should have Google App Engine on your machine and a basic site online. We're going to start with the &quot;Hello World&quot; example Google has on their site.</p>
+			<p>This is the main <code>hellowworld.py</code> file from the example:</p>
+<pre><code>import webapp2
+
+class MainPage(webapp2.RequestHandler):
+	def get(self):
+		self.response.headers['Content-Type'] = 'text/plain'
+		self.response.write('Hello, World!')
+
+app = webapp2.WSGIApplication([
+	('/', MainPage),
+], debug=True)</code></pre>
+			<p>Its got two main sections. Start with the one at the bottom. This is the URL mapping section. We have one URL, / and it maps to a handler, <code>MainPage</code>.</p>
+			<p><code>MainPage</code> is defined in the class above. It inherits from <code>webapp2.RequestHandler</code>, the generic request handler from Google. The class has a function called <code>get</code>, which takes a parameter called <code>self</code>, the common first parameter to most Python methods. This function does two things: First it takes <code>self.response</code>, which is the global response object that this framework uses, and it sets a <code>header</code>. It sets the <code>Content-Type</code> <code>header</code> to equal <code>text/plain</code>. By default the content type is <code>text/html</code>. Second, it writes the string <code>&quot;Hello World.&quot;</code>.</p>
+			<p>Start up Google App Engine and run the project, then go to your browser, and load the page. We see the string that the program was writing out.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-5-2">
+			<div class="concept-title">Content Type</div>
+			<div class="concept-content"><p>The first thing we want to do is put a form we were playing with earlier, and put it in our application.</p>
+			<p>Here is the form:</p>
+<pre><code>&lt;form action=&quot;http://www.google.com/search&quot;&gt;
+	&lt;input name=&quot;q&quot;&gt;
+	&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;</code></pre>
+			<p>Create a new variable at the top of <code>helloworld.py</code> called <code>form</code>. Use triple quotes to allow us to take up multiple lines.</p>
+<pre><code>form=&quot;&quot;&quot;
+&lt;form action=&quot;http://www.google.com/search&quot;&gt;
+	&lt;input name=&quot;q&quot;&gt;
+	&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+&quot;&quot;&quot;</code></pre>
+			<p>Instead of printing out &quot;Hello World&quot;, we want to print out our form. So, make that change: <code>self.response.write(form)</code>.</p>
+			<p>Go to the browser and see how it looks. Instead of our form, we see our html code. The problem is our <code>Content-Type</code> <code>header</code> is set to <code>text/plain</code>. Comment out that line and retry the program in your browser. Now the form is displayed correctly. In Google App Engine, the default content type is <code>text/html</code>. That tells the browser its receiving html and it should interpret it that way. When it was sent as <code>text/plain</code>, the browser showed everything sent back.</p>
+			<p>Now test the form to see if it behaves the same as the old one. Entering text sends the browser to a page of Google search results. The only difference is the html is served by a live web application running on our machine insead of just a plain text file.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-5-3">
+			<div class="concept-title">More Handlers</div>
+			<div class="concept-content"><p>Lets make some changes to <code>helloworld.py</code>. First get rid of the Google action. and replace it with <code>/testform</code>:</p>
+			<p><code>&lt;form action=&quot;/testform&quot;&gt;</code></p>
+			<p>Thats going to cause our form to submit to <code>/testform</code> instead of Google.</p>
+			<p>Since our application can only respond to /, we need to add a handler as well.</p>
+<pre><code>app = webapp2.WSGIApplication([
+	('/', MainPage),
+	('/testform', TestHandler)
+], debug=True)</code></pre>
+			<p>Now we need to create <code>TestHandler</code>:</p>
+<pre><code>class TestHandler(webapp2.RequestHandler):
+	def get(self):
+		q = self.request.get(&quot;q&quot;)
+		self.response.out.write(q)</code></pre>
+			<p><code>Testhandler</code> also has a method called <code>get</code>, like our other handler, what this does is sets a variable, <code>q</code>, which comes from <code>self.request</code>. Response represents the object we're going to send back to the client, request represents the request that came from the browser. You can call <code>get</code> on it to get different parameters. In our example, we'll get the parameter <code>q</code>. Then all we're going to do with the response (<code>self.response.out.write</code>) is output <code>q</code>.</p>
+			<p>So, go to the browser and enter some words. Hit submit and we see those words in the browser.</p>
+			<p>Now lets make another change. Comment out these two lines:</p>
+<pre><code>class TestHandler(webapp2.RequestHandler):
+	def get(self):
+		# q = self.request.get(&quot;q&quot;)
+		# self.response.out.write(q)</code></pre>
+			<p>And add these instead:</p>
+<pre><code>		self.response.headers['Content-Type'] = 'text/plain'
+		self.response.out.write(self.request)</code></pre>
+			<p>Go to the browser and try it out. When you enter text and hit submit, you see the HTTP request itself. Its long and involved. You can see many of the headers we discussed previously.</p>
+			<p>Looking at the code, here's what we did. We set the content type to text/plain, if we hadn't done that the response would have looked weird because the browser would try to render it in html. Then, we wrote out the request object itself. This is a handy tool when debugging, you can just print out the request and see.</p>
+			<p>Lets replace our two commented out lines. Comment out the debugging lines.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-5-4">
+			<div class="concept-title">The Method Attribute</div>
+			<div class="concept-content"><p>Lets add a new attribute to our form called <code>method</code>:</p>
+			<p><code>&lt;form method=&quot;post&quot; action=&quot;/testform&quot;&gt;</code></p>
+			<p>The default method has been <code>get</code>. We mentioned previously that the most important methods are <code>get</code> and <code>post</code>. If you don't specify method at all, it defaults to <code>get</code>.</p>
+			<p>Now go to the browser. Enter text and hit submit. What happens? <code>Error 405 Method Not Allowed. The method POST is not allowed for this resource.</code> This is a status code.</p>
+			<p>Go back to the code. What we changed in our form was we changed from the default <code>get</code> to <code>post</code>. But, our <code>TestHandler</code> is only configured to use <code>get</code>. So lets change the function. Change the word <code>get</code> in <code>TestHandler</code> to <code>post</code>. Go to the browser and try again. Its behaving just the way it was before, except the <code>q</code> parameter isn't in the URL.</p>
+			<p>Where did our <code>q</code> parameter go? Its after the HTTP request headers. Go back to the editor and switch those four lines around again. Now try submitting text in the browser. The output is the response headers. This time its a POST, not a GET. After all the headers, we have some data: <code>q=entered text</code>. One of the big differences between GETS and POSTS is that GETS include the parameters in the URL and POSTS include the data in the request body.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-5-5">
+			<div class="concept-title">Differences Between Get and Post</div>
+			<div class="concept-content"><p>GET:</p>
+			<p>Parameters in URL</p>
+			<p>Used for fetching documents</p>
+			<p>Maximum URL length</p>
+			<p>Ok to cache</p>
+			<p>Shouldn't change the server</p>
+			<br>
+			<p>POST:</p>
+			<p>Parameters in body</p>
+			<p>Used for updating data</p>
+			<p>No max length</p>
+			<p>Not ok to cache</p>
+			<p>Ok to change the server</p>
+			<br>
+			<p>GET requests should be simple requests for fetching a document. GET parameters should be used to describe what document you're looking for.</p>
+			<p>POST parameters are used for making updates to the server.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-5-6">
+			<div class="concept-title">Problems with Get</div>
+			<div class="concept-content"><p>What happens if you don't obey the rules above?</p>
+			<p>One example was Basecamp. It was used for organizing to do lists. Each page had a list of to do items and next to each item there was a link that said delete. This was just a link. Normal links, with the anchor tag make <code>get</code> requests. To make a <code>post</code> request, you need a form.</p>
+			<p>There was another program out at the time called Google Web Accelerator, which went and pre-fetched all the links on a page you were looking at to speed up browsing.</p>
+			<p>The problem is that Google Web Accelerator was hitting Basecamp's delete links. Users would find the items on their to do list deleting on their own.</p>
+			<p>That is what happens when you use <code>get</code> requests to alter the server.</p>
+			<p>What you should design instead of links that alter the server, is forms, it could be just a little button that says delete, or it can have a link that causes it to submit the form, but it should be making a <code>post</code> request.</p></div>
+		</div>
+	</div><!--lesson div-->
+
+	<div class="lesson" id="stage-4-6">
+		<h2>Stage 4.6 Validation</h2>
+
+		<div class="concept" id="stage-4-6-1">
+			<div class="concept-title">Validation</div>
+			<div class="concept-content"><p>Validation means verifying on the server side that what we received is what we expected.</p>
+			<p>Validation of user input is important for two reasons: First, security. A mischievous user could try to exploit the server by sending data outside of what we expect. A user could enter javascript or something else into a form to break in to the server. Second, user experience. If a user inputs information that isn't what we expect, the server could behave in unexpected ways. Responses from the server may not make sense at all. If we're using our forms to fill in a database, empty fields and fields filled with garbage make it difficult to act on the data later, disrupting what the user sees.</p>
+			<p>We have you and our servers. You're submitting to our form certain values. Say you're sending the <code>q</code> parameter, the checkbox we put on our form, and its value equals <code>on</code>. The server receives that and knows what to do if <code>q=on</code> and knows what to do if <code>q</code> is not present.</p>
+			<p>What if there's a bad guy. He submits the <code>q</code> parameter, but instead of <code>on</code> or not present, he submits the word <code>broken</code>. Depending on how our server is programmed, it could say &quot;I don't know what broken means, so I'm going to assume its unchecked.&quot; Thats probably smart behavior for the server. The point is that just because we have a checkbox, it doesn't mean that people can't send us parameters with arbitrary stuff in them. Its up to our server to make sure we handle it safely. Always remember that your server can receive junk and it needs to deal with someone sending completely broken data.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-2">
+			<div class="concept-title">What Is Your Birthday?</div>
+			<div class="concept-content"><p>We're going to go back to the webapp we were working on before, <code>helloworld.py</code>.</p>
+			<p>We've simplified the file for our working purposes:</p>
+<pre><code>import webapp2
+
+form=&quot;&quot;&quot;
+&lt;form method=&quot;post&quot;&gt;
+	&lt;input name=&quot;q&quot;&gt;
+	&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+&quot;&quot;&quot;
+
+class MainPage(webapp2.RequestHandler):
+	def get(self):
+		#self.response.headers['Content-Type'] = 'text/plain'
+		self.response.write(form)
+
+app = webapp2.WSGIApplication([
+	('/', MainPage),
+], debug=True)</code></pre>
+			<p>Instead of just this basic form, we're going to have a form to ask someone for their birthday.</p>
+<pre><code>&lt;form method=&quot;post&quot;&gt;
+	What is your birthday?
+	&lt;br&gt;
+	&lt;input type=&quot;text&quot; name=&quot;month&quot;&gt;
+	&lt;input type=&quot;text&quot; name=&quot;day&quot;&gt;
+	&lt;input type=&quot;text&quot; name=&quot;year&quot;&gt;
+
+	&lt;br&gt;
+	&lt;br&gt;
+	input type=&quot;submit&quot;&gt;
+&lt;/form&gt;</code></pre>
+			<p>Lets check how it looks in the browser. We've got our text, What is your birthday, three input boxes and a submit button. Its not clear what we're asking for, so we need to add some labels.</p>
+<pre><code>	What is your birthday?
+	&lt;br&gt;
+
+	&lt;label&gt; Month
+		&lt;input type=&quot;text&quot; name=&quot;month&quot;&gt;
+	&lt;/label&gt;
+
+	&lt;label&gt; Day
+		&lt;input type=&quot;text&quot; name=&quot;day&quot;&gt;
+	&lt;/label&gt;
+
+	&lt;label&gt; Year
+		&lt;input type=&quot;text&quot; name=&quot;year&quot;&gt;
+	&lt;/label&gt;</code></pre>
+			<p>Lets see how it looks in the browser. Now we can see that we're asking for the month, day and year.</p>
+			<p>What happens when we enter some data and submit the form? We get an <code>Error 405</code> because the never added a <code>post()</code> handler for <code>/</code>.</p>
+			<p>Lets go ahead and write a <code>post</code> handler:</p>
+<pre><code>def post(self):
+	self.response.out.write(&quot;Thanks! Thats a totally valid day!&quot;)</code></pre>
+			<p>This will get called when we post to the URL, which is what happens when someone submits the form.</p>
+			<p>Lets try it in our browser. Submit something and it says &quot;Thanks! That's a totally valid day!&quot;</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-3">
+			<div class="concept-title">Handling Bad Data</div>
+			<div class="concept-content">
+			<p>One solution to users entering bad data in our form is to use dropdowns to limit what the user can enter. No matter what we still need to verify what the users enter and complain if the data is bad. Just because our form limits input, a malicious user can make up a form and put in whatever junk they want, and could break our server. A lot of websites think that just because they use dropdowns that they don't have to verify data on the server.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-4">
+			<div class="concept-title">Valid Month</div>
+			<div class="concept-content">
+			<p>Write a <code>valid_month()</code> function to verify whether the data a user enters is a valid month. If the passed in parameter <code>'month'</code> is not a valid month, return <code>None</code>. If <code>'month'</code> is a valid month, then return the name of the month with the first letter capitalized.</p>
+<pre><code>months = ['January',
+		'February',
+		'March',
+		'April',
+		'May',
+		'June',
+		'July',
+		'August',
+		'September',
+		'October',
+		'November',
+		'December']
+
+def valid_month(month):
+	if month:
+		cap_month = month.capitalize()
+		if cap_month in months:
+			return cap_month</code></pre>
+			<p>What if we wanted to make this more user friendly, so the user doesn't have to enter a complete month? At the top of the file we have a list. We're going to build a dictionary of just the first three letters of the month name to the month name itself. So, we're only going to match on the first three letters of what the user enters. Add this dictionary above the function:</p>
+			<p><code>month_abbvs = dict((m[:3].lower(), m) for m in months)</code></p>
+			<p>So, for <code>m</code> in <code>months</code>, which is our list from above of the month names, we're going to make a mapping of the first three letters of that month, lower case, to the month name itself. If you printed it out it would look like this <code>{'mar': 'March', 'feb': February, and so on}</code></p>
+			<p>Now lets update the main function to use the new dictionary:</p>
+<pre><code>def valid_month(month):
+	if month:
+		short_month = month[:3].lower()
+		return month_abbvs.get(short_month)</code></pre></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-5">
+			<div class="concept-title">Valid Day</div>
+			<div class="concept-content"><p>Next, write a function that takes what the user inputs as the day and returns whether that day is valid or not.</p>
+<pre><code>def valid_day(day):
+	if day and day.isdigit():
+		day = int(day)
+		if day &gt; 0 and day &lt;= 31:
+			return day</code></pre>
+			<p>We take in <code>day</code> from the user. The first thing we check is whether <code>day</code> is a number or not. Everything we get from our webapp is going to be strings. The webapp doesn't know if the user is typing in strings or numbers or what. We get all strings, and we need to make sure our string is made up of digits. Thats what <code>isdigit</code> does, before we convert it to an integer, which is what <code>int(day)</code> does. Then, once <code>day</code> is an integer, we check to see if its greater than 0 or less than or equal to 31. If so, we return it. Otherwise, we return <code>None</code>. We could have made this more complex by accounting for the month and leap years, but we don't need to make things too complicated.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-6">
+			<div class="concept-title">Valid Year</div>
+			<div class="concept-content"><p>One last function to write, to determine if what the user entered for the year is valid. Assume a year is valid if it is a number between 1900 and 2020.</p>
+<pre><code>def valid_year(year):
+	if year and year.isdigit():
+		year = int(year)
+		if year &gt; 1900 and year &lt; 2020:
+			return year</code></pre>
+			<p>The solution is almost identical to the solution to Valid Day. We take in a year. Then we make sure its a number with <code>isdigit</code>. Then we convert it to an integer. Then we check to see if its between 1900 and 2020, if it is, we return the year.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-7">
+			<div class="concept-title">Checking Validation</div>
+			<div class="concept-content">
+			<p>Now we have functions to check input, lets see how they fit into things.</p>
+			<p>We have you and we have our servers. You make a GET request for the form, the server responds with the form, then you make a POST request with the data in the form, the server runs our validation functions. The server is going to do one of two things: If the data is good, the server will say &quot;thanks,&quot; If the data is bad, the server will respond with the form again and an error message telling the user to reenter their values. Then the user will send a POST request with the form again.</p>
+			<p>We're going to have to do 3 things: 1. Verify the user's input. 2. On error, render the form again. 3. Include an error message.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-8">
+			<div class="concept-title">Responding Based On Verification</div>
+			<div class="concept-content"><p>Go back to your editor and <code>helloworld.py</code>. Currently, it just prints thanks every time.</p>
+			<p>Lets actually use our new verification functions.</p>
+			<p>Add this line to our post function:</p>
+			<p><code>user_month = valid_month(self.request.get('month'))</code></p>
+			<p>It calls the <code>valid_month</code> function we just wrote, and it sends in as the first argument the <code>month</code> parameter that was included in our request.</p>
+			<p>Add this for the day and year as well:</p>
+			<p><code>user_day = valid_day(self.request.get('day'))</code></p>
+			<p><code>user_year = valid_year(self.request.get('year'))</code></p>
+			<p>If all three of those aren't true, re-render the form, otherwise say thanks!</p>
+<pre><code>if not (user_month and user_day and user_year):
+	self.response.out.write(form)
+else:
+	self.response.out.write(&quot;Thanks! Thats a totally valid day!&quot;</code>)</pre>
+			<p>So now, our entire code looks like this:</p>
+<pre><code>import webapp2
+
+form=&quot;&quot;&quot;
+&lt;form method=&quot;post&quot;&gt;
+		What is your birthday?
+		&lt;br&gt;
+
+		&lt;label&gt; Month
+				&lt;input type=&quot;text&quot; name=&quot;month&quot;&gt;
+		&lt;/label&gt;
+
+		&lt;label&gt; Day
+				&lt;input type=&quot;text&quot; name=&quot;day&quot;&gt;
+		&lt;/label&gt;
+
+		&lt;label&gt; Year
+				&lt;input type=&quot;text&quot; name=&quot;year&quot;&gt;
+		&lt;/label&gt;
+
+		&lt;br&gt;
+		&lt;br&gt;
+		&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+&quot;&quot;&quot;
+
+class MainPage(webapp2.RequestHandler):
+	def get(self):
+		#self.response.headers['Content-Type'] = 'text/plain'
+		self.response.write(form)
+
+	def post(self):
+		user_month = valid_month(self.request.get('month'))
+		user_day = valid_day(self.request.get('day'))
+		user_year = valid_year(self.request.get('year'))
+
+		if not (user_month and user_day and user_year):
+			self.response.out.write(form)
+		else:
+			self.response.out.write(&quot;Thanks! Thats a totally valid day!&quot;)
+
+def valid_month(month):
+	months = ['January', 'February', 'March', 'April', 'May', 'June',
+						'July', 'August', 'September',
+						'October', 'November', 'December']
+
+	month_abbvs = dict((m[:3].lower(), m) for m in months)
+	if month:
+		short_month = month[:3].lower()
+		return month_abbvs.get(short_month)
+
+def valid_day(day):
+	if day and day.isdigit():
+		day = int(day)
+		if day &gt; 0 and day &lt;= 31:
+			return day
+
+def valid_year(year):
+	if year and year.isdigit():
+		year = int(year)
+		if year &gt; 1900 and year &lt; 2020:
+			return year
+
+app = webapp2.WSGIApplication([
+		('/', MainPage),
+], debug=True)</code></pre>
+			<p>Lets give it try in the browser. Enter a valid day. When you submit, the browser says thanks. Now enter something invalid. When you submit, the form just clears, because the server sent back the form.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-9">
+			<div class="concept-title">String Substitution</div>
+			<div class="concept-content">
+			<p>Suppose we have a string in Python, represented like this <code>&quot;&lt;b&gt;some bold text&lt;/b&gt;&quot;</code>. If we want to return a lot of different bold contents, with different text, its a pain because we have to remake the whole string every time.</p>
+			<p>Instead, we can do something like this:</p>
+			<p><code>&quot;&lt;b&gt; %s &lt;/b&gt;&quot; %variable</code></p>
+			<p>We still have the same structure of the string, we still have our <code>&lt;b&gt;</code> tags, but we've replaced the contents with <code>%s</code>. If we follow this string with a <code>%</code> sign then a variable, it will substitute the contents of the variable for <code>%s</code>.</p>
+			<p>So, if we did <code>&quot;&lt;b&gt; %s &lt;/b&gt;&quot; %a</code> and <code>a=&quot;some bold text&quot;</code>, the output will be <code>&lt;b&gt;some bold text&lt;/b&gt;</code>.</p>
+			<p>This is very convenient because we could have a function that substitutes one variable into a string, then we don't have to build that string over and over again.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-10">
+			<div class="concept-title">Substituting Multiple Strings</div>
+			<div class="concept-content"><p>What if we want to substitute multiple strings? It would have a format like this: <code>&quot;text %s text %s&quot; %(var1, var2)</code>.</p>
+			<p>Common mistake: Only including one variable. Python will say &quot;not enough arguments for format string.&quot;</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-11">
+			<div class="concept-title">Advanced String Substitution</div>
+			<div class="concept-content">
+			<p>What if you want to include the same variable twice? Or not go crazy counting variables. There's a different syntax for that: <code>&quot;text %(name)s text&quot; %{&quot;name&quot;: value}</code></p>
+			<p>Name can appear in the string multiple times, and we can have multiple names.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-12">
+			<div class="concept-title">Substituting Into Our Form</div>
+			<div class="concept-content"><p>Go back to the editor with <code>helloworld.py</code>. If the submission is not valid, we just re-write the form for the user.</p>
+			<p>Lets make the invalid case more friendly. The first thing we want to do is tell the user there was an error. After our form, we're going to add a <code>div</code>, inside that we're going to print our error message using string substitution:</p>
+			<p><code>&lt;div&gt;%(error)s&lt;/div&gt;</code></p>
+			<p>Lets also make the text appear red:</p>
+			<p><code>&lt;div style=&quot;color: red&quot;&gt;%(error)s&lt;/div&gt;</code></p>
+			<p>We also need to change how we use form. Since we print it out in a couple places, lets add a new function to the class <code>MainPage</code>.</p>
+<pre><code>def write_form(error=&quot;&quot;):
+	self.response.out.write(form % {&quot;error&quot;: error})</code></pre>
+			<p>We need to use this function everywhere we draw our form now. Now our <code>MainPage</code> class looks like this:</p>
+<pre><code>class MainPage(webapp2.RequestHandler):
+	def write_form(self, error=&quot;&quot;):
+		self.response.out.write(form % {&quot;error&quot;: error})
+
+	def get(self):
+		#self.response.headers['Content-Type'] = 'text/plain'
+		self.write_form()
+
+	def post(self):
+		user_month = valid_month(self.request.get('month'))
+		user_day = valid_day(self.request.get('day'))
+		user_year = valid_year(self.request.get('year'))
+
+		if not (user_month and user_day and user_year):
+			self.write_form(&quot;That doesn't look valid to me friend&quot;)
+			else:
+				self.response.out.write(&quot;Thanks! Thats a totally valid
+										day!&quot;)</code></pre>
+			<p>So, what have we done? We've updated our form, we've added a new <code>write_form</code> function, and we've used our write form function in our get function and our post function.The get function just draws the empty form, the post function should draw the form with a new error message.</p>
+			<p>Give it a try in the browser. Enter invalid data. Submit it and we get a red error message.</p>
+			<p>One thing that would be nice is if when we entered bad data and submitted it, the form left our values in the boxes for us, so we don't have to reenter any valid data.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-13">
+			<div class="concept-title">Preserving User Input</div>
+			<div class="concept-content"><p>We've seen the <code>value</code> parameter for some elements, but lets talk about how it works for the <code>text</code> element case, which our form uses.</p>
+			<p><code>&lt;input type=&quot;text&quot; value=&quot;cool&gt;&quot;</code></p>
+			<p>This is our normal text element. The first part we're already familiar with. The second, has <code>&quot;cool&quot;</code> rendered as the default value instead of leaving the box blank. This might be useful for rendering our form with the values the user just typed in. You can also use this to fill out forms with default values if you know what the user is probably going to enter.</p>
+			<p>So, to keep user input, we'd have something like:</p>
+			<p><code>&lt;input type=&quot;text&quot; name=&quot;month&quot; value=&quot;%(month)s&quot;&gt;</code></p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-14">
+			<div class="concept-title">Problems With HTML Input</div>
+			<div class="concept-content">
+			<p>Go to your editor with the form. Add a new <code>value</code> parameter to your form elements:</p>
+<pre><code>&lt;form method=&quot;post&quot;&gt;
+		What is your birthday?
+		&lt;br&gt;
+
+		&lt;label&gt; Month
+			&lt;input type=&quot;text&quot; name=&quot;month&quot; value=&quot;%(month)s&quot;&gt;
+		&lt;/label&gt;
+
+		&lt;label&gt; Day
+			&lt;input type=&quot;text&quot; name=&quot;day&quot; value=&quot;%(day)s&quot;&gt;
+		&lt;/label&gt;
+
+		&lt;label&gt; Year
+			&lt;input type=&quot;text&quot; name=&quot;year&quot; value=&quot;%(year)s&quot;&gt;
+		&lt;/label&gt;
+
+		&lt;div style=&quot;color: red&quot;&gt;%(error)s&lt;/div&gt;
+		&lt;br&gt;
+		&lt;br&gt;
+		&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;</code></pre>
+			<p>We've added a value parameter for month, day and year. We're going to pass these values in through our function below so our form renders extra values.</p>
+			<p>Lets edit the write_form function.</p>
+<pre><code>def write_form(self, error=&quot;&quot;, month=&quot;&quot;, day=&quot;&quot;, year=&quot;&quot;):
+	self.response.out.write(form % {&quot;error&quot;: error, &quot;month&quot;: month,
+									&quot;day&quot;: day, &quot;year&quot;: year})</code></pre>
+			<p>We've updated the parameters so they default to blank, and updated the dictionary.</p>
+			<p>Now we need to actually populate the form with the bad data. Lets edit our post function to use these new variables.</p>
+			<p>First, remove the calls to <code>valid_month</code>, <code>day</code> &amp; <code>year</code>:</p>
+<pre><code>user_month = self.request.get('month')
+user_day = self.request.get('day')
+user_year = self.request.get('year')</code></pre>
+			<p>Now use different variables to test their validity:</p>
+<pre><code>month = valid_month(user_month)
+day = valid_day(user_day)
+year = valid_year(user_year)</code></pre>
+			<p>Now change the validity check to use the proper variables:</p>
+			<p><code>if not (month and day and year):</code></p>
+			<p>Then change the call to write form:</p>
+			<p><code>self.write_form(&quot;That doesn't look valid to me, friend.&quot;, user_month, user_day, user_year)</code></p>
+			<p>So now, we're passing in the original values the user gave us so when we re-render the form we'll populate it with those values.</p>
+			<p>Lets give it a try in the browser. Type in some junk. When we hit submit, we see an error message and our form fields still have their values in them.</p>
+			<p>So what if you enter a quote and some more text like bar&quot;&gt;what! What happens when you submit? We see an error message but the quote messes up our html.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-15">
+			<div class="concept-title">Handling HTML Input</div>
+			<div class="concept-content"><p>What happened is our input looks something like this: <code>&lt;input value=&quot;%(month)s&quot;&gt;</code>. The variable month gets substituted in to the string. If <code>month = &quot;November&quot;</code>, the string November renders. We get a textbox with November in it. If <code>month =&quot;foo&quot;&gt;derp&quot;</code>, the string we render looks something like this: <code>&lt;input value=&quot;foo&quot;&gt;derp&quot;&gt;</code> because the value for month is the entire string <code>foo&quot;&gt;derp</code>, including the quote and the angle bracket. That messed up our html. The browser sees this and sees <code>value=&quot;foo&quot;&gt;</code>, renders that in the box, then prints out <code>derp&quot;&gt;</code> outside the input box.</p>
+			<p>That is obviously not the behavior we want. It allows someone who knows how our website works to not just enter random text, but what if they put html in their input? This allows a user to completely manipulate what our website looks like.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-16">
+			<div class="concept-title">HTML Escaping</div>
+			<div class="concept-content"><p>The problem is we have this quote and this angle bracket that shouldn't be allowed in our input. The best way to fix this is through a method called escaping. HTML allows you to escape certain characters, or change them, so that when the user types in quote we can still show the quote in the textbox. Instead of returning &quot; in our html, we return the string <code>&amp;quot;</code>. We can also escape angle brackets The closing &gt; becomes <code>&amp;gt;</code> &lt; becomes <code>&amp;lt;</code>, &amp; becomes <code>&amp;amp;</code>. If we include these escaped characters in our html, what will appear are the original symbols, but they won't muck up our code.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-17">
+			<div class="concept-title">Using HTML Escaping</div>
+			<div class="concept-content"><p>Lets play with these substitutions in practice. Go back to your play.html from before. Clear the file and type &quot;what if I want to talk about html in html?&quot; If you type plain text in an HTML file, it shows up as plain text in the browser.</p>
+			<p>Now change the sentence: &quot;what if I want to talk about &lt;html&gt; in html?&quot; When you load that in your browser, the word html disappears. Thats because the angle brackets turned it into a tag. Tags don't render to the screen in html.</p>
+			<p>Use the escaping we just learned and replace the angle brackets: &quot;what if I want to talk about <code>&amp;lt;</code>html<code>&amp;gt;</code> in html?&quot; &lt;html&gt; shows up in the browser</p>.</div>
+		</div>
+
+		<div class="concept" id="stage-4-6-18">
+			<div class="concept-title">Implementing HTML Escaping</div>
+			<div class="concept-content">
+			<p>Implement the function <code>escape_html()</code>, which replaces</p>
+			<p>&gt; with <code>&amp;gt;</code></p>
+			<p>&lt; with <code>&amp;lt;</code></p>
+			<p>&quot; with <code>&amp;quot;</code></p>
+			<p>&amp; with <code>&amp;amp;</code></p>
+<pre><code>def escape_html(s):
+	for(i, o) in (('&amp;', '&amp;amp;'),
+				  ('&gt;', '&amp;gt;'),
+				  ('&lt;', '&amp;lt;'),
+				  ('&quot;', '&amp;quot;')):
+		s = s.replace(i, o)
+	return s</code></pre>
+			<p>Above is the instructors version of the solution. It just over wites the same string over and over again. Keep in mind that we need to replace the ampersand first, otherwise your function will mess up your other escaped characters.</p>
+			<p>There is a simpler way using functions already included in Python:</p>
+<pre><code>import cgi
+def escape_html(s):
+	return cgi.escape(s, quote = True)</code></pre>
+			<p>This works just the same as the other function. This is a lot more simple than writing your own.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-19">
+			<div class="concept-title">Problems Reinventing the Wheel</div>
+			<div class="concept-content"><p>We just implemented our own html escaping function, then found out we didn't have to do that because it was already built in to Python.</p>
+			<p>Now you know what goes in to the built in function. You should probably use the built in escaping because its been written by professionals, seen by thousands of people and used in production, so its probably pretty safe. If you don't use the safe one, you can sometimes run into trouble.</p>
+			<p>At Reddit, they had their own html escaping function, with a few extra features, written in C because it was faster. When they open sourced Reddit, they did a quick scan for security holes. They weren't too worried because most of Reddit is written in Python. Python is a secure, simple language. C is not quite the same. On the day they open sourced Reddit, somebody found a security hole in the html escaping function. So, unless you have a really good excuse, you should just go ahead and use the built in function.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-20">
+			<div class="concept-title">Current Limitations</div>
+			<div class="concept-content"><p>We have our escape_html function, lets use it in practice. Go to the write_form function of your <code>main.py</code> file.</p>
+			<p>When we print out values that came from the user, we want to make sure they're escaped. So, call the function on everything that came from the user.</p>
+<pre><code>def write_form(self, error=&quot;&quot;, month=&quot;&quot;, day=&quot;&quot;, year=&quot;&quot;):
+	self.response.out.write(form % {&quot;error&quot;: error,
+									&quot;month&quot;: escape_html(month),
+									&quot;day&quot;: escape_html(day),
+									&quot;year&quot;: escape_html(year)})</code></pre>
+			<p>Now we've called our escape_html function on all the variables that came from the user. Now when we render the form back to the user, we'll have new escaped versions of their input.</p>
+			<p>So lets try it in the browser. Submit some broken text that begins with a quote. Now when we submit our form, we get an error message, the original text in the textbox, and no broken form!</p>
+			<p>Now we've got our error handling pretty solid, you can type in all sorts of garbage into the form, get an error message and the text you inputted rendered. When you put in the correct answer, it says it worked.</p>
+			<p>Now that we have the error case handled well, lets handle the success case better. When you type in a valid date, you get a success message, but it has some limitations. First, you can't link to the success page. If you share the URL, you just get an empty form. The other problem is, if you want to reload the success page the browser asks &quot;do you want to resubmit this form?&quot; Thats because we're reloading a page drawn with a POST. When you reload a page drawn with a POST, the browser says &quot;should I do that POST again?&quot;</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-21">
+			<div class="concept-title">Redirection</div>
+			<div class="concept-content"><p>We have a couple of problems with our current app:</p>
+			<p>-We can't share the success link</p>
+			<p>-We can't reload the page without an annoying message</p>
+			<p>The way we fix these is by using a redirect. Instead of rendering the result in the POST, we send them to another page that says thanks. Suppose we were making a blog, we'd want to see our blog post once we submit it. We want to be able to link to that blog post and reload that page without reediting our blog post.</p>
+			<p>Every time you POST something to the server, the server has to do some work. We don't want the server to have to validate our input again just because we want to see our success message again.</p>
+			<p>Instead of returning the success html, we return a redirect to go to a different URL. The client will send a GET to get that URL. The server will respond with the new success page.</p>
+			<p>You may think the old way had only two round trips, the new way has three. But, this way we avoid the two problems above so its worth it.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-22">
+			<div class="concept-title">Redirection Advantages</div>
+			<div class="concept-content"><p>Why is it good to redirect after a form submission?</p>
+			<p>So that reloading our success page doesn't resubmit the form.</p>
+			<p>So we can have distinct pages for our forms and success pages.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-6-23">
+			<div class="concept-title">Implementing Redirection</div>
+			<div class="concept-content"><p>We need to do three things</p>
+			<p>-Make a &quot;thanks&quot; handler</p>
+			<p>-Add the /thanks URL</p>
+			<p>-Redirect to the /thanks URL</p>
+			<p>Make those changes to your <code>main.py</code>.</p>
+			<p>So now our code looks like this:</p>
+<pre><code>import webapp2
+import cgi
+
+form=&quot;&quot;&quot;
+&lt;form method=&quot;post&quot;&gt;
+	What is your birthday?
+	&lt;br&gt;
+
+	&lt;label&gt; Month
+		&lt;input type=&quot;text&quot; name=&quot;month&quot; value=&quot;%(month)s&quot;&gt;
+	&lt;/label&gt;
+
+	&lt;label&gt; Day
+		&lt;input type=&quot;text&quot; name=&quot;day&quot; value=&quot;%(day)s&quot;&gt;
+	&lt;/label&gt;
+
+	&lt;label&gt; Year
+		&lt;input type=&quot;text&quot; name=&quot;year&quot; value=&quot;%(year)s&quot;&gt;
+	&lt;/label&gt;
+
+	&lt;div style=&quot;color: red&quot;&gt;%(error)s&lt;/div&gt;
+	&lt;br&gt;
+	&lt;br&gt;
+	&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+&quot;&quot;&quot;
+
+class MainPage(webapp2.RequestHandler):
+	def write_form(self, error=&quot;&quot;, month=&quot;&quot;, day=&quot;&quot;, year=&quot;&quot;):
+		self.response.out.write(form % {&quot;error&quot;: error,
+										&quot;month&quot;: escape_html(month),
+										&quot;day&quot;: escape_html(day),
+										&quot;year&quot;: escape_html(year)})
+
+	def get(self):
+		#self.response.headers['Content-Type'] = 'text/plain'
+		self.write_form()
+
+	def post(self):
+		user_month = self.request.get('month')
+		user_day = self.request.get('day')
+		user_year = self.request.get('year')
+
+		month = valid_month(user_month)
+		day = valid_day(user_day)
+		year = valid_year(user_year)
+
+		if not (month and day and year):
+			self.write_form(&quot;That doesn't look valid to me, friend.&quot;,
+							user_month, user_day, user_year)
+		else:
+			self.redirect(&quot;/thanks&quot;)
+
+class ThanksHandler(webapp2.RequestHandler):
+	def get(self):
+		self.response.out.write(&quot;Thanks! Thats a totally valid day!&quot;)
+
+def valid_month(month):
+	months = ['January', 'February', 'March', 'April', 'May', 'June',
+			  'July', 'August', 'September',
+			  'October', 'November', 'December']
+
+	month_abbvs = dict((m[:3].lower(), m) for m in months)
+	if month:
+		short_month = month[:3].lower()
+		return month_abbvs.get(short_month)
+
+def valid_day(day):
+	if day and day.isdigit():
+		day = int(day)
+		if day &gt; 0 and day &lt;= 31:
+			return day
+
+def valid_year(year):
+	if year and year.isdigit():
+		year = int(year)
+		if year &gt; 1900 and year &lt; 2020:
+			return year
+
+def escape_html(s):
+	return cgi.escape(s, quote = True)
+
+app = webapp2.WSGIApplication([
+	('/', MainPage), ('/thanks', ThanksHandler)
+], debug=True)</code></pre>
+			<p>Go ahead and test it in the browser. Enter in a valid date and submit. Submit gives us a redirect to <code>/thanks</code>, which says &quot;Thanks! Thats a totally valid day!&quot;.</p></div>
+		</div>
+	</div><!--lesson div-->
+
+	<div class="lesson" id="stage-4-7">
+		<h2>Stage 4.7 HTML Templates</h2>
+
+		<div class="concept" id="stage-4-7-1">
+			<div class="concept-title">Writing a Basic Form</div>
+			<div class="concept-content"><p>We're going to be spending some time in our editor and browser building a simple web application.</p>
+			<p>Start with what a basic web application looks like:</p>
+<pre><code>import os
+import webapp2
+
+class Handler(webapp2.RequestHandler):
+	def write(self, *a, **kw):
+		self.response.out.write(*a, **kw)
+
+class MainPage(Handler):
+	def get(self):
+		self.write(&quot;Hello, Udacity!&quot;)
+
+app = webapp2.WSGIApplication([('/', MainPage)
+							  ],
+							  debug=True)</code></pre>
+			<p>Its got one handler, on <code>/</code> called <code>MainPage</code>, all it does is print the string &quot;Hello, Udacity!&quot;</p>
+			<p>We've made the <code>MainPage</code> handler inherit from a class called <code>Handler</code>, which is defined first. It just adds one method called <code>write</code>. It just lets you print a string without having to type <code>self.response.out.write</code>, you can just type in <code>self.write</code>. We'll be adding a few more helper functions to this handler as we go.</p>
+			<p>Go ahead and make sure the app works. Go run the project in Google App Engine. In your browser, go to localhost:the port GAE tells you. We see our text &quot;Hello Udacity!&quot;</p>
+			<p>If we want to make a form, we can return html from our <code>MainPage</code> handler. So, lets add a string that represents an html form.</p>
+<pre><code>form_html = &quot;&quot;&quot;
+&lt;form&gt;
+&lt;h2&gt;Add a food&lt;/h2&gt;
+&lt;input type=&quot;text&quot; name=&quot;food&quot;&gt;
+&lt;button&gt;Add&lt;/button&gt;
+&lt;/form&gt;
+&quot;&quot;&quot;</code></pre>
+			<p>Make sure that the app returns this html: replace <code>&quot;Hello Udacity!&quot;</code> with <code>form_html</code>. Try it out in the browser. Reload the page and you see a basic form. Since we didn't set a method on the form the default method is going to be get. That means when submit the form, it will just add that parameter to the URL. Type in a food and see if it appears in the URL. When you hit enter, the food you just entered appears in the URL.</p>
+			<p>When you type in a new food and hit add, what happens? The food parameter in the URL updates to our new food.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-7-2">
+			<div class="concept-title">Hidden Inputs</div>
+			<div class="concept-content"><p>Go back to the editor. We've got our first input, <code>type=&quot;text&quot;</code>. After that, add a new input called <code>type=&quot;hidden&quot;</code>. This is a way to submit values with your form that the user can't see. Sometimes when you submit a form you want more information that just what the user submits. <code>&lt;input type=&quot;hidden&quot; name=&quot;food&quot; value=&quot;eggs&quot;&gt;</code>.</p>
+			<p>Back to the browser. Reload the browser to get to the new page. Enter a food. What happens when you submit the form with a hidden input? We see two values in the URL. We see what you submitted and the hardcoded value (eggs.) So when you enter steak via the form, the URL updates to include food=steak&amp;food=eggs. We always have the value in our hidden element in our URL, plus whatever the user enters. We can't add multiple things yet.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-7-3">
+			<div class="concept-title">Shopping List Take 1</div>
+			<div class="concept-content"><p>Go back to the editor and make this into a shopping list application.</p>
+			<p>First, replace the input type hidden line with a <code>%s</code>. <code>%s</code> is the Python string sustitution character.</p>
+			<p>Now we'll add some more strings:</p>
+<pre><code>hidden_html = &quot;&quot;&quot;
+&lt;input type=&quot;hidden&quot; name=&quot;food&quot; value=&quot;%s&quot;&gt;
+&quot;&quot;&quot;
+
+item_html = &quot;&lt;li&gt;%s&lt;/li&gt;&quot;
+
+shopping_list_html = &quot;&quot;&quot;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2&gt;Shopping List&lt;/h2&gt;
+&lt;ul&gt;
+%s
+&lt;/ul&gt;
+&quot;&quot;&quot;</code></pre>
+			<p>You'll notice that we aren't indenting things or getting syntax highlighting. Thats because we're editing strings in Python.</p>
+			<p>Now, update the <code>MainPage</code> handler to do more than just print out the <code>form_html</code>:</p>
+<pre><code>class MainPage(Handler):
+	def get(self):
+		output = form_html
+		output_hidden = &quot;&quot;
+		items = self.request.get_all(&quot;food&quot;)
+		if items:
+			output_items = &quot;&quot;
+			for item in items:
+				output_hidden += hidden_html % item
+				output_items += item_html % item
+			output_shopping = shopping_list_html % output_items
+			output += output_shopping
+		output = output % output_hidden
+		self.write(output)</code></pre></div>
+		</div>
+
+		<div class="concept" id="stage-4-7-4">
+			<div class="concept-title">Possible Problems</div>
+			<div class="concept-content"><p>In your browser, reload the page. Enter a food. It appears on the shopping list. Try adding another food. Both elements are in the URL. Thats because last time the page loaded it had steak as a hidden input.</p>
+			<p>What is wrong with our solution? Its a pain to change, we don't get any syntax highlighting, our code is ugly, and its error prone.</p>
+			<p>This is obviously not a great way to generate html from our web application. It works alright for little things, but anything more complicated is very rough.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-7-5">
+			<div class="concept-title">Introducing Templates</div>
+			<div class="concept-content"><p>There is a better way. We're going to use templates.</p>
+			<p>Templates refer to a library. A template library is a library to build complicated strings (like html.)</p>
+			<p>We're going to be using a template library called <code>jinja2</code>. We're using this because its built in to Google App Engine. There are many templating libraries, all very similar. You can find more information about <code>jinja2</code> at <a target="_blank" href="http://jinja.pocoo.org">jinja.pocoo.org</a>.</p>
+			<p>Lets start integrating <code>jinja2</code> into the app we've built.</p>
+			<p>First, update the <code>app.yaml</code>. Add <code>jinja2</code> to libraries:</p>
+<pre><code>libraries:
+- name: webapp2
+  version: &quot;2.5.2&quot;
+- name: jinja2
+  version: latest</code></pre>
+			<p>Next, add an import statement at the top of your Python file: <code>import jinja2</code>.</p>
+			<p>Go ahead and reload your page to make sure the import statement and the changes to <code>app.yaml</code> worked. If there was an error, you'd see a blank page, at which point you'd need to check your logs to track down the error.</p>
+			<p>Add a couple lines to initialize <code>jinja</code>:</p>
+<pre><code>template_dir = os.path.join(os.path.dirname(__file__), &quot;templates&quot;)
+jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir))</code></pre>
+			<p>Next, add a couple functions to your <code>Handler</code> class:</p>
+<pre><code>def render_str(self, template, **params):
+	t = jinja_env.get_template(template)
+	return t.render(params)
+
+def render(self, template, **kw):
+	self.write(self.render_str(template, **kw))</code></pre>
+			<p>The first function, <code>render_str</code>, takes a filename and a bunch of extra parameters. It uses the <code>jinja</code> environment that we created earlier, and we call <code>get_template</code>, and give it a filename. This causes <code>jinja</code> to get that file, load it in a template and store it in <code>t</code>. Then we call <code>t.render</code>, passing in the parameters that were taken in by the function. The return is really just a complex string.</p>
+			<p>The second function, <code>render</code>, takes a template, and a bunch of extra parameters. It just calls <code>render_str</code> but wraps it in <code>self.write</code>, which sends it back to the browser.</p>
+			<p>You'll see the three functions <code>write</code>, <code>render_str</code>, and <code>render</code> in most of the homework solutions we use.</p>
+			<p>Next, move some of your html into a new file. Copy the html from <code>form_html</code> into the file and delete the <code>%s</code>. Save the file as <code>shopping_list.html</code> in a templates directory in your project directory. We can now see syntax highlighting! Go ahead and clean up the indentation.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-7-6">
+			<div class="concept-title">Template Refactor</div>
+			<div class="concept-content"><p>Now, delete all of <code>form_html</code> from your Python file.</p>
+			<p>Lets check to make sure things are working. Add this line to the get function in the <code>MainPage</code> handler: <code>self.render(&quot;shopping_list.html&quot;)</code>. Comment out the rest of the function. Go to the browser and make sure it works. If everything is working, we see our basic form. That means our template is working correctly.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-7-7">
+			<div class="concept-title">Variable Substitution</div>
+			<div class="concept-content"><p>The syntax for variable substitution in <code>jinja</code> is: <code>{{ variable }}</code>. The curly braces basically just mean &quot;print.&quot;</p>
+			<p>Go back to your code so we can see it in practice. Go to your html file and add this line to the bottom of the form: <code>&lt;h2&gt;Hello {{name}}&lt;/h2&gt;</code>. <code>name</code> isn't defined anywhere yet, but go ahead and see what the page looks like. So, if the variable is not defined, <code>jinja</code> just doesn't include it.</p>
+			<p>Now go ahead and define <code>name</code>. Change your get function: <code>self.render(&quot;shopping_list.html&quot;, name=&quot;steve&quot;)</code></p>
+			<p><code>name=&quot;steve&quot;</code> gets passed in to the <code>render</code> function as <code>**kw</code>, which gets received by <code>render_str</code> as <code>**params</code>, which gets passed into the <code>render</code> function from <code>jinja</code> which expects keyword parameters.</p>
+			<p>What if instead of <code>name=&quot;steve&quot;</code>, we did <code>name=self.request.get(&quot;name&quot;)</code>. If we reload our page, we get nothing for name because there is no parameter. If we add <code>?name=Udacity</code> to the URL, it appears on the form.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-7-8">
+			<div class="concept-title">Statement Syntax</div>
+			<div class="concept-content"><p>The statement syntax in <code>jinja</code> is very simple:</p>
+<pre><code>{% statement %}
+output
+{% end statement %}</code></pre>
+			<p>For example, an if statement would look like this:</p>
+<pre><code>{% if name == &quot;Steve&quot; %}
+Hello, Steve!
+{% else %}
+Who are you?
+{% endif %}</code></pre>
+			<p>In <code>jinja</code>, you have to tell it when the <code>if</code> statement is over.</p>
+			<p>Lets try this in practice: Add this to the first line of the <code>get</code> function to get the variable <code>n</code>. <code>n = self.request.get(&quot;n&quot;)</code></p>
+			<p>Change the next line to read <code>self.render(&quot;shopping_list.html&quot;, n=n)</code>.</p>
+			<p>Now edit your <code>shopping_list.html</code> and replace the Hello line with the following:</p>
+<pre><code>{% if n == 1 %}
+	n equals 1
+{% else %}
+	n does not equal 1
+{% endif %}</code></pre>
+			<p>When we load this in our browser, we see n does not equal 1, because we haven't specified <code>n</code> in our URL. Go ahead and set <code>n=1</code> in the URL. It still says n does not equal 1.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-7-9">
+			<div class="concept-title">Templates and Types</div>
+			<div class="concept-content"><p>Why didn't that work? When we put <code>n=1</code> as a GET parameter in our URL, it still outputted n does not equal 1. Because <code>n</code> is a <code>str</code> but we are comparing it as an <code>int</code>.</p>
+			<p>The problem is that when things come out of a request, they are always strings. If we want it to be an integer, we have to make it one. Add these lines after <code>n = self.request.get(&quot;n&quot;)</code>:</p>
+<pre><code>if n:
+	n = int(n)</code></pre>
+			<p>Now lets see if it works in the browser. With <code>n=1</code> in the URL, the browser outputs n equals 1. If we set it to something else in the URL, we get n does not equal 1. If we set it to a string of characters, we get a server error. Python doesn't like converting an actual string of characters into an integer.</p>
+			<p>The important thing is that if you expect an integer from the user, you need to go ahead and convert it, because the program has no idea whats an integer and whats a string.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-7-10">
+			<div class="concept-title">For Loop Syntax</div>
+			<div class="concept-content"><p>The syntax of a <code>for</code> loop is very much like an <code>if</code> statement. It looks like this:</p>
+<pre><code>{% for statement %}
+body
+{% endfor %}</code></pre>
+			<p>Example: Replace the <code>if</code> statement in <code>shopping_list.html</code> with this:</p>
+<pre><code>&lt;ol&gt;
+	{% for x in range(1, n+1) %}
+		&lt;li&gt;{{x **2}}&lt;/li&gt;
+	{% endfor %}
+&lt;/ol&gt;</code></pre>
+			<p>Go to the browser to see if it works. Set <code>n</code> to 10</p>
+			<p>It works. It prints x 1 through 10 in the left column and x squared in the right column.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-7-11">
+			<div class="concept-title">FizzBuzz</div>
+			<div class="concept-content"><p>Create a template that when provided with the variable <code>n</code> prints FizzBuzz up to n.</p>
+			<p>If <code>n</code> is divisible by 3, print Fizz.</p>
+			<p>If <code>n</code> is divisible by 5, print Buzz.</p>
+			<p>If <code>n</code> is divisible by 3 and 5 print FizzBuzz.</p>
+			<p>If its not divisible by 3 or 5, print the number.</p>
+<pre><code>&lt;ol&gt;
+	{% for x in range(1, n+1) %}
+		{% if x % 3 == 0 and x % 5 == 0 %}
+			&lt;li&gt;FizzBuzz&lt;/li&gt;
+		{% elif x % 3 == 0 %}
+			&lt;li&gt;Fizz&lt;/li&gt;
+		{% elif x % 5 == 0 %}
+			&lt;li&gt;Buzz&lt;/li&gt;
+		{% else %}
+			&lt;li&gt;{{x}}&lt;/li&gt;
+		{% endif %}
+	{% endfor %}
+&lt;/ol&gt;</code></pre></div>
+		</div>
+
+		<div class="concept" id="stage-4-7-12">
+			<div class="concept-title">Shopping List Take 2</div>
+			<div class="concept-content"><p>Lets update our shopping list to take advantage of the new techniques we've learned. First, clean up the <code>MainPage</code> handler by getting rid of the lines about <code>n</code> before the <code>self.render</code> line. Also get rid of <code>n=n</code> in <code>self.render(&quot;shopping_list.html&quot;)</code>. Then go to <code>shopping_list.html</code> and delete the <code>for</code> loop code. Reload the browser and verify that the form is working.</p>
+			<p>Lets add in the functionality with the hidden inputs and showing the list of foods we add.</p>
+			<p>First, add this line to the <code>MainPage</code> handler above the <code>self.render</code> line: <code>items = self.request.get_all(&quot;food&quot;)</code></p>
+			<p>Then pass items to the template:</p>
+<pre><code>class MainPage(Handler):
+	def get(self):
+		items = self.request.get_all(&quot;food&quot;)
+		self.render(&quot;shopping_list.html&quot;, items = items)</code></pre>
+			<p>Variable names don't always have to match you're passing things into the template, but its easier if they do.</p>
+			<p>Go ahead and delete the rest of the old html from the top of the Python file.</p>
+			<p>Next, update the shopping list template. First, add in the hidden input elements:</p>
+<pre><code>&lt;form&gt;
+	&lt;h2&gt;Add a food&lt;/h2&gt;
+	&lt;input type=&quot;text&quot; name=&quot;food&quot;&gt;
+	{%if items%}
+		{% for item in items %}
+			&lt;input type=&quot;hidden&quot; name=&quot;food&quot; value=&quot;{{item}}&quot;&gt;
+		{% endfor %}
+	{% endif %}
+	&lt;button&gt;Add&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+			<p>Lets go ahead and test it in the browser. When you add multiple foods, they're added to the URL, rather than replacing them in the URL, so our hidden input is working.</p>
+			<p>Now, lets add the shopping list to the bottom:</p>
+<pre><code>{% if items %}
+	&lt;br&gt;
+	&lt;br&gt;
+	&lt;h2&gt;Shopping List&lt;/h2&gt;
+	&lt;ul&gt;
+		{% for item in items%}
+			&lt;li&gt;{{ item }}&lt;/li&gt;
+		{% endfor %}
+	&lt;/ul&gt;
+{% endif %}</code></pre>
+			<p>Lets see if it works. Adding multiple items now adds them to our shopping list.</p>
+			<p>Looking at our code, things are much more simple. We've got our parent class, <code>Handler</code>, that has our simple rendering functions. Our <code>MainPage</code> handler has gotten far shorter. All it does is get the items out of the URL and passes them into the shopping list template, which now has the structure of the html that we're actually generating. This is a lot easier to read and think about than what we had before with string substitution.</p>
+			<p>There is one little problem. What happens if you enter pizza with h1 tags? The html is rendered by the browser. This is because we didn't escape our html when we took user input. If the user had inserted javascript, they could wreak havoc. Its a common way of breaking into websites.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-7-13">
+			<div class="concept-title">Escaping Templates</div>
+			<div class="concept-content"><p>Jinja makes it easy to escape html. There are two ways.</p>
+			<p>The simplest way first: They've got this syntax for adding a pipe, then a filter. There are lots of built in filters in jinja, one is called <code>escape</code>:</p>
+			<p><code>{{ item | escape }}</code></p>
+			<p>So if you do pipe <code>escape</code> in this example, the variable item will get escaped.</p>
+			<p>That method works, but if you forget to put in a pipe <code>escape</code>, you've got a security hole.</p>
+			<p>The second more foolproof way: When you initialize <code>jinja</code>, if you add this:</p>
+<pre><code>jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
+						autoescape = True)</code></pre>
+			<p><code>jinja</code> will automatically escape all variable substitutions.</p>
+			<p>Lets make sure it works in the browser. Everything is escaped properly.</p>
+			<p>What if you want to actually display the html? You can say <code>| safe</code>, allowing you to opt in to displaying formatted html.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-7-14">
+			<div class="concept-title">Helpful Tips</div>
+			<div class="concept-content"><p>Always automatically escape variables when possible. It avoids accidentally creating security holes if you forget to escape an individual variable.</p>
+			<p>Minimize code in templates. If statements and for loops should be about it. Jinja will allow you to put just about any arbitrary Python into your templates, negating the whole reason we're using templates, and making it very difficult to read, debug, and modify.</p>
+			<p>Minimize html in code. Even if its a little one line thing, put it in a template. That way all your html is in one place, all your code another. You aren't using the wrong tool for the wrong job. That will hurt you as your projects get more and more complex.</p></div>
+		</div>
+
+		<div class="concept" id="stage-4-7-15">
+			<div class="concept-title">Template Inheritance</div>
+			<div class="concept-content"><p>Most web pages have a title, a footer, and some content in the middle.</p>
+			<p>You might have another page that looks identical, with different content. Its got the same title and footer.</p>
+			<p>You don't want to have to write the same title &amp; footer over &amp; over again. Just like in your code when you use functions and classes to organize your code so you don't have to rewrite things over and over again, you can organize your templates the same way.</p>
+			<p>You can have one template that includes the header and the footer and a bunch of sub-templates that redefine the content in the middle.</p>
+			<p>Here's how we're going to organize our code. We have <code>shopping_list.html</code> and <code>fizzbuzz.html</code>. These files don't have anything in common, but we want to add a title to them. We're going to make each of these inherit from <code>base.html</code>.</p>
+			<p>Example: Make a new file called <code>base.html</code></p>
+			<p>Here are its contents. Note the <code>{% block content %}</code> and <code>{% endblock %}</code> commands.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Udacity Templates&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body style=&quot;margin: 0&quot;&gt;
+		&lt;h1 style=&quot;background-color: #ddd; color: #888; margin: 0;
+		height: 50px&quot;&gt;Udacity Templates&lt;/h1&gt;
+		{% block content %}
+		{% endblock %}
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+			<p>Lets use this with our shopping list: At the very top of shopping_list.html add <code>{% extends &quot;base.html&quot; %}</code></p>
+			<p>Now lets see how it works. When we reload the page, the header is there, but none of the content.</p>
+			<p>We need to add <code>{% block content %}</code> before the content of <code>shopping_list.html</code>, and <code>{% endblock %}</code> at the end of our content.</p>
+			<p>Save the file and go back to the browser. When you reload the page you see the content!</p>
+			<p>Now do the same thing with <code>fizzbuzz.html</code></p></div>
+		</div>
+
+		<div class="concept" id="stage-4-7-16">
+			<div class="concept-title">Conclusion</div>
+			<div class="concept-content"><p>Templates are a great way to:</p>
+			<p>Separate different types of code. You can keep your html separate from your Python, which will make things easier and keep your code more clean.</p>
+			<p>Make more readable code. Better organized code is more readable.</p>
+			<p>Make more secure websites. If you use the auto escaping feature of <code>jinja</code> or other templates you don't have to worry about users putting insecure or malicious data into your website.</p>
+			<p>Make html easier to modify. Instead of trying to modify strings in a Python editor, you have html in your html editor, which is much easier to handle.</p>
+			<p>Avoid repetition. Templates can help us avoid re-writing html code many times, for example by automating the insertion of elements like divs or by using template inheritance. This makes our html more efficient, saves time and effort, and reduces errors.</p>
+			<p>Once again, to learn more about <code>jinja</code>, go to <a target="_blank" href="http://jinja.pocoo.org">jinja.pocoo.org</a>.</p></div>
+		</div>
+	</div>
+
+</body>
+</html>

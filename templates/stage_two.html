@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IPND Notes</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>IPND Notes Stage 2: Automate Your Page</h1>
+	<div class="sidebar">
+		<nav>
+			<h2>Table of Contents</h2>
+				<ul>
+					<li><a href="#stage-2-1"><strong>Stage 2.1 Introduction to Serious Programming</strong></a>
+						<ol>
+							<li><a href="#stage-2-1-1">What Computer Science is About</a></li>
+							<li><a href="#stage-2-1-2">Programming</a></li>
+							<li><a href="#stage-2-1-3">Why We Need Programming Languages</a></li>
+							<li><a href="#stage-2-1-4">Grammar</a></li>
+							<li><a href="#stage-2-1-5">Python Grammar</a></li>
+							<li><a href="#stage-2-1-6">Python Grammar for
+							Arithmetic Expressions</a></li>
+						</ol>
+					</li>
+					<li><a href="#stage-2-2"><strong>Stage 2.2 Variables and Strings</strong>
+					</a>
+						<ol>
+							<li><a href="#stage-2-2-1">Variables</a></li>
+							<li><a href="#stage-2-2-2">Variables Can Vary</a></li>
+							<li><a href="#stage-2-2-3">Strings</a></li>
+							<li><a href="#stage-2-2-4">Indexing Strings</a>
+							</li>
+							<li><a href="#stage-2-2-5">Selecting Subsequences From Strings</a></li>
+							<li><a href="#stage-2-2-6">Finding Strings in Strings</a></li>
+							<li><a href="#stage-2-2-7">Finding with Numbers</a>
+							</li>
+						</ol>
+					</li>
+					<li><a href="#stage-2-3"><strong>Stage 2.3 Input-&gt;Function-&gt; Output</strong></a>
+						<ol>
+							<li><a href="#stage-2-3-1">Self Driving Cars</a>
+							</li>
+							<li><a href="#stage-2-3-2">Functions [or Procedures]</a></li>
+							<li><a href="#stage-2-3-3">Making and Using Functions</a></li>
+							<li><a href="#stage-2-3-4">Functions Avoid Repetition</a></li>
+							<li><a href="#stage-2-3-5">Functions Without a Return</a></li>
+							<li><a href="#stage-2-3-6">Functions and Variables
+							</a></li>
+						</ol>
+					</li>
+					<li><a href="#stage-2-4"><strong>Stage 2.4 Control Flow &amp; Loops: If and While</strong></a>
+						<ol>
+						<li><a href="#stage-2-4-1">Making Decisions</a>
+							</li>
+							<li><a href="#stage-2-4-2">If Statements</a></li>
+							<li><a href="#stage-2-4-3">You Can Write Every Possible Computer Program</a></li>
+							<li><a href="#stage-2-4-4">Loops</a></li>
+							<li><a href="#stage-2-4-5">Break Statements</a>
+							</li>
+						</ol>
+					</li>
+					<li><a href="#stage-2-5"><strong>Stage 2.5 Debugging</strong></a>
+						<ol>
+							<li><a href="#stage-2-5-1">Bugs Happen!</a></li>
+							<li><a href="#stage-2-5-2">Examine Error Messages </a></li>
+							<li><a href="#stage-2-5-3">Work from a Working Example</a></li>
+							<li><a href="#stage-2-5-4">Check Intermediate Results</a></li>
+							<li><a href="#stage-2-5-5">Keep and Compare Old Versions</a></li>
+							<li><a href="#stage-2-5-6">Debugging as a Scientific Process</a></li>
+						</ol>
+						</li>
+					<li><a href="#stage-2-6"><strong>Stage 2.6 Structured Data: Lists &amp; For Loops</strong></a>
+						<ol>
+							<li><a href="#stage-2-6-1">Structured Data</a></li>
+							<li><a href="#stage-2-6-2">Nested Lists</a></li>
+							<li><a href="#stage-2-6-3">Mutation</a></li>
+							<li><a href="#stage-2-6-4">A List of Strings</a> </li>
+							<li><a href="#stage-2-6-5">Yello Mutation</a></li>
+							<li><a href="#stage-2-6-6">Aliasing</a></li>
+							<li><a href="#stage-2-6-7">List Operations</a></li>
+							<li><a href="#stage-2-6-8">Loops on Lists</a></li>
+							<li><a href="#stage-2-6-9">For Loops</a></li>
+						</ol>
+					</li>
+					<li><a href="#stage-2-7"><strong>Stage 2.7 How to Solve Problems</strong></a>
+						<ol>
+							<li><a href="#stage-2-7-1">How to Solve Problems </a></li>
+							<li><a href="#stage-2-7-2">Days Between Dates</a> </li>
+							<li><a href="#stage-2-7-3">First Step</a></li>
+							<li><a href="#stage-2-7-4">Understanding a Computational Problem</a></li>
+							<li><a href="#stage-2-7-5">The First Rule</a></li>
+							<li><a href="#stage-2-7-6">What Are the Outputs</a></li>
+							<li><a href="#stage-2-7-7">Next Step</a></li>
+							<li><a href="#stage-2-7-8">Take the Next Step</a></li>
+							<li><a href="#stage-2-7-9">Try an Example</a></li>
+							<li><a href="#stage-2-7-10">Harder Example</a></li>
+							<li><a href="#stage-2-7-11">Algorithm Pseudocode </a></li>
+							<li><a href="#stage-2-7-12">Should We Implement It</a></li>
+							<li><a href="#stage-2-7-13">Different Approach</a> </li>
+							<li><a href="#stage-2-7-14">Simple Mechanical Algorithm</a></li>
+							<li><a href="#stage-2-7-15">Don't Optimize Prematurely</a></li>
+							<li><a href="#stage-2-7-16">What Should We Write First</a></li>
+							<li><a href="#stage-2-7-17">Define nextDay</a></li>
+							<li><a href="#stage-2-7-18">Making Progress is Good </a></li>
+							<li><a href="#stage-2-7-19">Define daysBetweenDates </a></li>
+							<li><a href="#stage-2-7-20">Step Three daysBetweenDates</a></li>
+							<li><a href="#stage-2-7-21">Real World Problem</a> </li>
+							<li><a href="#stage-2-7-22">Finish daysBetweenDates </a></li>
+							<li><a href="#stage-2-7-23">Conclusion</a></li>
+						</ol>
+					</li>
+				</ul>
+		</nav>
+	</div>
+
+	<div class="lesson" id="stage-2-1">
+		<h2>Stage 2.1 Introduction to Serious Programming</h2>
+
+		<div class="concept" id="stage-2-1-1">
+			<div class="concept-title">What Computer Science is About</div>
+			<div class="concept-content"><p>Computer Science is about how to
+			solve problems by breaking them into smaller pieces and then
+			precisely and mechanically describing a series of steps that you
+			can use to solve each piece, and those steps can be executed by a
+			computer.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-1-2">
+			<div class="concept-title">Programming</div>
+<div class="concept-content"><p>The core of computer science. Most
+			machines are designed to do one thing, like a toaster. Without a
+			program, a computer is even less useful than a toaster. The
+			program tells the computer what to do. The power of a computer,
+			unlike a toaster, is that a computer can do anything. Anything we
+			can figure out how to write a program for, we can make the
+			computer do. A program needs to be a very precise sequence of steps
+			. The computer by itself doesn't know how to do anything, it has a
+			few simple instructions that it can execute. To make a program do
+			something useful, we need to put those instructions together in a
+			way that does what we want. The power of the computer is that it
+			can execute those steps super fast. The program gives us a way to
+			tell the computer what steps to take. There are many different
+			languages for programming computers. The language we will be
+			learning is called Python. Python gives us a high level language
+			to write programs. That means instead of running directly on the
+			computer, the programs we write will be input into the Python
+			program, which runs on the computer. Python is called an
+			interpreter, that means it runs our programs, it interprets them,
+			it executes the program that we wrote in the Python language.</p>
+			</div>
+		</div>
+
+		<div class="concept" id="stage-2-1-3">
+			<div class="concept-title">Why We Need Programming Languages</div>
+<div class="concept-content"><p>Why do we need to invent new
+			languages like Python to program computers, rather that using
+			natural languages like English or Mandarin? 1. Ambiguity: Natural
+			languages are inherently ambiguous. Different people interpret the
+			same sentence different ways. When we program computers we need to
+			make sure the computer interprets the language the exact same way
+			the programmer does. Example: Biweekly can mean twice a week or
+			once every two weeks according to the dictionary. 2.Verbosity.
+			Natural languages are very verbose. To write a program we need to
+			describe exactly what the computer should do in a very precise
+			sequence of steps. If we had to describe all those details using
+			natural language, it would require a huge amount of text. With a
+			language like Python we only need a few lines of code to describe
+			a complex thing in a step by step way. </p></div>
+		</div>
+
+		<div class="concept" id="stage-2-1-4">
+			<div class="concept-title">Grammar</div>
+<div class="concept-content"><p>Like English, Python has a grammar
+			that defines what strings are in the language. English rule: You
+			can make a sentence by combining a subject with a verb &amp; object
+			. <em>Backus-Naur Form</em> is a way of writing grammars. The
+			purpose is to describe languages in a way that is simple and
+			concise. On the left there is a [Non-terminal] (something we
+			aren't finished with) then an arrow, and on the right side, a
+			replacement. The replacement can be anything, it can be a sequence
+			of non-terminals, it can be one non-terminal, it can also be a
+			terminal. Once we get to a terminal, there is nothing else we can
+			replace it with. We can form a sentence by starting from some non-
+			terminal, then by following the rules, we keep replacing non-
+			terminals with their replacements until we're left with only
+			terminals. Derivation: Starting from non-terminals follow the
+			rules to come up with a sequence of terminals. Important thing
+			about replacement grammars is that we can describe an infinitely
+			large language with a small set of rules.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-1-5">
+			<div class="concept-title">Python Grammar</div>
+			<div class="concept-content"><p>Python grammar is much stricter
+			than English. Ungrammatical speech can still be understood in
+			English. In Python, the code must match the language grammar
+			exactly. <code> print 2 +</code> gives a syntax error.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-1-6">
+			<div class="concept-title">Python Grammar for Arithmetic
+			Expressions</div>
+			<div class="concept-content"><p>Expression-&gt;Expression Operator
+			Expression</p>
+			<p>Expression-&gt;Number</p>
+			<p>Operator-&gt;+</p>
+			<p>Operator-&gt;*</p>
+			<p>Number-&gt;0,1,...</p>
+			<p>Expression-&gt;(Expression)</p>
+			<p>Example Derivation: Expression-&gt;Expression Operator
+			Expression, Number-&gt;1, Operator-&gt;+, Number-&gt;1, 1+1.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="lesson" id="stage-2-2">
+		<h2>Stage 2.2 Variables and Strings</h2>
+
+		<div class="concept" id="stage-2-2-1">
+			<div class="concept-title">Variables</div>
+			<div class="concept-content">
+			<p>Our answer to the last quiz (<code>
+			print 299792458 * 100 * 1.0 / 1000000000</code>) would have been a
+			lot easier to read and a lot more useful if we used names to keep
+			track of values, instead of writing out those big numbers,
+			especially numbers as big as the speed of light. Python provides a
+			way to do it, its called the variable. We can use a variable to
+			create a name and use that name to refer to a variable. Way to
+			introduce a variable is using an Assignment Statement: Name =
+			Expression. After the Assignment Statement, the name refers to the
+			value that the expression has. The name can be any sequence of
+			letters and numbers as well as underscores, as long as it starts
+			with a letter or underscore. Example: <code>speed_of_light =
+			299792458.</code></p>
+			<p>When we print speed_of_light, we'll see 299792458. We can use it
+			in expressions too: If we want to convert it to centimeters
+			instead of meters we can multiply by 100:</p>
+			<p><code>print speed_of_light * 100</code> gives the result
+			29979245800.</p>
+			<p>Another variable: <code>billionth = 1.0 / 1000000000</code>.
+			Another: <code>nanostick = speed_of_light * billionth * 100</code>
+			(Nanostick is the length light travels in a nanosecond.)
+			<code>print nanostick</code> gives the result 29.9792458</p>
+			<p>Variables are very useful, they make our programs a lot easier
+			to understand. They also mean that we can use the same expression,
+			changing the values of the variables to compute different things.
+			</p>
+			<p><strong>Comments in Python: # from the start of the to the end
+			of the line is a comment.</strong></p></div>
+		</div>
+
+		<div class="concept" id="stage-2-2-2">
+			<div class="concept-title">Variables Can Vary</div>
+			<div class="concept-content"><p>Once we define a variable, we can
+			change the value. When we use the variable again, it refers to the
+			new value.</p>
+			<p>Example:</p>
+			<p><code>days = 7 * 7</code>  (days now refers to the value 49)</p>
+			<p><code>days = 48</code> (days now refers to the value 48)</p>
+			<p>We can use variables in their own assignment statements:</p>
+			<p><code>days = days - 1</code> (days now refers to the value 47
+			)</p>
+			<p>We can do the same thing again: <code>days = days -1</code> (
+			days now refers to the value 46)</p>
+			<p><code>=</code> This is <em>not</em> an equals symbol.
+			<code>=</code> means <em>assignment</em> in Python. Think of it as
+			an arrow that says put whatever value the right side evaluates to
+			into the name on the left side.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-2-3">
+			<div class="concept-title">Strings</div>
+			<div class="concept-content"><p>In the early days of computing,
+			people thought of computers as super powerful calculators for
+			doing computations like simulating nuclear weapons, computing
+			ballistic tables, or breaking encryption. There is no reason to
+			limit computers to numbers: They can operate on any kind of data
+			we want and it gets much more interesting when we operate on data
+			besides just numbers.</p>
+			<p>A string is just a sequence of characters surrounded by quotes.
+			Example of a string in Python: <code>'I am a string!'</code> If we
+			want we can use double quotes instead: <code>"I prefer double
+			quotes!"</code> The only requirement is that if we begin with a
+			single quote we end with one, the same with double quotes. <code>
+			"I'm happy I started with a double quote!"</code></p>
+			<p><code>print 'Hello'</code></p>
+			<p><code>print "Hello"</code></p>
+			<p>Both return the same thing.</p>
+			<p>Assigning a string to a variable is just like assigning a number
+			to a variable: <code>name = "John"</code></p>
+			<p><code>print "Hello " + name</code></p>
+			<p>The <code>+</code> operator on strings means something different
+			than with numbers. With strings it means concatenation</p>
+			<p><code>string + string</code> -&gt;concatenation of the two
+			strings.
+			[You need to add spacing as necessary to the strings to format
+			output.]
+			You cannot use the <code>+</code> operator with a string and a
+			number [cannot concatenate 'str' and 'int' objects.]
+			You <em>can</em> multiply strings: <code>print '!' * 12</code>
+			results in 12 exclamation points.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-2-4">
+			<div class="concept-title">Indexing Strings</div>
+			<div class="concept-content"><p>One of the things we can do with
+			strings that we can't do with numbers is extract subsequences from
+			the strings.</p>
+			<p>If we have a string, we can use the square brackets to extract
+			parts of that string:
+			<code>&lt;string&gt; [&lt;expression&gt;]</code></p>
+			<p><code>'udacity'[0]</code> would extract the 0 character from the
+			string. Characters in a string are indexed starting from zero. The
+			result of <code>'udacity'[0]</code> is the string <code>'u.'</code>
+			</p>
+			<p>The expression inside the square bracket can be anything that
+			evaluates to a number. <code>'udacity'[1+1]</code> returns <code>'a
+			.'</code></p>
+			<p><code>name='Dave'</code></p>
+			<p><code>name[0]</code> returns <code>'D'</code></p>
+			<p>You <em>can</em> use negative numbers, in which case it starts
+			counting from the back of the string.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-2-5">
+			<div class="concept-title">Selecting Subsequences From Strings
+			</div>
+			<div class="concept-content"><p><code>&lt;string&gt;[&lt;expression
+			&gt;:&lt;expression&gt;]</code></p>
+			<p>The value of the first expression we'll call start, the value of
+			the second expression we'll call stop.</p>
+			<p>The result is a string that is a subsequence of the characters
+			in the string starting from position start and ending with position
+			stop but not including that character. So start to stop -1.</p>
+			<p><code>word = 'assume'</code></p>
+			<p><code>print word[4:6]</code></p>
+			<p>returns <code>me</code></p>
+			<p><code>print word[4:]</code></p>
+			<p>selects from position 4 to the end.</p>
+			<p><code>print word[:2]</code></p>
+			<p>selects from the beginning</p>
+			<p><code>print word [:]</code></p>
+			<p>selects the entire string</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-2-6">
+			<div class="concept-title">Finding Strings in Strings</div>
+			<div class="concept-content"><p>The <code>find</code> operation
+			gives us a way in a big string to find some substring that we're
+			looking for. The way we use <code>find</code> is a little
+			different because find is a method (a built in procedure provided
+			by Python.)</p>
+			<p>Find is a procedure that operates on strings <code>
+			&lt;string&gt;.find(&lt;string&gt;)</code> The second string is
+			the one we want to find in the first.</p>
+			<p>The output of find is the position in the string where that
+			substring is found (The first occurrence.) A number that gives the
+			first position in the search string where the target string appears
+			. If the target string is not found, output will be <code>-1</code>
+			.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-2-7">
+			<div class="concept-title">Finding with Numbers</div>
+			<div class="concept-content"><p>Find returns the first position,
+			but there might be other occurrences we want to find.</p>
+			<p>The way to find them is to pass a second parameter:</p>
+			<p><code>&lt;string&gt;.find(&lt;string&gt;, &lt;number&gt;)</code>
+			</p>
+			<p>What find will output is the number of the position in the
+			search string where the target string first appears at or after
+			the <code>&lt;number.&gt;</code></p></div>
+		</div>
+	</div>
+
+	<div class="lesson" id="stage-2-3">
+		<h2>Stage 2.3 Input-&gt;Function-&gt;Output</h2>
+
+		<div class="concept" id="stage-2-3-1">
+			<div class="concept-title">Self Driving Cars</div>
+			<div class="concept-content"> <p>Inputs and outputs can be
+			incredibly rich. One example is a self driving car. Taking data in
+			is essential to making self driving cars work. The machine has a
+			lot of sensors that take data in at enormous rates. It has a laser
+			range finder on the roof that takes scans 10 times a second of the
+			entire surroundings. It has a spherical camera, very much like
+			Google Street is able to see in all directions. It has a stereo
+			camera system. It also has a GPS system used to localize the car
+			course lead based on satellite navigation. So, all this data,
+			which are millions and millions of data points per second, get fed
+			into the computer system that sits in the cars trunk. It uses that
+			data to avoid collisions with bicyclists, cars, pedestrians and so
+			on. Finally, the data gets funneled back to the car. These are the
+			outputs of the computer system. They actuate the steering wheel,
+			they use the brake, the gas.</p></div> </div>
+
+		<div class="concept" id="stage-2-3-2">
+			<div class="concept-title">Functions [or Procedures]</div>
+			<div class="concept-content"><p>How to use a procedure [function]:
+			</p>
+			<p><code>&lt;procedure&gt;(&lt;input&gt;, &lt;input&gt;,...)</code>
+			</p>
+			<p>There can be any number of inputs, but they have to match the
+			number of inputs the procedure expects. Inputs are sometimes
+			called operands or arguments.</p>
+			<p>We've already done something similar to this. In 2.2 we learned
+			about using find on strings:</p>
+			<p><code>find('au',3)</code></p>
+			<p>With find, you would pass in one or 2 inputs. The first input
+			was a string (that you were looking for.) The second input could
+			be a number (the position where you start looking for that string.)
+			 We used find in many ways in stage 2.2.</p>
+			<p>Find is a little different from the procedures that you define
+			yourself. First of all, its built in. Secondly, instead of just
+			having find, we had another input in front of the function, the
+			string we were doing the find in, say its the variable
+			<code>page</code>:</p>
+			<p><code>page.find('au',3)</code></p>
+			<p>That is really another input to find. We'll talk later about
+			why its done differently. But its very similar to calling a
+			procedure where one of the inputs is on the left and the other two
+			are on the right.</p>
+			<p>For all the procedures you define yourself, we won't have any
+			object to invoke them on like the string in find. We'll just have
+			the procedure to call and the arguments or operands or inputs to
+			pass in.</p>
+			<p>How this works with a simple procedure:</p>
+			<p><code>def rest_of_string(s):</code></p>
+			<div class="tab"><p><code>return s[1:]</code></p></div>
+			<p>This will evaluate to the string with the first letter removed.
+			</p>
+			<p>How to use this procedure:</p>
+			<p><code>print rest_of_string('audacity')</code></p>
+			<p>What happens when we call a procedure like this: Execution will
+			jump into the body of the procedure. What the interpreter is doing
+			is jumping to run the code inside the procedure. It will assign to
+			the parameters the values passed in as the inputs. Think of it as
+			being an assignment that says now the value of <code>s = 'audacity'
+			</code>. Now we're going to evaluate the body of the procedure. In
+			this case, there's only one statement, the return statement. We're
+			going to find the value of <code>s[1:]</code>. The result of that
+			is the string <code>'udacity'</code>. Then we get to the return.
+			What return means is that we're going to jump back to where we
+			called the procedure, but now we actually have a result. So, when
+			we jump back, the value that
+			<code>rest_of_string('audacity')</code > evaluates to is whatever
+			value we returned. In this case, its the string
+			<code>'udacity'</code></p>
+			<p>Anything we're going to do in the rest of the course, and
+			anything almost anyone does in programming is all about defining
+			procedures and using procedures. We can think of procedures in
+			terms of mapping inputs to outputs.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-3-3">
+			<div class="concept-title">Making and Using Functions</div>
+			<div class="concept-content"> <p>Making a function:</p>
+			<p>Start a line of code with the keyword <code>def</code>. Give
+			the function a name. Follow the name with the function parameters
+			in parentheses. In the main part of the function, write the code
+			that says what to do with the parameters.</p>
+			<p>Example:</p>
+<pre><code>Def sum(a,b):
+	c = a + b
+	return c</code></pre>
+			<p>Using a function:</p>
+			<p>Write the name of the function then the parameters we want to
+			input.</p>
+			<p>Example:</p>
+			<p><code>print sum(2,3)</code></p>
+			<p><code>5</code></p></div>
+		</div>
+
+		<div class="concept" id="stage-2-3-4">
+			<div class="concept-title">Functions Avoid Repetition</div>
+			<div class="concept-content"><p>Functions avoid repetition because
+			they are infinitely reusable. Once you write a function you can
+			use it many times in your code without having to define it again.
+			</p>
+			</div>
+		</div>
+
+		<div class="concept" id="stage-2-3-5">
+			<div class="concept-title">Functions Without a Return</div>
+			<div class="concept-content"><p>What does this function do?</p>
+<pre><code>def sum(a,b):
+	a = a + b</code></pre>
+			<p>It really does nothing. It doesn't have a return, so it doesn't
+			produce any output. It doesn't actually modify the value of the
+			first input in any way thats visible to the caller. It does modify
+			the value of a, inside the function, but the caller can't actually
+			see it.</p>
+			<p>The result of the procedure in Python is <code>None</code>.
+			Python uses None to mean "there's no value."</p>
+			<p>Lets add a return statement:</p>
+<pre><code>def sum(a,b):
+	a = a + b
+	return a
+print sum(2, 123)</code></pre>
+			<p>Now when we run this, we get the result 125.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-3-6">
+			<div class="concept-title">Functions and Variables</div>
+			<div class="concept-content"><p>If we pass in variables (without
+			the return) it still does not change their value.</p>
+<pre><code>def sum(a,b):
+	a=a+b
+a=2
+b=123
+print sum(a,b)
+print a</code></pre>
+			<p>Does the value of <code>a</code> change after running this? No.
+			The reason is what gets passed in is the value, not the name of
+			the variable. What gets passed in is the value of <code>a</code>,
+			in this case 2. We don't actually modify what the variable is.</p>
+			<p>More explanation:</p>
+			<p><code>a=2</code></p>
+			<p><code>b=123</code></p>
+			<p>Name <code>a</code> refers to the value 2. Name <code>b</code>
+			refers to the value 123.</p>
+			<p>Then, we have our procedure:</p>
+<pre><code>def sum(a,b):
+ a = a + b</code></pre>
+			<p>When we call <code>sum</code>, <code>sum(a,b)</code> we have
+			the names of our parameters. We're going to have a name inside sum
+			called <code>a</code>. That <code>a</code> refers to whatever
+			value is passed in when <code>sum</code> is called. <code>a</code>
+			refers to the value 2, <code>b</code> refers to the value 123.
+			When we run sum, we do the assignment, that is going to produce
+			the new number, adding 2 + 123, and we get the value 125. Then we
+			do the assignment. The assignment changes what <code>a</code>
+			refers to. Now instead of referring to the number 2, the
+			<code>a</code> that corresponds to the parameter to the procedure
+			sum, now refers to 125.</p>
+			<p><em>Note that the original value of <code>a</code>, the one we
+			named outside the function, still refers to 2.</em> When we come
+			back from the procedure, all the parameters that were visible
+			inside the body of sum are no longer visible. They were there for
+			that execution, but they're done, we can't use those names any more
+			. They were only visible during that execution of the procedure.
+			</p></div>
+		</div>
+	</div>
+
+	<div class="lesson" id="stage-2-4">
+		<h2>Stage 2.4 Control Flow &amp; Loops: If and While</h2>
+
+		<div class="concept" id="stage-2-4-1">
+			<div class="concept-title">Making Decisions</div>
+			<div class="concept-content"><p>Everything we've had to do so far
+			has been pretty limited. We had to do the same thing on all data.
+			We couldn't do anything that really depended on what the data was.
+			</p>
+			<p>What we're going to do next is to figure out a way to make code
+			behave differently based on decisions. The first thing we're going
+			to do is figure out some ways to make comparisons so we have a way
+			to test and decide what we should do.</p>
+			<p>Python provides lots of different operators for doing
+			comparisons. They're things similar to what we've used in math:
+			<code>&lt;</code > we have a less than sign that compares two
+			numbers. <code>&gt;</code> we have a greater than.
+			<code>&lt;=</code> we have a less than or equal to. All of these
+			operate on numbers. We can have a <code>&lt;number&gt;</code>
+			followed by a comparison operator > <code>&lt;operator&gt;</code>
+			followed by another number <code> &lt;number &gt;</code>. This is
+			very similar to the grammar we saw earlier for arithmetic
+			expressions, but now instead of having a plus or times we have
+			something that does a comparison. The output of a comparison is
+			not a number, its a boolean value. A boolean value is one of two
+			things: Its either the value <code>True</code> or the value
+			<code>False</code>. Note that in Python, the boolean values
+			<code>True</code> and <code> False</code> are <em>capitalized</em>.
+			</p>
+			<p>Examples:</p>
+			<p><code>print 2 &lt; 3</code></p>
+			<p>The result is <code>True</code></p>
+			<p><code>print 21 &lt; 3</code></p>
+			<p>The result is <code>False</code></p>
+			<p>We can have any expression we want with the comparison:</p>
+			<p><code>print 7 * 3 &lt; 21</code></p>
+			<p>The result is <code>False</code>, because 7*3 is equal to 21</p>
+			<p>Another comparison operator we can use is
+			<em>"not equal to."</em></p>
+			<p><code>print 7 * 3 != 21</code></p>
+			<p>The result is <code>False</code>, because 7*3 is equal to 21.
+			</p>
+			<p>If we want to do equality comparison, we don't use the equals
+			sign, we use two equals signs. We call that the "double equal."</p>
+			<p><code>print 7 * 3 == 21</code></p>
+			<p>The result is <code>True</code>.</p>
+			<p>Why is the equality comparison done using <code>==</code>
+			instead of <code>=</code>? Because <code>=</code> means assignment.
+			</p>
+			<p>Example:</p>
+			<p><code>i = 21</code> assigns the value 21 to the variable <code>i
+			</code>. <code> i == 21</code> is a comparison, it evaluates to
+			either <code>True</code> or <code>False</code> depending on
+			whether the value of <code >i</code> is 21.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-4-2">
+			<div class="concept-title">If Statements</div>
+			<div class="concept-content"><p><strong>If:</strong></p>
+			<p>Now we know some ways to make comparisons, we want to use them
+			to make decisions, to make our code do something different
+			depending on the result of a comparison. The way to do that is to
+			use an <code>if</code> statement.</p>
+			<p>The structure of an <code>if</code> statement is we have the
+			keyword <code>if</code> followed by a comparison, we'll call that
+			the <code>&lt;Test Expression&gt;</code>, followed by a colon.</p>
+			<p><code>if &lt;Test Expression&gt;:</code></p>
+				<div class="tab"><p><code>&lt;Block&gt;</code></p></div>
+			<p>Then, inside the <code>if</code>, we have the block: The block
+			is the code that will run if the test expression is
+			<code>True</code>. If the test expression doesn't evaluate to
+			<code>True</code> , then the block doesn't execute. As with
+			function definitions, we know the end of the <code>if</code>
+			because of the indentation. All the statements inside the block
+			are executed only when the test expression is <code>True</code>.
+			The next statement, that is not indented, is going to be executed
+			whether or not the test expression is <code>True</code>.</p>
+			<p>Example of a function using an if statement:</p>
+<pre><code>def absolute(x):
+	if x&lt; 0:
+		x = -x
+	return x</code></pre>
+			<p>What this does is give us the absolute value of the number
+			thats passed in.</p>
+			<p><strong>Else:</strong></p>
+			<p>Start with this:</p>
+<pre><code>def bigger(a,b):
+	if a &gt; b:
+		return a
+	return b</code></pre>
+			<p>Instead of just having what we had before:</p>
+			<p><code>if &lt;Test Expression&gt;:</code></p>
+				<div class="tab"><p><code>&lt;Block&gt;</code></p></div>
+			<p>What we want is something that executes when the test
+			expression is <code>False.</code></p>
+			<p>We can do that by using an <code>else</code>.</p>
+			<p><code>if &lt;Test Expression&gt;:</code></p>
+				<div class="tab"><p><code>&lt;Block&gt;</code></p></div>
+			<p><code>else:</code></p>
+				<div class="tab"><p><code>&lt;Block&gt;</code></p></div>
+			<p>As before, the indentation tells us when we're done with the
+			block.</p>
+			<p>How to rewrite bigger using else:</p>
+<pre><code>def bigger(a,b):
+	if a &gt; b:
+		return a
+	else:
+		return b</code></pre>
+			<!-- <code>def bigger(a,b):</code><br>
+				<div class="tab"><code>if a &gt; b:</code></div>
+					<div class="tab-2"><code>return a</code></div>
+				<div class="tab"><code>else:</code></div>
+					<div class="tab-2"><code>return b</code></div> -->
+			<p>This means the same thing as the first function, and in this
+			case neither is particularly better. but there are lots of cases
+			where it makes things work a lot better by using else.</p>
+			<p>One way using else makes things better:</p>
+<pre><code>def bigger(a,b):
+	if a &gt; b:
+		r = a
+	else:
+		r = b</code></pre>
+			<p><strong>Or:</strong></p>
+			<p><code>&lt;Expression&gt; or &lt;Expression&gt;</code></p>
+			<p>If the first expression evaluates to <code>True</code>, the
+			value is <code>True</code> and the second expression is not
+			evaluated. If the first expression evaluates to <code>False</code>
+			, the value is the value of the second expression.</p>
+			<p>Example:</p>
+<pre><code>def is_friend(name):
+	return name[0] == 'D' or name[0] == 'N'
+print is_friend('Doug')
+print is_friend('Nicole')
+print is_friend('Fred')</code></pre>
+			<p><code>or</code> gives us the logical <em>or</em> of the two
+			operands on its left and right.</p>
+			<p>Examples:</p>
+			<p><code>print True or False</code></p>
+			<p>The value is <code>True</code></p>
+			<p><code>print False or True</code></p>
+			<p>also has the value <code>True</code></p>
+			<p><code>print True or True</code></p>
+			<p>is also <code>True</code></p>
+			<p><code>print False or False</code></p>
+			<p>is <code>False</code></p>
+			<p>The one important thing that or does that is different from
+			other operators is that it only evaluates what it needs to.</p>
+			<p>Example:</p>
+			<p><code>print True or this_is_an_error</code></p>
+			<p>evaluates to <code>True</code></p>
+			<p><code>this_is_an_error</code> is an undefined variable, its an
+			error. But, when we evaluate the <code>or</code> expression,
+			because we already found that the first part was <code>True</code>
+			, we don't get an error.</p>
+			<p><code>print False or this_is_an_error</code></p>
+			<p>In this case, its necessary to evaluate the second operand (
+			since the first one is <code>False</code>,) and we'll get an error.
+			</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-4-3">
+			<div class="concept-title">You Can Write Every Possible Computer
+			Program</div>
+			<div class="concept-content"><p>You know enough (in theory) to
+			write every possible computer program. With a very few simple
+			operations you can simulate any other operation you want:</p>
+				<div class="tab"><p>Arithmetic</p></div>
+				<div class="tab"><p>Comparisons</p></div>
+				<div class="tab"><p>Procedures</p></div>
+				<div class="tab"><p>If</p></div>
+			<p>These are enough to simulate anything else a computer can do.
+			While you could in theory do this, it won't be the best, most
+			efficient or elegant way, so the course will continue.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-4-4">
+			<div class="concept-title">Loops</div>
+			<div class="concept-content"><p>Loops are a way to do things over
+			and over again.</p>
+			<p>The kind of loop we'll introduce first is called a
+			<code>while</code> loop.</p>
+			<p>Syntax is this:</p>
+			<p><code>while &lt;Test Expression&gt;:</code></p>
+				<div class="tab"><p><code>&lt;Block&gt;</code></p></div>
+			<p>The block is a sequence of instructions. With <code>if</code>,
+			the block is executed 0 or 1 times. With <code>while</code>, the
+			block can be executed any number of times. It keeps going as long
+			as the test expression is <code>True</code>. Once the test
+			expression is <code>False</code>, we go to the next expression.
+			The loop could keep going forever: There is no requirement that
+			the test expression eventually becomes <code>False</code>. (We
+			call this an infinite loop.)</p>
+			<p>Example:</p>
+<pre><code>i=0
+while i &lt; 10:
+	print i
+	i = i + 1</code></pre>
+			<p>This example is not an infinite loop because we include a
+			counter, <code>i</code> that makes the test expression
+			<code>False</code> when it gets to 10.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-4-5">
+			<div class="concept-title">Break Statements</div>
+			<div class="concept-content"><p><code>break</code> gives us a way
+			to stop a loop even while the test condition is <code>True</code>.
+			</p>
+			<p><code>while &lt;Test Expression&gt;:</code></p>
+				<div class="tab"><p><code>&lt;Code&gt;</code></p></div>
+				<div class="tab"><p><code>if &lt;Break Test&gt;:</code></p>
+				</div>
+					<div class="tab-2"><p><code>break #once break happens, we
+					jump to the code after the while</code></p></div>
+				<div class="tab"><p><code>&lt;More Code&gt;</code></p></div>
+			<p>Example:</p>
+			<p>Start with this:</p>
+<pre><code>def print_numbers(n):
+	i=1
+	while i &lt;= n:
+		print i
+		i = i + 1</code></pre>
+			<p>Instead of that, use a <code>break</code>:</p>
+<pre><code>def print_numbers(n):
+	i = 1
+	while True:
+		if i &gt; n:
+			break
+		print i
+		i = i + 1</code></pre>
+			</div>
+		</div>
+	</div>
+
+	<div class="lesson" id="stage-2-5">
+		<h2>Stage 2.5 Debugging</h2>
+
+		<div class="concept" id="stage-2-5-1">
+			<div class="concept-title">Bugs Happen!</div>
+			<div class="concept-content"><p>Sometimes when you try something
+			in code, it just doesn't work the first time. These errors are
+			called bugs.</p>
+			<p>Writers spend a lot of time proof reading and scientists spend
+			a lot of time checking their results. But it was a surprise to
+			early programmers that debugging was going to be a thing. A good
+			bit of time will be spent finding errors in programs. Andy thought
+			that every bug he introduced was some failure on his part as a
+			programmer. He realizes now that bugs are inevitable. The
+			important thing isn't to avoid them entirely, its to develop a
+			strategy for systematically getting rid of them. Its not so much
+			about spotting typos or logic errors as it is about building a
+			correct mental model of how that system works so that you can find
+			out what isn't working.</p>
+			<p>Here are some techniques for making debugging part of your
+			learning process:</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-5-2">
+			<div class="concept-title">Examine error messages</div>
+			<div class="concept-content"><p>Sometimes its really obvious that
+			code has a bug because the bug makes the code crash. When it
+			crashes, it usually gives some sort of error message. Error
+			messages can be confusing, but they do give some kind of
+			information besides just "it didn't work, try something different.
+			" When Python code crashes, the message it gives is called a
+			Traceback. The traceback tells you what line it crashed on, what
+			file it was running, and how it got there. The information the
+			traceback gives you, especially the line number and function name,
+			can focus your attention on the part of the code that might be
+			going wrong. Even if the root of the problem isn't on that exact
+			line, its somewhere upstream of that line. We can also look up the
+			error message to find out what to do about it.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-5-3">
+			<div class="concept-title">Work from a Working Example</div>
+			<div class="concept-content"><p>When your learning to use a new
+			feature or language, you'll often look at example code to give you
+			a model of what to write. Then you'll write code that's based on
+			the example code, but change it to do what you want it to. If that
+			doesn't work, what then? A lot of new programmers try making
+			random changes, when that doesn't work, they ask for help. Here's
+			another approach: When your code doesn't work, set it aside,
+			comment it out. Then copy and paste in the example code. Run it
+			and make sure it does what its supposed to. Then, modify it in
+			small steps until it does what you wanted your code to do. Once
+			you're done, see if you can find where your original code had a
+			bug . Make sure the examples work! When you're working from
+			example code, you do have to exercise some care, or could inherit
+			bugs from it.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-5-4">
+			<div class="concept-title">Check Intermediate Results</div>
+			<div class="concept-content"><p>Bugs that don't crash your program
+			can be a lot trickier than ones that do. When a function
+			calculates an incorrect value, finding out where it went wrong
+			often involves splitting the function up into smaller pieces and
+			looking at the value of variables in each of those pieces. One
+			basic way to do this is to introduce print statements that output
+			the variables where you can see them. Once you are done debugging,
+			be sure to remove the print statements or your code will print
+			debugging information when you don't want it to.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-5-5">
+			<div class="concept-title">Keep and Compare Old Versions</div>
+			<div class="concept-content"><p>If you have something almost, but
+			not quite working, and you're getting frustrated with it, it can
+			be tempting to throw it away and try again. But, sometimes you're
+			really close on your first try and your second try isn't as close.
+			Then you want to be able to get back to the first version. For
+			short functions you can make this easier by commenting out the old
+			version. In Python, just put a hash mark (<code>#</code>) before
+			each line of the function. Or, you can turn it into a big string
+			by putting triple quotes around it. Text editors do have an undo
+			feature, but it doesn't usually let you go back between multiple
+			different versions of your code. Its not really good enough to let
+			you compare different versions of code. Undo is good for when you
+			accidentally mess something up and immediately notice it. But you
+			can't rely on undo alone to compare different versions of code, or
+			to get back to an arbitrary version you previously had. You <em>
+			can </em> copy code into a different file. Files aren't exactly
+			expensive after all. Just make sure you save them where you can
+			find them. Another reason to keep old versions is that when you do
+			ask for help, you can share two or three different things you've
+			tried. Software engineers use version control systems like Git,
+			which are pretty much super-powerful undo systems that let you
+			navigate to any version of the code, and have multiple modified
+			versions and share different versions and so on. Keeping old
+			versions isn't just for beginners, its how software engineering
+			really works.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-5-6">
+			<div class="concept-title">Debugging as a Scientific Process</div>
+			<div class="concept-content"><p>Now you have a few more tools to
+			approach problems in your code. This is just the beginning. When
+			you really get into it, debugging isn't just correcting errors or
+			even just figuring out how you made a mistake. Its a scientific
+			process of examining code to discover things you didn't expect in
+			it. Debugging is a really important skill to learn if you want to
+			do software engineering. In real world computing systems, bugs
+			cause problems that are a lot bigger than just getting a weird
+			error message. Correctly locating errors is a big part of writing
+			reliable software. In fact, we have a whole course on "A
+			Scientific Approach to Debugging." After you finish your current
+			projects you might want to take a look at that next.</p></div>
+		</div>
+	</div>
+
+	<div class="lesson" id="stage-2-6">
+		<h2>Stage 2.6 Structured Data: Lists &amp; For Loops</h2>
+
+		<div class="concept" id="stage-2-6-1">
+			<div class="concept-title">Structured Data</div>
+			<div class="concept-content"><p>The closest thing we've seen to
+			structured data is the string data type. A string is a kind of
+			structured data, we can break it down into its characters. The
+			string is a sequence of characters, and we can operate on
+			subsequences of the string. What we can do with strings is
+			somewhat limited because the only thing we can put in a string is
+			a character.</p>
+			<p>Today, we're going to introduce the list data type. Lists are
+			much more powerful than strings. Whereas for a string, all the
+			elements had to be characters, in a list the elements can be
+			anything we want. They could be characters, they could be strings,
+			they could be numbers, they could also be other lists.</p>
+			<p>Example:</p>
+			<p>String</p>
+				<div class="tab"><p>Sequence of characters</p></div>
+					<div class="tab-2"><p><code>s = 'yabba!'</code></p></div>
+			<p>List</p>
+				<div class="tab">Sequence of anything</div>
+					<div class="tab-2">
+					<code>p = ['y','a','b','b','a','!']</code></div>
+			<p>With a list, instead of using quotes to identify the list, we
+			use square brackets, and the elements are separated by commas.
+			Just like with a string, we can assign the list to a variable.</p>
+			<p>With a string, we can use square brackets to select elements:
+			<code>s[0]</code> when we index element 0, we'll get the first
+			element of the string, in this case <code>'y'</code>.</p>
+			<p>With lists, we can also use square brackets to access elements:
+			<code>p[0]</code> evaluates to the first element of <code>p</code>
+			, which is the string containing the single letter <code>'y'</code>
+			.</p>
+			<p>With strings, we could use the colon inside square brackets to
+			select a substring of more than one character: <code>s[2:4]</code>
+			gives us <code>'bb'</code>.</p>
+			<p>We can do the same thing with lists: <code>p[2:4]</code>
+			Instead of returning a string, it will return a list containing
+			those elements: <code>['b','b']</code></p>
+			<p>The general grammar for constructing a list is a square
+			bracket, followed by a list of any number of expressions, where
+			the expressions are separated by commas:</p>
+			<p><code>&lt;list&gt; -> [&lt;expression&gt;, &lt;expression&gt;, .
+			..]</code></p>
+			<p>We could create a list using just two square brackets. This
+			would create a list containing zero elements, also known as the
+			empty list.</p>
+			<p>We could create a list containing one element, or we could
+			create a list with many elements, as we did in the first example.
+			</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-6-2">
+			<div class="concept-title">Nested Lists</div>
+			<div class="concept-content"><p>All of the examples we've seen so
+			far, all of the elements in the list have the same type. We had a
+			list where all the elements were strings, we had a list where all
+			the elements were numbers.</p>
+			<p>There is no restriction on lists, we can make all of the
+			elements any type we want. We can mix and match different things
+			in one list.</p>
+			<p>Example:</p>
+			<p><code>mixed_up = ['apple', 3, 'oranges', 27,</code></p>
+			<p>We've put some strings and some numbers together, thats
+			perfectly okay.</p>
+			<p>Where it gets even more interesting is we can have a list
+			inside a list.</p>
+			<p><code>mixed_up = ['apple', 3, 'oranges', 27, [1, 2,</code></p>
+			<p>We can have another list inside that:</p>
+			<p><code>mixed_up = ['apple', 3, 'oranges', 27, [1, 2, ['alpha',
+			'beta']]]</code></p>
+			<p>We've defined a new variable <code>mixed_up</code>. It contains
+			a string, a number, then a list, the fifth element is itself a
+			list that contains a number, a number and contains another list.
+			</p>
+			<p>This example shows the versatility of lists, that we can put
+			anything we want in them. It doesn't seem particularly useful
+			because there is no structure to the things we've put in the list.
+			</p>
+			<p>Lets try another example that may give a better idea of why its
+			good to have lists inside lists:</p>
+			<p><code>beatles = [['John', 1940],</code></p>
+						<div class="tab-4"><p><code>['Paul', 1942],</code></p>
+						</div>
+						<div class="tab-4"><p><code>['George', 1943],</code>
+						</p></div>
+						<div class="tab-4"><p><code>['Ringo', 1940]],</code>
+						</p></div>
+			<p>We've defined the variable <code>beatles</code> as a list of
+			lists where each element of the list is a list of the person as
+			well as the date when he was born.</p>
+			<p>In Python, its okay to divide a list into several lines, as
+			long as we do the separation after a comma, so Python knows
+			they're part of the same list. Use indentation to further help you
+			see that they are part of the same list.</p>
+			<p>We can <code>print beatles[3]</code> and get <code>['Ringo',
+			1940]</code>.</p>
+			<p>If we want just a name, we can print <code>beatles[3][0]</code>
+			and get <code>Ringo</code>.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-6-3">
+			<div class="concept-title">Mutation</div>
+			<div class="concept-content"><p>There are two main differences
+			between strings and lists. The first is that a list can hold
+			anything we want but a string can only be made up of characters.
+			The second big difference between list and strings is that lists
+			support mutation. Mutation sounds a little bit scary and in some
+			ways it is. It makes it much harder to understand what our
+			programs mean, but its also very powerful.</p>
+			<p>What mutation means is that we can change the value of a list
+			after we've created it.</p>
+			<p>To explain what that means and to see why its so different from
+			the behavior we can get with strings, lets recap what happens with
+			strings:</p>
+			<p>We can create a string and store it in a variable:</p>
+			<p><code>s = 'Hello'</code></p>
+			<p>We can change the value of the variable by creating a new
+			string:</p>
+			<p><code>s = 'Yello'</code></p>
+			<p>Whats going on there is changing the value of <code>s</code>,
+			not changing the value of the string. <code>s = 'Yello'</code>
+			doesn't change the value of <code>'Hello'</code>, we just don't
+			have a way to refer to that string any more.</p>
+			<p>With strings we can also use the <code>+</code> operator to
+			concatenate two strings.</p>
+			<p><code>s = s + 'w'</code></p>
+			<p>It looks like this is changing the value of the string. You
+			might think the result of this is the string that was
+			<code>'Yello'</code> is now changed to <code>'Yellow'</code>.
+			Thats not actually what happens. We don't actually modify the
+			string we had. What happens when we use the <code>+</code>
+			operator is it creates a completely new string, where the value of
+			the new string is the result of concatenating the two strings. The
+			assignment changes what the variable refers to, to refer to the
+			new string.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-6-4">
+			<div class="concept-title">A List of Strings</div>
+			<div class="concept-content"><p>
+			<code>p = ['H', 'e', 'l', 'l', 'o']</code></p>
+			<p>We've created a list, using the square brackets, that contains
+			five strings, each one is a one letter string spelling out the
+			word Hello. We've stored that list in the variable <code>p</code>.
+			</p>
+			<p>We could do the same thing we did with strings. We could
+			reassign <code>p</code> to a new value:</p>
+			<p><code>p = ['Y', 'e', 'l', 'l' 'o']</code></p>
+			<p>Instead, we're going to mutate the list we've already created.
+			</p>
+			<p>We can do that by modifying the value of its elements:</p>
+			<p><code>p[0] = 'Y'</code></p>
+			<p>Here we have an assignment where on the left side of the
+			assignment we have <code>p[0]</code>, this means select from the
+			list that <code>p</code> refers to, find position <code>0</code>,
+			and instead of getting the value of that position, since its an
+			assignment, we're going to replace that value with what's on the
+			right side of the assignment, in this case the string containing
+			the single letter <code>'Y'</code>. <code>'H'</code> will be
+			replaced by <code>'Y'</code>. Note that we did not create a new
+			list, <code>p</code> still refers to the same list, but we've
+			changed the value of that list.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-6-5">
+			<div class="concept-title">Yello Mutation</div>
+			<div class="concept-content"><p>Mutation modifies the existing
+			object, but you can't really see the difference from what we've
+			done with strings. Where we'll really see the difference is when
+			we introduce a new variable.</p>
+			<p>Lets go back to the example we had before:</p>
+			<p><code>p = ['H', 'e', 'l', 'l', 'o']</code></p>
+			<p><code>p[0] = 'Y'</code></p>
+			<p>Now we're going to add an extra assignment statement and
+			introduce a new variable:</p>
+			<p><code>q = p</code></p>
+			<p>We introduce the variable <code>q</code>, and we assign
+			<code>p</code> to <code>q</code>. That means the value of
+			<code>p</code>, the list, is what <code>q</code> will refer to.
+			After the assignment <code>p</code> and <code>q</code> refer to
+			the same list.</p>
+			<p>Suppose we did an assignment statement to modify one of the
+			elements of <code>q</code>:</p>
+			<p><code>q[4] = '!'</code></p>
+			<p>That will change the 4th element of <code>q</code>. It also
+			changes the value of <code>p</code>, even though the assignment
+			statement didn't include <code>p</code>. The fact that
+			<code>p</code> and <code>q</code> refer to the same object means
+			that it changes the value of <code>p</code>.</p> <p>A key
+			difference between mutable objects and immutable objects is once
+			an object is mutable, then we have to worry about other variables
+			that might refer to the same object. We can change the value of
+			that object, and it affects not just the variable that we think we
+			changed, it affects the value of other variables as well.
+			</p>
+			</div>
+		</div>
+
+		<div class="concept" id="stage-2-6-6">
+			<div class="concept-title">Aliasing</div>
+			<div class="concept-content"><p>When we have two different ways to
+			refer to the same object, that is called aliasing.</p>
+			<p>Aliasing in programs is similar to the way we think about
+			aliasing in spy craft. We can refer to James Bond by his name or
+			his spy name, 007. Both of those are ways to refer to the same
+			person. If something happens that changes the state of James Bond,
+			it affects the state of both James Bond and 007. Both names refer
+			to the same person, so whatever state that person has is true for
+			both names.</p>
+			<p>Aliasing for variable names has the same property. If we have
+			two variable names that refer to the same object, say
+			<code>p</code> and <code>q</code>, any change we make to the
+			object <code> p</code> refers to also affects the value that
+			<code>q</code> refers to.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-6-7">
+			<div class="concept-title">List Operations</div>
+			<div class="concept-content"><p>Lists are very powerful, by using
+			mutation, by having lists that can contain other lists or any
+			other kind of data we want, we can build very complex data
+			structures and we can do lots of interesting things. We've seen
+			that we can use lists to store complex data, that elements of the
+			list can be any type we want, including other lists, and we've
+			seen we can use mutation to change the value of the list, and that
+			mutation is visible to any reference to the same list object.</p>
+			<p>One more list operation will allow us to add a new element at
+			the end of the list:</p>
+			<p><code>append</code></p>
+			<p><code>append</code> is like a procedure, but its a method. We
+			use it similar to the way we use find on strings:</p>
+			<p><code>&lt;list&gt;.append(&lt;element&gt;)</code></p>
+			<p><code>append</code> will add a new element to the end of the
+			list. The important thing about <code>append</code> is its
+			mutating the list that its invoked on, its not creating a new
+			list, its mutating the old list.</p>
+			<p>Example:</p>
+			<p><code>stooges=['Moe', 'Larry', 'Curly']</code></p>
+			<p>Lets assume that instead of replacing Curly we want to end up
+			with four stooges. We'll add Shemp and keep the other three as
+			they are.</p>
+			<p><code>stooges.append('Shemp')</code></p>
+			<p>We have not created a new list. There is no assignment from the
+			result of <code>append</code>. What we've done is modify the value
+			that <code>stooges</code> refers to by adding a new element to it.
+			</p>
+			<p>Another list operation:</p>
+			<p><code>+</code> (plus.)</p>
+			<p><code>&lt;list&gt; + &lt;list&gt;</code></p>
+			<p><code>+</code> behaves very similar to the concatenation
+			operation for strings:</p>
+			<p><code>[0, 1] + [2, 3]</code></p>
+			<p>Result is the list <code>[0, 1, 2, 3]</code></p>
+			<p>What <code>+</code> does, like concatenation for strings, is it
+			produces a new list. It doesn't mutate either of the input lists.
+			</p>
+			<p>One other list operator:</p>
+			<p><code>len</code></p>
+			<p><code>len</code> is short for length.</p>
+			<p><code>len(&lt;list&gt;)</code></p>
+			<p><code>len</code> is a function call, its just a function
+			already included in Python. We pass into <code>len</code> the
+			object we want to know the length of.</p>
+			<p><code>len</code> works for many other things than lists. It
+			also works for strings, it works for any object thats a collection
+			of things.</p>
+			<p>The output from <code>len</code> is the number of elements in
+			the input.</p>
+			<p><code>len([0,1])</code> result is 2</p>
+			<p><code>len(['a', ['b,' ['c']]])</code> result is also 2. It
+			looks like there are more elements, but <code>len</code> is only
+			counting the outer elements. If one of the elements of a list is a
+			list, it doesn't matter how many elements it contains, it only
+			contributes one to the length of the original list.</p>
+			<p><code>len ("Udacity")</code> We can use len on a string. The
+			output will be the number of characters in a string. In this case,
+			7.</p>
+			<p><code>index</code></p>
+			<p><code>&lt;list&gt;.index(&lt;value&gt;)</code></p>
+			<p>The <code>index</code> method is invoked on a list, you pass in
+			a value, and the output is the first position that value exists in
+			the list. When we invoke <code>index</code> on a list that doesn't
+			contain value we pass in, <code>index</code> doesn't return -1, it
+			gives us an error.</p>
+			<p>To help deal with that error, we have two more operators:</p>
+			<p><code>in</code></p>
+			<p><code>&lt;value&gt; in &lt;list&gt;</code></p>
+			<p>Syntax: a value, the in word, followed by the list.</p>
+			<p>Returns a boolean <code>True</code> or <code>False</code></p>
+			<p><code>not in</code></p>
+			<p><code>&lt;value&gt; not in &lt;list&gt;</code></p>
+			<p>If the value is not in the list the result is <code>True</code>.
+			 If it is in the list the result is <code>False</code>.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-6-8">
+			<div class="concept-title">Loops on Lists</div>
+			<div class="concept-content"><p>How to loop through a list: Since
+			lists are collections of things, its very useful to be able to go
+			through a list and do something with every element of the list.</p>
+			<p>Remember the <code>while</code> loop from the previous unit:</p>
+			<p><code>while &lt;test&gt;:</code></p>
+				<p><code>&lt;Block&gt;</code></p>
+			<p>As a reminder, this is the way the while loop works: we have a
+			<code>while</code> followed by a test expression, which is
+			something that evaluates to <code>True</code> or <code>False</code>
+			 , when it evaluates to <code>True</code>, that means to execute
+			 the block, which can be of any number of statements we want. We
+			 keep executing the block as long as the test expression evaluates
+			 to <code>True</code>.</p>
+			<p>We can use a <code>while</code> loop on a list:</p>
+<pre><code>def print_all_elements(p):
+i = 0
+while i &lt; len(p)
+	print p[i]
+	i = i + 1</code></pre></div>
+		</div>
+
+		<div class="concept" id="stage-2-6-9">
+			<div class="concept-title">For Loops</div>
+			<div class="concept-content"><p>We can write all the code we need
+			to loop through the elements of a list just using
+			<code>while</code>. It would just be a little more complicated
+			than we want.</p>
+			<p>Python provides a simpler way to loop through the elements of a
+			list: The <code>for</code> loop.</p>
+			<p><code>for &lt;name&gt; in &lt;list&gt;:</code></p>
+				<div class="tab"><p><code>&lt;Block&gt;</code></p></div>
+			<p>The structure of a <code>for</code> loop is like this: We have
+			the keyword <code>for</code>, followed by a name, (this is a new
+			name for a variable that we can introduce,) the the keyword <code>
+			in</code>, followed by a list, followed by a colon, with a block
+			inside the <code>for</code>.</p>
+			<p>What a <code>for</code> loop like this means is that for each
+			element in the list, we're going to assign that element to the
+			<code>&lt;name&gt;</code> and evaluate the block, and we'll do that
+			in order, going through the list.</p>
+			<p>Using <code>for</code> we can define
+			<code>print_all_elements</code> using far less elements than we
+			did using <code>while</code>:</p>
+<pre><code>def print_all_elements(p:)
+	for e in p:
+		print e</code></pre>
+			<p>We can use for loops on nested lists too:</p>
+<pre><code>example_list_2 = [['China', 'Beijing'],
+				['USA'  , 'Washington D.C.'],
+				['India', 'Delhi']]
+for country_with_capital in example_list_2:
+	country = country_with_capital[0]
+	capital = country_with_capital[1]
+	print capital + ' is the capital of ' + country</code></pre></div>
+		</div>
+	</div>
+
+	<div class="lesson" id="stage-2-7">
+		<h2>Stage 2.7 How to Solve Problems</h2>
+
+		<div class="concept" id="stage-2-7-1">
+			<div class="concept-title">How to Solve Problems</div>
+			<div class="concept-content"><p>Solving problems is one of the
+			most important skills you can learn. Calling it a skill is really
+			an understatement. Nearly everything you can do can be viewed as
+			solving problems. Improving as a problem solver is a lifelong
+			challenge.</p>
+			<p>One short lesson is not going to be enough to make anyone an
+			expert problem solver, but for this lesson we're going to look at
+			how to approach more complex programming problems, and hopefully
+			that will help you with solving any problem you are faced with
+			from now on.</p>
+			<p>It doesn't really make any sense to talk about solving problems
+			without talking about particular problems. We're going to look at
+			a specific practice problem and talk about how to go about solving
+			it. Our goal by looking at a particular problem is not just to
+			solve that problem, but to draw general lessons.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-2">
+			<div class="concept-title">Days Between Dates</div>
+			<div class="concept-content"><p>Given your birthday and the
+			current date, calculate your age in days. Compensate for leap days.
+			 Assume that the birthday and current date are correct dates (and
+			 no time travel.) Simply put, if you were born 1 Jan 2012 and
+			 today's date is 2 Jan 2012 you are 1 day old.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-3">
+			<div class="concept-title">First Step</div>
+			<div class="concept-content"><p>What is the first thing we should
+			do to solve a problem like this one?</p>
+			<p>Make sure we understand the problem. Other steps may get us to
+			a solution, but they are more likely to fail unless we understand
+			the problem in the first place.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-4">
+			<div class="concept-title">Understanding a Computational Problem
+			</div>
+			<div class="concept-content"><p>Given your birthday and the
+			current date, calculate your age in days.</p>
+			<p>What all computational problems have in common is they have
+			inputs (your birthday and the current date) and they have desired
+			outputs (your age in days.)</p>
+			<p>The problem is defined by the set of possible inputs, and the
+			relationship between those inputs and the desired outputs.</p>
+			<p>A solution to a problem is a procedure that can take any input
+			in the set of possible inputs and produce as output the desired
+			output we want.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-5">
+			<div class="concept-title">The First Rule</div>
+			<div class="concept-content"><p>The first rule in our Pythonista's
+			Guide To All Problems in the Galaxy, is: 1. What are the inputs?
+			</p>
+			<p>There is one rule before the first rule, the zeroth rule: 0.
+			Don't Panic! If you panic, you're never going to solve the problem.
+			</p>
+			<p>1. What are the inputs? In this case its very clearly stated:
+			"your birthday and the current date."</p>
+			<p>What is the set of inputs we want this to work for?</p>
+			<p>Inputs: two dates (that gives us a set of all possible inputs)
+			</p>
+			<p>What is the set of valid inputs?</p>
+			<p>"Assume that the birthday and current date are correct dates (
+			and no time travel.)" The second date also needs to be after the
+			first one. If we're being good defensive programmers, we should
+			check if this is true.</p>
+			<p>We're also going to require that the dates are valid dates in
+			the Gregorian calendar, which started on Oct 15, 1582.</p>
+			<p>Assumptions like this make life easier for programmers. They
+			make it easier to write our code since it has to work for fewer
+			possible inputs.</p>
+			<p>For most real world problems, its up to you to figure out how
+			to encode the inputs. This is one of the most important decisions
+			you can make in solving a problem.</p>
+			<p>In this case, the template for the problem indicates how the
+			inputs are represented. There are six parameters: <code>def
+			daysBetweenDates(year1, month1, day1, year2 month2, day2):</code>
+			</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-6">
+			<div class="concept-title">What Are the Outputs</div>
+			<div class="concept-content"><p>Given your birthday and the
+			current date, calculate your age in days.</p>
+			<p>The problem doesn't specify explicitly what we want the output
+			to be. The best answer is "Return a number giving the number of
+			days between the first date and second date." If we return a
+			number, we can do more things with it later.</p>
+			<p>Now we have the second step in Pythonista's Guide To All
+			Problems in the Galaxy: 2. What are the outputs?</p>
+			<p>All we have left to do is the third step: Solve the problem.
+			That is the hard part. Without steps 1 &amp; 2, it is even more
+			difficult.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-7">
+			<div class="concept-title">Next Step</div>
+			<div class="concept-content"><p>Now we have our <strong>Problem
+			Statement:</strong> Define a procedure,
+			<code>daysBetweenDates</code>, that takes two dates as inputs and
+			returns the number of days between the first date and second date.
+			Each date is passed in as three numbers giving a valid year,
+			month, and day in the Gregorian calendar. The second date must not
+			be before the first. </p>
+			<p>We know what the inputs are and we know what the outputs are.
+			</p>
+			<p>What we want to do is make sure we understand the relationship
+			between the two by working out some examples. Take several dates
+			and work out the number of days in between by hand.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-8">
+			<div class="concept-title">Take the Next Step</div>
+			<div class="concept-content"><p>We've done three main steps toward
+			solving the problem:</p>
+			<p>Understand the inputs.</p>
+			<p>Understand the outputs.</p>
+			<p>Understand the relationship between the two using some examples.
+			</p>
+			<p>At this point, you might be ready to start coding, but if the
+			problem is a challenging one you're probably not.</p>
+			<p>The next thing you should do is consider systematically how a
+			human solves the problem. If you don't understand how to solve the
+			problem yourself in a systematic way, you're not ready to start
+			writing code.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-9">
+			<div class="concept-title">Try an Example</div>
+			<div class="concept-content"><p><code>daysBetweenDates(2013, 1 ,
+			24, 2013, 6, 29)</code></p>
+			<p>If we were going to do this as a human, we might look at a
+			calendar, and count the days using the calendar:</p>
+				<div class="tab"><p>Jan 24-Jan 31 = 7</p></div>
+				<div class="tab"><p>February = 28</p></div>
+				<div class="tab"><p>March = 31</p></div>
+				<div class="tab"><p>April = 30</p></div>
+				<div class="tab"><p>May = 31</p></div>
+				<div class="tab"><p>June though the 29th = 29</p></div>
+			<p>Sum all those up and we get 156</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-10">
+			<div class="concept-title">Harder Example</div>
+			<div class="concept-content"><p>Lets say we increased the second
+			year: <code>daysBetweenDates(2013, 1 , 24, 2024, 6, 29)</code></p>
+			<p>Then we would need to add the days in the years (some of those
+			years will have 365 days, some will be leap years with 366 days:
+			</p>
+			<div class="tab"><p>2013 = 365</p></div>
+				<div class="tab"><p>2014 = 365</p></div>
+				<div class="tab"><p>...</p></div>
+				<div class="tab"><p>2024 = 366</p></div>
+			<p>Maybe based on this we have enough of an idea to write down as
+			an algorithm   what we did as a human.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-11">
+			<div class="concept-title">Algorithm Pseudocode</div>
+			<div class="concept-content"><p>Lets try to write down an
+			algorithm that systematizes how we solved the problem.</p>
+			<p>We're going to write this as pseudocode, that means we're not
+			worrying about the details of how to write exactly correct Python,
+			we're trying to get they idea down and see if it makes sense:</p>
+			<p><em>days = # of days in month1 - day1</em></p>
+			<p><em>month1 += 1</em></p>
+			<p><em>while month1 &lt; month2:</em></p>
+				<div class="tab"><p><em>days += # of days in month1</em></p>
+				</div>
+				<div class="tab"><p><em>month1 += 1</em></p></div>
+			<p><em>days += day2</em></p>
+			<p>We haven't yet accounted for years:</p>
+			<p><em>while year1 &lt; year2:</em></p>
+				<div class="tab"><p><em>days += days in year1</em></p></div>
+				</div>
+		</div>
+
+		<div class="concept" id="stage-2-7-12">
+			<div class="concept-title">Should We Implement It</div>
+			<div class="concept-content"><p>Should we implement our algorithm?
+			The best answer is no. The pseudocode is already fairly complex,
+			and it doesn't handle lots of cases. It doesn't handle: Input
+			dates in same month, <code>month2</code> before <code>month1</code>
+			 (which can easily happen with a different year,) or Counting days
+			 in leap years. We could try to fix the code to try to handle
+			 these cases, but our goal as programmers should be to try to find
+			 a simple solution first. Something this complicated is very
+			 difficult to get correct. Once you start handling lots of special
+			 cases, its really hard to get them all right.</p>
+			<p>Lets start by thinking of a simpler way. Often the way humans
+			solve a problem is not the simplest way, because humans are lazy,
+			we try to find shortcuts instead of doing things in a real simple,
+			mechanical way. On the other hand, computers are not lazy, doing
+			things in a simple mechanical way is great for computers, makes
+			the program easier to write, and makes it more likely for the
+			program to be correct.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-13">
+			<div class="concept-title">Different Approach</div>
+			<div class="concept-content"><p>Lets think of a really simple way
+			we might solve this problem: Start on the day of the first date,
+			and count the days. Go one day at a time. Keep doing this until we
+			get to our target date.</p>
+			<p>Pseudocode for a simple mechanical algorithm:</p>
+			<p><em>days = 0</em></p>
+			<p><em>while date1 is before date2:</em></p>
+				<div class="tab"><p><em>date1 = advance to next day</em></p>
+				</div>
+				<div class="tab"><p><em>days += 1</em></p></div></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-14">
+			<div class="concept-title">Simple Mechanical Algorithm</div>
+			<div class="concept-content"><p><em>days = 0</em></p>
+			<p><em>while date1 is before date2:</em></p>
+				<div class="tab"><p><em>date1 = advance to next day</em></p>
+				</div>
+				<div class="tab"><p><em>days += 1</em></p></div>
+			<p>This seems really brain dead simple: We should do a sanity
+			check to see how long it would take a computer to count 100 years.
+			</p>
+			<p>We are counting roughly 100 * 365 = 36,500 days</p>
+			<p>A processor can do about one billion instructions per second. (
+			One nanosecond per instruction)</p>
+			<p>Each day will take about 1000 instructions.</p>
+			<p>36.5 million instructions total, 0.036 seconds.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-15">
+			<div class="concept-title">Don't Optimize Prematurely</div>
+			<div class="concept-content"><p>Maybe 0.036 seconds is good enough.
+			 We need to look at how we're actually going to use this procedure.
+			  If we're going to use it for a human to tell how many days old
+			  they are in an interactive way, the fact that they have to wait
+			  3 hundredths of a second doesn't matter. Thats plenty fast
+			  enough, getting that down to less than a hundredth of a second
+			  is not worth the extra effort. If we're using it in a service
+			  thats doing this lots of times for lots and lots of different
+			  dates, then maybe its not fast enough, and its worth putting
+			  time and effort into doing something better. We shouldn't put
+			  that time and effort in until we know it should be faster.</p>
+			<p>Put this in Pythonista's Guide To All Problems in the Galaxy:
+			Don't optimize prematurely!</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-16">
+			<div class="concept-title">What Should We Write First</div>
+			<div class="concept-content"><p><em>days = 0</em></p>
+			<p><em>while date1 is before date2:</em></p>
+				<div class="tab"><p><em>date1 = advance to next day</em></p>
+				</div>
+				<div class="tab"><p><em>days += 1</em></p></div>
+			<p>We should write <code>nextDay(year, month, day)</code> to get
+			the next day for simple cases first. Advancing to the next day is
+			the most important thing to make the solution work. If we can't do
+			this, we need to think of a different approach.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-17">
+			<div class="concept-title">Define nextDay</div>
+			<div class="concept-content"><p>Define a procedure <code>nextDay(
+			year, month, day)</code> that takes as input a valid date in the
+			Gregorian calendar encoded as the year, month, and day as numbers
+			and returns the next day as a year, month, day.</p>
+			<p>Assume: All months have 30 days</p>
+<pre><code>def nextDay(year, month, day):
+	if day &lt; 30:
+		return year, month, day + 1
+	else:
+		if month == 12:
+			return year + 1, 1, 1
+		else:
+			return year, month + 1, 1</code></pre></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-18">
+			<div class="concept-title">Making Progress Is Good</div>
+			<div class="concept-content"><p>We haven't solved the problem but
+			we're making progress, and making progress is really good! We
+			should be happy about that.</p>
+			<p>The way to make progress is not to write lots of code, but to
+			write small bits of code, to test them, and then know what they do.
+			 We haven't solved the problem yet, we've got lots of
+			 simplifications, and we've only solved one part of it, but
+			 because of our solution, once we implement <code>nextDay</code>
+			 correctly, we're a good part of the way there.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-19">
+			<div class="concept-title">Define daysBetweenDates</div>
+			<div class="concept-content"><p>Define an (approximate) <code>
+			daysBetweenDates</code> procedure that would produce the correct
+			results given a correct <code>nextDay</code> procedure.</p>
+			<p>Hint: start by defining a helper procedure.</p>
+			<p>Step One: Pseudocode</p>
+			<p><em>days = 0</em></p>
+			<p><em>while date1 is before date2:</em></p>
+				<div class="tab"><p><em>date1 = day after date1</em></p></div>
+				<div class="tab"><p><em>days += 1</em></p></div>
+			<p><em>return days</em></p>
+			<p>If we're going to write a helper procedure, we should write something that makes it easier to do
+			<em>"date1 is before date2:"</em> Thats going to be a lot more simple to do as a helper procedure than to do it in the daysBetweenDates code. The other advantage of writing it as a helper procedure is we can test it separately. Instead of starting with daysBetweenDates, it would make more sense to write the helper procedure that determines the stopping condition.</p>
+<pre><code>def dateIsBefore(year1, month1, day1, year2, month2, day2):
+	if year1 &lt; year:
+		return True
+	if year1 == year2:
+		if month1 &lt; month2:
+			return True
+		if month1 == month2:
+			return day1 &lt; day2
+	return False</code></pre></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-20">
+			<div class="concept-title">Step Three daysBetweenDates</div>
+			<div class="concept-content"><p>Now that we've got the helper
+			procedure, defining daysBetweenDates is pretty simple:</p>
+	<pre><code>def daysBetweenDates(year1, month1, day1, year2, month2, day2):
+	"""Returns the number of days between year1/month1/day1 and
+	year2/month2/day2. Assumes inputs are valid dates in Gregorian calendar."""
+	assert not dateIsBefore(year2, month2, day2, year1, month1, day1)
+	days = 0
+	while dateIsBefore(year1, month1, day1, year2, month2, day2):
+		year1, month1, day1 = nextDay(year1, month1, day1)
+		days += 1
+	return days</code></pre></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-21">
+			<div class="concept-title">Real World Problem</div>
+			<div class="concept-content"><p>Now we should be pretty happy,
+			we've got the guts of our program working, we've tested it, we've
+			got some confidence its going to work correctly, but we've got a
+			problem:</p>
+			<p>We're not getting the right answers. Not all months have 30 days
+			. </p>
+			<p>See <code>daysInMonth</code> and <code>isLeapYear</code> below
+			for how we solved this.</p></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-22">
+			<div class="concept-title">Finish daysBetweenDate</div>
+			<div class="concept-content"><p>For the answer, we're going to
+			show you how we actually solved this, developing incrementally
+			&amp; testing as we went.</p>
+			<p>First we wrote a stub, <code>daysInMonth(year, month)</code>
+			that always returns 30.</p>
+			<p>Then, we modified our <code>nextDay(year, month, day)</code>
+			routine to use that stub.</p>
+			<p>Then, we tested <code>nextDay(year, month, day)</code> using
+			the stub <code>daysInMonth</code>.</p>
+			<p>Next, we modified <code>daysInMonth(year, month</code>to be
+			correct except for leap years.</p>
+			<p>Then, we tested <code>daysInMonth(year, month)</code> except
+			for leap years.</p>
+			<p>Next, we wrote <code>isLeapYear(year)</code>.</p>
+			<p>Then we tested <code>isLeapYear(year)</code> separately.</p><p>
+			Finally, we tested <code>daysBetweenDates(...)</code> for all test
+			cases.</p>
+			<p>The important thing is that we wrote small bits of code that we
+			tested independently as we went. Incremental testing makes
+			debugging easier. One of the most important things to learn as a
+			developer is to think of ways to structure code so you're able to
+			do meaningful tests as you go, and see the code get incrementally
+			closer to the solution that you need for the end.</p>
+
+<pre><code>def isLeapYear(year):
+#From Wikipedia--if (year is not exactly divisible by 4) then (it is a common
+year)
+#else
+#if (year is not exactly divisible by 100) then (it is a leap year)
+#else
+#if (year is not exactly divisible by 400) then (it is a common year)
+#else (it is a leap year)
+	if year % 400 == 0:
+		return True
+	if year % 100 == 0:
+		return False
+	if year % 4 == 0:
+		return True
+	return False
+
+def daysInMonth(year,month):
+	if month == 1 or month == 3 or month == 5 or month == 7 or month == 8 or
+	month == 10 or month == 12:
+		return 31
+	else:
+		if month == 2:
+			if isLeapYear(year):
+				return 29
+			else:
+				return 28
+		else:
+			return 30
+
+def nextDay(year, month, day):
+	"""Simple version: assume every month has 30 days"""
+	if day &lt; daysInMonth(year, month):
+		return year, month, day + 1
+	else:
+		if month == 12:
+			return year + 1, 1, 1
+		else:
+			return year, month + 1, 1
+
+def dateIsBefore(year1, month1, day1, year2, month2, day2):
+	"""Returns True if year1-month1-day1 is before year2-month2-day2.
+	Otherwise, returns False."""
+	if year1 &lt; year2:
+		return True
+	if year1 == year2:
+		if month1 &lt; month2:
+			return True
+		if month1 == month2:
+			return day1 &lt; day2
+	return False
+
+def daysBetweenDates(year1, month1, day1, year2, month2, day2):
+	"""Returns the number of days between year1/month1/day1
+	   and year2/month2/day2. Assumes inputs are valid dates
+	   in Gregorian calendar."""
+	# program defensively! Add an assertion if the input is not valid!
+	assert not dateIsBefore(year2, month2, day2, year1, month1, day1)
+	days = 0
+	while dateIsBefore(year1, month1, day1, year2, month2, day2):
+		year1, month1, day1 = nextDay(year1, month1, day1)
+		days += 1
+	return days
+
+def test():
+	test_cases = [((2012,1,1,2012,2,28), 58),
+				  ((2012,1,1,2012,3,1), 60),
+				  ((2011,6,30,2012,6,30), 366),
+				  ((2011,1,1,2012,8,8), 585 ),
+				  ((1900,1,1,1999,12,31), 36523)]
+
+	for (args, answer) in test_cases:
+		result = daysBetweenDates(*args)
+		if result != answer:
+			print "Test with data:", args, "failed"
+		else:
+			print "Test case passed!"
+
+test()</code></pre></div>
+		</div>
+
+		<div class="concept" id="stage-2-7-23">
+			<div class="concept-title">Conclusion</div>
+			<div class="concept-content"><p>Developing better problem solving
+			skills really is a lifetime effort. We hope some of the guidelines
+			here will be useful for solving many problems you'll encounter in
+			the future.</p>
+			<p>Remember Pythonista's Guide to All Problems in the Galaxy:</p>
+			<p>0. Don't Panic!</p>
+			<p>1. What are the inputs?</p>
+			<p>2. What are the outputs?</p>
+			<p>3. Work through some examples by hand.</p>
+			<p>4. Simple mechanical solution.</p>
+			<p>5. Develop incrementally and test as you go.</p></div>
+		</div>
+	</div>
+</body>
+</html>
