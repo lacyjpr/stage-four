@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>IPND Notes</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}
+IPND Stage 4 Notes
+{% endblock %}
+
+{% block content %}
 	<h1>IPND Notes Stage 4: Allow Comments</h1>
 	<div class="sidebar">
 		<nav>
@@ -1399,9 +1398,9 @@ Who are you?
 		<div class="concept" id="stage-4-7-10">
 			<div class="concept-title">For Loop Syntax</div>
 			<div class="concept-content"><p>The syntax of a <code>for</code> loop is very much like an <code>if</code> statement. It looks like this:</p>
-<pre><code>{% for statement %}
+<pre><code>&#123;% for statement %}
 body
-{% endfor %}</code></pre>
+&#123;% endfor %}</code></pre>
 			<p>Example: Replace the <code>if</code> statement in <code>shopping_list.html</code> with this:</p>
 <pre><code>&lt;ol&gt;
 	{% for x in range(1, n+1) %}
@@ -1535,6 +1534,4 @@ body
 			<p>Once again, to learn more about <code>jinja</code>, go to <a target="_blank" href="http://jinja.pocoo.org">jinja.pocoo.org</a>.</p></div>
 		</div>
 	</div>
-
-</body>
-</html>
+{% endblock %}
