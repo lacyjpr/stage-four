@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>IPND Notes</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}IPND Stage 1 Notes{% endblock %}
+{% block content %}
 	<h1>IPND Notes Stage 1: Make Your Web Page</h1>
 	<div class="sidebar">
 		<nav>
@@ -352,8 +347,5 @@
 			<a href="http://jigsaw.w3.org/css-validator/#validate_by_input">
 			http://jigsaw.w3.org/css-validator/#validate_by_input</a></p></div>
 		</div>
-
 	</div>
-
-</body>
-</html>
+{% endblock %}

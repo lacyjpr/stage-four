@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>IPND Notes</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}IPND Stage 3 Notes{% endblock %}
+{% block content %}
 	<h1>IPND Notes Stage 3: Create a Movie Website</h1>
 	<div class="sidebar">
 		<nav>
@@ -2109,5 +2104,4 @@ print(miley_cyrus.number_of_toys)</code></pre>
 			<p>What we've done is defined a method with the same name, <code>show_info</code>, in class <code>Child</code> and class <code>Parent</code>. The ability of a subclass to override a method that it inherited from its parent class, is called <em>Method Overriding</em>.</p></div>
 		</div>
 	</div>
-</body>
-</html>
+{% endblock %}

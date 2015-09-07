@@ -1364,24 +1364,24 @@ def render(self, template, **kw):
 		<div class="concept" id="stage-4-7-8">
 			<div class="concept-title">Statement Syntax</div>
 			<div class="concept-content"><p>The statement syntax in <code>jinja</code> is very simple:</p>
-<pre><code>{% statement %}
+<pre><code>&#123;% statement %}
 output
-{% end statement %}</code></pre>
+&#123;% end statement %}</code></pre>
 			<p>For example, an if statement would look like this:</p>
-<pre><code>{% if name == &quot;Steve&quot; %}
+<pre><code>&#123;% if name == &quot;Steve&quot; %}
 Hello, Steve!
-{% else %}
+&#123;% else %}
 Who are you?
-{% endif %}</code></pre>
+&#123;% endif %}</code></pre>
 			<p>In <code>jinja</code>, you have to tell it when the <code>if</code> statement is over.</p>
 			<p>Lets try this in practice: Add this to the first line of the <code>get</code> function to get the variable <code>n</code>. <code>n = self.request.get(&quot;n&quot;)</code></p>
 			<p>Change the next line to read <code>self.render(&quot;shopping_list.html&quot;, n=n)</code>.</p>
 			<p>Now edit your <code>shopping_list.html</code> and replace the Hello line with the following:</p>
-<pre><code>{% if n == 1 %}
+<pre><code>&#123;% if n == 1 %}
 	n equals 1
-{% else %}
+&#123;% else %}
 	n does not equal 1
-{% endif %}</code></pre>
+&#123;% endif %}</code></pre>
 			<p>When we load this in our browser, we see n does not equal 1, because we haven't specified <code>n</code> in our URL. Go ahead and set <code>n=1</code> in the URL. It still says n does not equal 1.</p></div>
 		</div>
 
@@ -1403,9 +1403,9 @@ body
 &#123;% endfor %}</code></pre>
 			<p>Example: Replace the <code>if</code> statement in <code>shopping_list.html</code> with this:</p>
 <pre><code>&lt;ol&gt;
-	{% for x in range(1, n+1) %}
-		&lt;li&gt;{{x **2}}&lt;/li&gt;
-	{% endfor %}
+	&#123;% for x in range(1, n+1) %}
+		&lt;li&gt;&#123;&#123;x **2}}&lt;/li&gt;
+	&#123;% endfor %}
 &lt;/ol&gt;</code></pre>
 			<p>Go to the browser to see if it works. Set <code>n</code> to 10</p>
 			<p>It works. It prints x 1 through 10 in the left column and x squared in the right column.</p></div>
@@ -1419,17 +1419,17 @@ body
 			<p>If <code>n</code> is divisible by 3 and 5 print FizzBuzz.</p>
 			<p>If its not divisible by 3 or 5, print the number.</p>
 <pre><code>&lt;ol&gt;
-	{% for x in range(1, n+1) %}
-		{% if x % 3 == 0 and x % 5 == 0 %}
+	&#123;% for x in range(1, n+1) %}
+		&#123;% if x % 3 == 0 and x % 5 == 0 %}
 			&lt;li&gt;FizzBuzz&lt;/li&gt;
-		{% elif x % 3 == 0 %}
+		&#123;% elif x % 3 == 0 %}
 			&lt;li&gt;Fizz&lt;/li&gt;
-		{% elif x % 5 == 0 %}
+		&#123;% elif x % 5 == 0 %}
 			&lt;li&gt;Buzz&lt;/li&gt;
-		{% else %}
-			&lt;li&gt;{{x}}&lt;/li&gt;
-		{% endif %}
-	{% endfor %}
+		&#123;% else %}
+			&lt;li&gt;&#123;&#123;x}}&lt;/li&gt;
+		&#123;% endif %}
+	&#123;% endfor %}
 &lt;/ol&gt;</code></pre></div>
 		</div>
 
@@ -1449,25 +1449,25 @@ body
 <pre><code>&lt;form&gt;
 	&lt;h2&gt;Add a food&lt;/h2&gt;
 	&lt;input type=&quot;text&quot; name=&quot;food&quot;&gt;
-	{%if items%}
-		{% for item in items %}
-			&lt;input type=&quot;hidden&quot; name=&quot;food&quot; value=&quot;{{item}}&quot;&gt;
-		{% endfor %}
-	{% endif %}
+	&#123;%if items%}
+		&#123;% for item in items %}
+			&lt;input type=&quot;hidden&quot; name=&quot;food&quot; value=&quot;&#123;&#123;item}}&quot;&gt;
+		&#123;% endfor %}
+	&#123;% endif %}
 	&lt;button&gt;Add&lt;/button&gt;
 &lt;/form&gt;</code></pre>
 			<p>Lets go ahead and test it in the browser. When you add multiple foods, they're added to the URL, rather than replacing them in the URL, so our hidden input is working.</p>
 			<p>Now, lets add the shopping list to the bottom:</p>
-<pre><code>{% if items %}
+<pre><code>&#123;% if items %}
 	&lt;br&gt;
 	&lt;br&gt;
 	&lt;h2&gt;Shopping List&lt;/h2&gt;
 	&lt;ul&gt;
-		{% for item in items%}
-			&lt;li&gt;{{ item }}&lt;/li&gt;
-		{% endfor %}
+		&#123;% for item in items%}
+			&lt;li&gt;&#123;&#123; item }}&lt;/li&gt;
+		&#123;% endfor %}
 	&lt;/ul&gt;
-{% endif %}</code></pre>
+&#123;% endif %}</code></pre>
 			<p>Lets see if it works. Adding multiple items now adds them to our shopping list.</p>
 			<p>Looking at our code, things are much more simple. We've got our parent class, <code>Handler</code>, that has our simple rendering functions. Our <code>MainPage</code> handler has gotten far shorter. All it does is get the items out of the URL and passes them into the shopping list template, which now has the structure of the html that we're actually generating. This is a lot easier to read and think about than what we had before with string substitution.</p>
 			<p>There is one little problem. What happens if you enter pizza with h1 tags? The html is rendered by the browser. This is because we didn't escape our html when we took user input. If the user had inserted javascript, they could wreak havoc. Its a common way of breaking into websites.</p></div>
@@ -1477,7 +1477,7 @@ body
 			<div class="concept-title">Escaping Templates</div>
 			<div class="concept-content"><p>Jinja makes it easy to escape html. There are two ways.</p>
 			<p>The simplest way first: They've got this syntax for adding a pipe, then a filter. There are lots of built in filters in jinja, one is called <code>escape</code>:</p>
-			<p><code>{{ item | escape }}</code></p>
+			<p><code>&#123;&#123; item | escape }}</code></p>
 			<p>So if you do pipe <code>escape</code> in this example, the variable item will get escaped.</p>
 			<p>That method works, but if you forget to put in a pipe <code>escape</code>, you've got a security hole.</p>
 			<p>The second more foolproof way: When you initialize <code>jinja</code>, if you add this:</p>
@@ -1503,7 +1503,7 @@ body
 			<p>You can have one template that includes the header and the footer and a bunch of sub-templates that redefine the content in the middle.</p>
 			<p>Here's how we're going to organize our code. We have <code>shopping_list.html</code> and <code>fizzbuzz.html</code>. These files don't have anything in common, but we want to add a title to them. We're going to make each of these inherit from <code>base.html</code>.</p>
 			<p>Example: Make a new file called <code>base.html</code></p>
-			<p>Here are its contents. Note the <code>{% block content %}</code> and <code>{% endblock %}</code> commands.</p>
+			<p>Here are its contents. Note the <code>&#123;% block content %}</code> and <code>&#123;% endblock %}</code> commands.</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 	&lt;head&gt;
@@ -1512,13 +1512,13 @@ body
 	&lt;body style=&quot;margin: 0&quot;&gt;
 		&lt;h1 style=&quot;background-color: #ddd; color: #888; margin: 0;
 		height: 50px&quot;&gt;Udacity Templates&lt;/h1&gt;
-		{% block content %}
-		{% endblock %}
+		&#123;% block content %}
+		&#123;% endblock %}
 	&lt;/body&gt;
 &lt;/html&gt;</code></pre>
-			<p>Lets use this with our shopping list: At the very top of shopping_list.html add <code>{% extends &quot;base.html&quot; %}</code></p>
+			<p>Lets use this with our shopping list: At the very top of shopping_list.html add <code>&#123;% extends &quot;base.html&quot; %}</code></p>
 			<p>Now lets see how it works. When we reload the page, the header is there, but none of the content.</p>
-			<p>We need to add <code>{% block content %}</code> before the content of <code>shopping_list.html</code>, and <code>{% endblock %}</code> at the end of our content.</p>
+			<p>We need to add <code>&#123;% block content %}</code> before the content of <code>shopping_list.html</code>, and <code>&#123;% endblock %}</code> at the end of our content.</p>
 			<p>Save the file and go back to the browser. When you reload the page you see the content!</p>
 			<p>Now do the same thing with <code>fizzbuzz.html</code></p></div>
 		</div>
