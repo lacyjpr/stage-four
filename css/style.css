@@ -1,0 +1,122 @@
+body {
+	font-family: Georgia, serif;
+	font-size: 18px;
+	max-width: 1000px;
+}
+
+code {
+	font-size: 17px;
+	background-color: #c9cfe5; /*aero blue*/
+}
+
+
+h1 {
+	text-align: center;
+	background-color: dimgray;
+	color: white;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+}
+
+h2 {
+	text-align: center;
+	padding: 5px;
+	margin: 5px;
+}
+
+ol {
+	margin: 0px;
+}
+
+p {
+	margin: 0px;
+}
+
+pre {
+	text-align: left;
+	line-height: 19px;
+	background-color: #c9cfe5; /*aero blue*/
+	white-space: pre-wrap;
+	tab-size: 4;
+	width:100%;
+	margin: 3px;
+}
+
+sup {
+	vertical-align: top; /*stop sup from altering line height*/
+	font-size: 0.6em; /*adjust font size to account for vertical-align: top*/
+}
+
+.lesson {
+	background-color: dimgray;
+	color: white;
+	/*padding: 10px;*/
+	padding-top: 1px;
+	padding-bottom: 1px;
+	margin: 10px;
+	border-radius: 10px;
+	margin-left: 240px; /*maintain consistent spacing between sidebar & top heading*/
+	/*margin-left: 24%;*/
+}
+
+.concept {
+	background-color: cyan;
+	color: black;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+}
+
+.concept-title {
+	font-weight: bold;
+	font-size: 24px;
+	margin: 4px;
+	text-align: left;
+}
+
+.concept-content {
+	font-weight: 500;
+	line-height: 21px;
+	margin: 8px;
+}
+
+.sidebar {
+	float: left;
+	background-color: cyan;
+	border-radius: 10px;
+	padding: 10px;
+	margin-left: 10px;
+	width: 200px;
+	/*height: 100%;*/
+	/*height: 12795px; /*height: 100%; wont create equal column sizes*/
+	text-align: left;
+}
+
+.sidebar ul {
+	list-style-type: none; /*eliminate bullets*/
+	padding-left: 0px; /*eliminate default padding so text aligns left in sidebar*/
+	padding-right: 0px;
+	margin: 0px;
+}
+
+.tab {
+	margin-left: 20px;
+}
+
+.tab-2 {
+	margin-left: 40px;
+}
+
+.tab-3 {
+	margin-left: 60px;
+}
+
+.tab-4 {
+	margin-left: 80px;
+}
+
+.tab-5 {
+	margin-left: 100px;
+}
+
