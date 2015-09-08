@@ -1662,7 +1662,7 @@ body
 			<p>Then he creates an index of hotel ids:</p>
 			<p><code>create index hotel_id on hotel(id);</code></p>
 			<p>This is the SQL command for creating an index.</p>
-			<p>Then he runs <code>explain analyze select name from hotels where id = 51492</code> again.</p>
+			<p>Then he runs <code>explain analyze select name from hotels where id = 51492;</code> again.</p>
 			<p>Now, instead of doing a sequential scan, the database does an index scan.</p>
 			<p>The total runtime goes from 142 milliseconds to 0.163 milliseconds using the index.</p></div>
 		</div>
@@ -1691,7 +1691,7 @@ body
 			<p>Consistency: The database will always be consistent. On Reddit, a link has a score, and the user submitting the link has a karma score that gets updated at the same time. Consistency means we don't update the score without also updating the karma.</p>
 			<p>Isolation: No transaction can interfere with another's. Lets say a link on Reddit gets an up and down vote at the same time. Isolation means the computation of the up vote wont interfere with the computation of the down vote. Each transaction cannot affect other transactions. Sometimes this is accomplished through locking, but the database needs some way to resolve these types of conflicts.</p>
 			<p>Durability: Once a transaction is committed, it won't be lost. This means if we update our database and update some rows, and the database says ok, successful, that even if the database is turned off or crashes or is unplugged, we won't lose that transaction.</p>
-			<p>Its hard to build a database that is fully atomic, consistent, isolated and durable. There are always trade offs.</p></div>
+			<p>Its difficult to build a database that is fully atomic, consistent, isolated and durable. There are always trade offs involved.</p></div>
 		</div>
 
 		<div class="concept" id="stage-4-8-15">
@@ -1700,7 +1700,7 @@ body
 			<p>What we've been referring to as tables are known as entities in Datastore. They serve basically the same purpose, which is how you organize things of the same data type together.</p>
 			<p>Some important things about entities: Columns are not fixed. In a table you have a fixed number of columns that you define when you create a table. In an entity, you can have whatever columns you want, even entities of the same type don't have to have the same columns. This makes development much easier. When you're working with tables, you often realize you need to add a column, which can be very troublesome. With Datastore, you can change the columns as you're developing.</p>
 			<p>Entities all have an ID. The ID can be assigned automatically, or you can make up your own, integers, strings, whatever you want.</p>
-			<p>Entities have parents and ancestors. This is a relationship to other entities with a couple of specific use cases. If we had an entity, link, it might have a parent, Reddit. We can do queries like get me all the links that are a child of Reddit.</p></div>
+			<p>Entities have parents and ancestors. This is a relationship to other entities with a couple of specific use cases. If we had an entity, link, it might have a parent, Reddit. We can do queries like &quot;get me all the links that are a child of Reddit.&quot;</p></div>
 		</div>
 	</div>
 
