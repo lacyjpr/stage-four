@@ -1591,35 +1591,35 @@ body
 			<p>SQL was invented in the 1970's, long before the internet, the web or web applications. SQL was built to solve problems that are very different from the problems you'll encounter building a consumer web application.</p>
 			<p>There are still a lot of very important parts to SQL. We'll be discussing the major parts so you'll know how to use them. Keep in mind that SQL and relational databases have existed long before the web, so there are some things that aren't very relevant.</p>
 			<p>SQL looks something like this:</p>
-			<p>SELECT * FROM links WHERE id=5;</p>
-			<p>What this says is SELECT, which means retrieve data, *, which means all columns, FROM links, this is the table we're fetching data from, WHERE id=5, which is a constraint.</p>
-			<p>The SELECT * section is what we're selecting. The * can be a list of columns instead. If you just want the URL, it would look like this: SELECT url.</p>
-			<p>The FROM links clause is where we're going to fetch the data from. You can include any table or multiple tables.</p>
-			<p>WHERE id=5 is the WHERE clause. These are the constraints. They tell us which rows from our table to return. We can put quite a bit in here.</p></div>
+			<p><code>SELECT * FROM links WHERE id=5;</code></p>
+			<p>What this says is <code>SELECT</code>, which means retrieve data, <code>*</code>, which means all columns, <code>FROM links</code>, this is the table we're fetching data from, <code>WHERE id=5</code>, which is a constraint.</p>
+			<p>The <code>SELECT *</code> section is what we're selecting. The <code>*</code> can be a list of columns instead. If you just want the URL, it would look like this: <code>SELECT url</code>.</p>
+			<p>The <code>FROM links</code> clause is where we're going to fetch the data from. You can include any table or multiple tables.</p>
+			<p><code>WHERE id=5</code> is the <code>WHERE</code> clause. These are the constraints. They tell us which rows from our table to return. We can put quite a bit in here.</p></div>
 		</div>
 
 		<div class="concept" id="stage-4-8-7">
 			<div class="concept-title">More Advanced SQL</div>
 			<div class="concept-content"><p>We just used this query in a quiz:</p>
-			<p>SELECT * FROM links WHERE id = 2</p>
+			<p><code>SELECT * FROM links WHERE id = 2</code></p>
 			<p>Lets talk about how we can make it a bit more fancy.</p>
 			<p>First, lets change the constraint a little bit:</p>
-			<p>SELECT * FROM links WHERE submitter-id = 5 AND votes &gt; 23</p>
-			<p>We could change the AND to an OR:</p>
-			<p>SELECT * FROM links WHERE submitter-id = 5 OR votes &gt; 23</p></div>
+			<p><code>SELECT * FROM links WHERE submitter-id = 5 AND votes &gt; 23</code></p>
+			<p>We could change the <code>AND</code> to an <code>OR</code>:</p>
+			<p><code>SELECT * FROM links WHERE submitter-id = 5 OR votes &gt; 23</code></p></div>
 		</div>
 
 		<div class="concept" id="stage-4-8-8">
 			<div class="concept-title">Order By</div>
 			<div class="concept-content"><p>Start with the basic statement we've been using:</p>
-			<p>SELECT * FROM links</p>
+			<p><code>SELECT * FROM links</code></p>
 			<p>Add a where clause:</p>
-			<p>SELECT * FROM links WHERE votes &gt; 10</p>
+			<p><code>SELECT * FROM links WHERE votes &gt; 10</code></p>
 			<p>Add a new type of clause:</p>
-			<p>SELECT * FROM links WHERE votes &gt; 10 ORDER BY votes</p>
-			<p>This is the ORDER BY clause. It says to sort the results. By default, ORDER BY is ascending. You can specify ASC for ascending or DESC for descending.</p>
-			<p>One other thing to note is that the WHERE clause is not required. So we could change our statement to read:</p>
-			<p>SELECT * FROM links ORDER BY votes DESC</p></div>
+			<p><code>SELECT * FROM links WHERE votes &gt; 10 ORDER BY votes</code></p>
+			<p>This is the <code>ORDER BY</code> clause. It says to sort the results. By default, <code>ORDER BY</code> is ascending. You can specify <code>ASC</code> for ascending or <code>DESC</code> for descending.</p>
+			<p>One other thing to note is that the <code>WHERE</code> clause is not required. So we could change our statement to read:</p>
+			<p><code>SELECT * FROM links ORDER BY votes DESC</code></p></div>
 		</div>
 
 		<div class="concept" id="stage-4-8-9">
@@ -1628,12 +1628,12 @@ body
 			<p>Remember our link table and user table from before. The user id in the link table refers to the id column of the user table.</p>
 			<img src="static/joins.png" alt="Two Tables">
 			<p>We have a basic SQL statement:</p>
-			<p>SELECT * FROM link WHERE user-id = 22</p>
+			<p><code>SELECT * FROM link WHERE user-id = 22</code></p>
 			<p>What if we didn't know the user's id? What if we wanted to select from the links table all of the links submitted by users with the name Spez?</p>
 			<p>There are a couple of ways:</p>
 			<p>You could first do a query for the user id of Spez, grab the user id, then run the query above.</p>
 			<p>Instead, you could combine those into one query:</p>
-			<p>SELECT link.* FROM link, user WHERE link.user-id = user.id AND user.name = 'Spez'</p>
+			<p><code>SELECT link.* FROM link, user WHERE link.user-id = user.id AND user.name = 'Spez'</code></p>
 			<p>This is a join query. Your SQL engine will decide which of the tables to scan first, it will probably do the user table first so it will find the user name Spez, then find all the links whose user-id property matches the user.id field in the user table.</p>
 			<p>We don't use joins very often when writing web software. You'll see it in almost every SQL tutorial, but joins don't work very well for the types of problems we're going to be solving writing web stuff.</p></div>
 		</div>
@@ -1645,32 +1645,32 @@ body
 			<p>That works fine if you have 25 links, but if you have a million or a billion, iterating over that entire list is going to take some time. We want to make our websites fast.</p>
 			<p>An index is just like an index in a book. They increase the speed of queries.</p>
 			<p>One index you're probably already familiar with is the hash table. In Python you can have a dictionary that is a mapping of a key to a value.</p>
-index = {1: 'Link 1',
+<pre><code>index = {1: 'Link 1',
 		 2: 'Link 2',
 		 3: 'Link 3',
-		 ...}
-			<p>You can do very fast lookups by doing something like index[2] which will refer to index key 2 of the dictionary. The value of key 2, Link 2 will be returned. We don't have to iterate over every element of a list to see if it matches our constraint. We jump immediately to the value. That makes queries run much faster.</p>
-			<p>An index is very useful for making reads simpler. But, there is a maintenance cost to having them in that you have to keep it up to date when you're updating the rest of your database. If you have multiple indexes on your table, each time you update your table you have to update each of your indexes. Indexes increase the speed of database reads but decrease the speed of database inserts.</p></div>
+		 ...}</code></pre>
+			<p>You can do very fast lookups by doing something like <code>index[2]</code> which will refer to index key 2 of the dictionary. The value of key 2, Link 2 will be returned. We don't have to iterate over every element of a list to see if it matches our constraint. We jump immediately to the value. That makes queries run much faster.</p>
+			<p>An index is very useful for making reads simpler. But, there is a maintenance cost to having them in that you have to keep them up to date when you're updating the rest of your database. If you have multiple indexes on your table, each time you update your table you have to update each of your indexes. Indexes increase the speed of database reads but decrease the speed of database inserts.</p></div>
 		</div>
 
 		<div class="concept" id="stage-4-8-11">
 			<div class="concept-title">Real-World Example</div>
 			<div class="concept-content"><p>Steve, the instructor is logged in to his development machine for Hipmunk. Then he logs into Postgresql.</p>
-			<p>They have a table of hotels. He does select count(*) from hotels; and gets 312901 rows.</p>
-			<p>Then he does select name from hotels where id = 51492; the hotel's name displays.</p>
-			<p>Then he enters explain analyze select name from hotels where id = 51492; What that does is run the query then explain what it did. The result says it did a sequential scan on hotels, and it took 142 milliseconds.</p>
+			<p>They have a table of hotels. He does <code>select count(*) from hotels;</code> and gets 312901 rows.</p>
+			<p>Then he does <code>select name from hotels where id = 51492;</code> the hotel's name displays.</p>
+			<p>Then he enters <code>explain analyze select name from hotels where id = 51492;</code> What that does is run the query then explain what it did. The result says it did a sequential scan on hotels, and it took 142 milliseconds.</p>
 			<p>Then he creates an index of hotel ids:</p>
-			<p>create index hotel_id on hotel(id);</p>
+			<p><code>create index hotel_id on hotel(id);</code></p>
 			<p>This is the SQL command for creating an index.</p>
-			<p>Then he runs explain analyze select name from hotels where id = 51492 again.</p>
+			<p>Then he runs <code>explain analyze select name from hotels where id = 51492</code> again.</p>
 			<p>Now, instead of doing a sequential scan, the database does an index scan.</p>
-			<p>The total runtime went from 142 milliseconds to 0.163 milliseconds.</p></div>
+			<p>The total runtime goes from 142 milliseconds to 0.163 milliseconds using the index.</p></div>
 		</div>
 
 		<div class="concept" id="stage-4-8-12">
 			<div class="concept-title">Indexes for Sorting</div>
 			<div class="concept-content"><p>So far we've been talking about using a hashtable or dictionary to create an index. One of the characteristics of a hashtable is that its not sorted. So, we lose our sorting information when we use one.</p>
-			<p>We saw some SQL queries before that used the ORDER BY statement. Obviously, that requires some sorting.</p>
+			<p>We saw some SQL queries before that used the <code>ORDER BY</code> statement. Obviously, that requires some sorting.</p>
 			<p>There's a different kind of mapping we can use called a tree. Trees are a basic data structure that accomplish something similar to a hashtable, but they are sorted. Why use a hashtable when you could use a tree instead? Lookups are slower with a tree. Hashtables have constant time lookup. Looking up any particular key is not a function of the number of keys in the hashtable. With a tree, lookup times are a function of log n, where n is the number of elements in a tree. So, lookup speed decreases with the size of the tree.</p>
 			<p>Depending on what you're going to use your index for, you may choose to use a hashtable or a tree. Many databases let you choose, others don't, others choose for you.</p></div>
 		</div>
@@ -1679,9 +1679,9 @@ index = {1: 'Link 1',
 			<div class="concept-title">Another Real-World Example</div>
 			<div class="concept-content"><p>If you've used Reddit before, its a huge list of links, and users can vote links up or down. The front page is whatever is the most popular, or hottest.</p>
 			<p>To do this, Reddit uses a special index. They've got a link table, that looks a lot like what we've been dealing with, but it also has a field called score. This is the total score of the link.</p>
-			<p>The way the Reddit hotness algorithm works is there is an index on the score field, called the hot_index. Every time a link gets an up vote, the score is incremented by a certain amount, computed by Reddit's hot function. That function looks something like this: amount = hot(ups, downs, date)</p>
+			<p>The way the Reddit hotness algorithm works is there is an index on the score field, called the hot_index. Every time a link gets an up vote, the score is incremented by a certain amount, computed by Reddit's hot function. That function looks something like this: <code>amount = hot(ups, downs, date)</code></p>
 			<p>Over time, the value of an up vote increases. An up vote today might be worth one point. The same up vote tomorrow might be worth 10 points. This causes scores over time to constantly increase, so newer links always have higher scores than older links. A link thats one day old with lots of votes will have the same score as a link from today with a few votes. That's what keeps Reddit's front page churning.</p>
-			<p>All Reddit has to do is SELECT * FROM links ORDER BY score DESC. Because they're using the hot_index, its a very simple and fast query.</p></div>
+			<p>All Reddit has to do is <code>SELECT * FROM links ORDER BY score DESC</code>. Because they're using the hot_index, its a very simple and fast query.</p></div>
 		</div>
 
 		<div class="concept" id="stage-4-8-14">
@@ -1689,9 +1689,9 @@ index = {1: 'Link 1',
 			<div class="concept-content"><p>This stands for Atomicity, Consistency, Isolation, and Durability.</p>
 			<p>Atomicity: All parts of a transaction succeed or fail together. A transaction is just a group of commands. Maybe we're updating two tables at once, or updating multiple rows in our database together. Atomicity means that all those commands are going to succeed or they're all going to fail. We don't do part of the transaction.</p>
 			<p>Consistency: The database will always be consistent. On Reddit, a link has a score, and the user submitting the link has a karma score that gets updated at the same time. Consistency means we don't update the score without also updating the karma.</p>
-			<p>Isolation: No transaction can interfere with another's. Lets say a link on Reddit gets an up and down vote at the same time. Isolation means the computation of the up vote wont interfere with the computation of the down vote. Each transaction cannot affect other transactions. Sometimes this is accomplished through locking, but the database needs a way to resolve these types of conflicts.</p>
+			<p>Isolation: No transaction can interfere with another's. Lets say a link on Reddit gets an up and down vote at the same time. Isolation means the computation of the up vote wont interfere with the computation of the down vote. Each transaction cannot affect other transactions. Sometimes this is accomplished through locking, but the database needs some way to resolve these types of conflicts.</p>
 			<p>Durability: Once a transaction is committed, it won't be lost. This means if we update our database and update some rows, and the database says ok, successful, that even if the database is turned off or crashes or is unplugged, we won't lose that transaction.</p>
-			<p>Its hard to have a database that meets all these criteria. There are always trade offs.</p></div>
+			<p>Its hard to build a database that is fully atomic, consistent, isolated and durable. There are always trade offs.</p></div>
 		</div>
 
 		<div class="concept" id="stage-4-8-15">
