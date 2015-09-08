@@ -1534,4 +1534,177 @@ body
 			<p>Once again, to learn more about <code>jinja</code>, go to <a target="_blank" href="http://jinja.pocoo.org">jinja.pocoo.org</a>.</p></div>
 		</div>
 	</div>
+
+	<div class="lesson" id="stage-4-8">
+		<h2>Stage 4.8 Databases</h2>
+
+		<div class="concept" id="stage-4-8-1">
+			<div class="concept-title">Databases</div>
+			<div class="concept-content">Databases are how you store all the information we've been collecting from users. This is the final piece that will allow us to build fully functional web applications.
+			Databases are very complex. We could spend a lot of time talking about them, you could get a PHD in databases, but we only have about an hour in this lesson.
+			The lesson will be divided into two parts: In the first part, we'll talk about SQL and other basic database technology. In the second part, we'll cover Google App Engine's Datastore. It abstracts away a lot of the headaches of installing a database and getting it set up. The reason we decided to use App Engine for this Nanodegree is the ease of getting started with databases.</div>
+		</div>
+
+		<div class="concept" id="stage-4-8-2">
+			<div class="concept-title">Databases Continued</div>
+			<div class="concept-content">What is a database?
+			A program that stores and retrieves large amounts of structured data.
+			We've got our user, their computer, the internet, and our servers. Until now, we've been referring to these servers as web servers running our web applications. In many cases, these servers are database servers as well. We might have a special server just for databases.
+			A database can refer to a program that stores and retrieves the data, it can refer to the machine running the program, or it can refer to a system of machines operating together running the program. The same way, web server can refer to the program that hosts your web app, the machine the program runs on, or a system of machines working together to host your application.
+			A request may come in from the user, via the internet, through our servers, and we may need to retrieve some data for the user. Lets say this is Reddit and we need to draw the front page. To do that we need a list of links we're going to draw. We get that from the database. The database responds with the data to the web app, which may manipulate the data to get it ready for display, and then send it back to the user.</div>
+		</div>
+
+		<div class="concept" id="stage-4-8-3">
+			<div class="concept-title">Tables</div>
+			<div class="concept-content"><img src="static/tables.png" alt="tables, rows and columns">
+			All database products are a little different. One thing that applies in most every case is tables.
+			Lets say we're building a site like Reddit, thats going to take links from users, store them in a database, allow users to vote on those links, and we'll show what's most popular.
+			We'll probably have a table for links. A link is made up of a number of things. Its got an ID, its got a number of votes, its got the user that submitted the link, its got a date of when the link was submitted, it has a title, and a URL. These are all called columns. Columns are the properties that make up a particular type, in this case link, which is what we'll call our table
+			Every entry of a link in this table is called a row. A row is one instance of an element in the table. We'll have many rows for all the links that are submitted.
+			Lets talk about each of these columns. The ID column is important in almost all tables. Generally every row will have an ID. This is how you refer to that row specifically. Its not required in most databases that you have something called ID, but its very helpful. Usually its an integer, it could be a string. The Google App Engine Datastore allows you to use integers or strings.
+			The votes column is also an integer, it refers to the number of votes on the link.
+			The user column is also an integer. It is a reference to the ID of the user who submitted the link. We may have another table called user, that has its own set of columns. One of which is ID. It may also have name, date and password.
+			The date column probably has a type of date. Not all databases support the date type, but the one we'll be using does. Its probably an integer, but depending on the database they may have a real date type.
+			The title column is a string. In some databases string may be known as text or varchar or something else.
+			The URL column is also a string.
+			Our table is defined with columns and filled up with rows. Every time a user submits something, we add a new row.</div>
+		</div>
+
+		<div class="concept" id="stage-4-8-4">
+			<div class="concept-title">Why Databases</div>
+			<div class="concept-content">There are many downsides of querying data by hand in Python. You could make the equivalent of a database table and query it by writing custom code for each query, but its very hard. Its also very error prone. You have to write code for every query you want to answer and if you don't get the sort order right or something else goes wrong you have trouble. Its tedious. writing a new function for each query can get very tiresome. Most importantly, its slow. If you had a million links, like on Reddit, it wouldn't even fit in memory in Python.
+			Databases exist to take big chunks of data, and answer queries on them in a reasonable amount of time without having to write a lot of custom code.</div>
+		</div>
+
+		<div class="concept" id="stage-4-8-5">
+			<div class="concept-title">Types of Databases</div>
+			<div class="concept-content">There are lots of different types of databases. We'll focus on the major ones.
+			We've got one type of database called relational databases. They often use a language called SQL to manipulate them. Some examples are Postgresql, MySQL, sqlite, Oracle. These databases all work with tables, they use SQL to manipulate those tables, and are general purpose handy things.
+			There are other databases in the world. Some examples are Google App Engine's Datastore, Amazon Dynamo, NoSQL: Mongo, Couch.
+			Which database is the best? None of them. They are all different and all have their place for solving different types of problems. Its not uncommon for large websites to use multiple different database products.
+			We're going to focus on the basics of SQL and Google App Engine's Datastore.</div>
+		</div>
+
+		<div class="concept" id="stage-4-8-6">
+			<div class="concept-title">SQL</div>
+			<div class="concept-content">SQL stands for Structured Query Language. Its a language for expressing queries. You use SQL on a relational database to ask questions of it, to get data out of it.
+			SQL was invented in the 1970's, long before the internet, the web or web applications. SQL was built to solve problems that are very different from the problems you'll encounter building a consumer web application.
+			There are still a lot of very important parts to SQL. We'll be discussing the major parts so you'll know how to use them. Keep in mind that SQL and relational databases have existed long before the web, so there are some things that aren't very relevant.
+			SQL looks something like this:
+			SELECT * FROM links WHERE id=5;
+			What this says is SELECT, which means retrieve data, *, which means all columns, FROM links, this is the table we're fetching data from, WHERE id=5, which is a constraint.
+			The SELECT * section is what we're selecting. The * can be a list of columns instead. If you just want the URL, it would look like this: SELECT url.
+			The FROM links clause is where we're going to fetch the data from. You can include any table or multiple tables.
+			WHERE id=5 is the WHERE clause. These are the constraints. They tell us which rows from our table to return. We can put quite a bit in here.</div>
+		</div>
+
+		<div class="concept" id="stage-4-8-7">
+			<div class="concept-title">More Advanced SQL</div>
+			<div class="concept-content">We just used this query in a quiz:
+			SELECT * FROM links WHERE id = 2
+			Lets talk about how we can make it a bit more fancy.
+			First, lets change the constraint a little bit:
+			SELECT * FROM links WHERE submitter-id = 5 AND votes &gt; 23
+			We could change the AND to an OR:
+			SELECT * FROM links WHERE submitter-id = 5 OR votes &gt; 23</div>
+		</div>
+
+		<div class="concept" id="stage-4-8-8">
+			<div class="concept-title">Order By</div>
+			<div class="concept-content">Start with the basic statement we've been using:
+			SELECT * FROM links
+			Add a where clause:
+			SELECT * FROM links WHERE votes &gt; 10
+			Add a new type of clause:
+			SELECT * FROM links WHERE votes &gt; 10 ORDER BY votes
+			This is the ORDER BY clause. It says to sort the results. By default, ORDER BY is ascending. You can specify ASC for ascending or DESC for descending.
+			One other thing to note is that the WHERE clause is not required. So we could change our statement to read:
+			SELECT * FROM links ORDER BY votes DESC</div>
+		</div>
+
+		<div class="concept" id="stage-4-8-9">
+			<div class="concept-title">Joins</div>
+			<div class="concept-content">Joins are a type of SQL query that involve multiple tables.
+			Remember our link table and user table from before. The user id in the link table refers to the id column of the user table.
+			<img src="static/joins.png" alt="Two Tables">
+			We have a basic SQL statement:
+			SELECT * FROM link WHERE user-id = 22
+			What if we didn't know the user's id? What if we wanted to select from the links table all of the links submitted by users with the name Spez?
+			There are a couple of ways:
+			You could first do a query for the user id of Spez, grab the user id, then run the query above.
+			Instead, you could combine those into one query:
+			SELECT link.* FROM link, user WHERE link.user-id = user.id AND user.name = 'Spez'
+			This is a join query. Your SQL engine will decide which of the tables to scan first, it will probably do the user table first so it will find the user name Spez, then find all the links whose user-id property matches the user.id field in the user table.
+			We don't use joins very often when writing web software. You'll see it in almost every SQL tutorial, but joins don't work very well for the types of problems we're going to be solving writing web stuff.</div>
+		</div>
+
+		<div class="concept" id="stage-4-8-10">
+			<div class="concept-title">Indexes</div>
+			<div class="concept-content">
+			So far, we've been doing sequential scans. A sequential scan is where you have a list of something, in our case links. We have a list of links, and we've been doing things like &quot;find the link with the id 2.&quot; In which case we write a loop to go through the list and find the one with id 2.
+			That works fine if you have 25 links, but if you have a million or a billion, iterating over that entire list is going to take some time. We want to make our websites fast.
+			An index is just like an index in a book. They increase the speed of queries.
+			One index you're probably already familiar with is the hash table. In Python you can have a dictionary
+			that is a mapping of a key to a value.
+index = {1: 'Link 1',
+		 2: 'Link 2',
+		 3: 'Link 3',
+		 ...}
+			You can do very fast lookups by doing something like index[2] which will refer to index key 2 of the dictionary. The value of key 2, Link 2 will be returned. We don't have to iterate over every element of a list to see if it matches our constraint. We jump immediately to the value. That makes queries run much faster.
+			An index is very useful for making reads simpler. But, there is a maintenance cost to having them in that you have to keep it up to date when you're updating the rest of your database. If you have multiple indexes on your table, each time you update your table you have to update each of your indexes. Indexes increase the speed of database reads but decrease the speed of database inserts.</div>
+		</div>
+
+		<div class="concept" id="stage-4-8-11">
+			<div class="concept-title">Real-World Example</div>
+			<div class="concept-content">Steve, the instructor is logged in to his development machine for Hipmunk. Then he logs into Postgresql.
+			They have a table of hotels. He does select count(*) from hotels; and gets 312901 rows.
+			Then he does select name from hotels where id = 51492; the hotel's name displays.
+			Then he enters explain analyze select name from hotels where id = 51492; What that does is run the query then explain what it did. The result says it did a sequential scan on hotels, and it took 142 milliseconds.
+			Then he creates an index of hotel ids:
+			create index hotel_id on hotel(id);
+			This is the SQL command for creating an index.
+			Then he runs explain analyze select name from hotels where id = 51492 again.
+			Now, instead of doing a sequential scan, the database does an index scan.
+			The total runtime went from 142 milliseconds to 0.163 milliseconds.</div>
+		</div>
+
+		<div class="concept" id="stage-4-8-12">
+			<div class="concept-title">Indexes for Sorting</div>
+			<div class="concept-content">So far we've been talking about using a hashtable or dictionary to create an index. One of the characteristics of a hashtable is that its not sorted. So, we lose our sorting information when we use one.
+			We saw some SQL queries before that used the ORDER BY statement. Obviously, that requires some sorting.
+			There's a different kind of mapping we can use called a tree. Trees are a basic data structure that accomplish something similar to a hashtable, but they are sorted. Why use a hashtable when you could use a tree instead? Lookups are slower with a tree. Hashtables have constant time lookup. Looking up any particular key is not a function of the number of keys in the hashtable. With a tree, lookup times are a function of log n, where n is the number of elements in a tree. So, lookup speed decreases with the size of the tree.
+			Depending on what you're going to use your index for, you may choose to use a hashtable or a tree. Many databases let you choose, others don't, others choose for you.</div>
+		</div>
+
+		<div class="concept" id="stage-4-8-13">
+			<div class="concept-title">Another Real-World Example</div>
+			<div class="concept-content">If you've used Reddit before, its a huge list of links, and users can vote links up or down. The front page is whatever is the most popular, or hottest.
+			To do this, Reddit uses a special index. They've got a link table, that looks a lot like what we've been dealing with, but it also has a field called score. This is the total score of the link.
+			The way the Reddit hotness algorithm works is there is an index on the score field, called the hot_index. Every time a link gets an up vote, the score is incremented by a certain amount, computed by Reddit's hot function. That function looks something like this: amount = hot(ups, downs, date)
+			Over time, the value of an up vote increases. An up vote today might be worth one point. The same up vote tomorrow might be worth 10 points. This causes scores over time to constantly increase, so newer links always have higher scores than older links. A link thats one day old with lots of votes will have the same score as a link from today with a few votes. That's what keeps Reddit's front page churning.
+			All Reddit has to do is SELECT * FROM links ORDER BY score DESC. Because they're using the hot_index, its a very simple and fast query.</div>
+		</div>
+
+		<div class="concept" id="stage-4-8-14">
+			<div class="concept-title">ACID</div>
+			<div class="concept-content">This stands for Atomicity, Consistency, Isolation, and Durability.
+			Atomicity: All parts of a transaction succeed or fail together. A transaction is just a group of commands. Maybe we're updating two tables at once, or updating multiple rows in our database together. Atomicity means that all those commands are going to succeed or they're all going to fail. We don't do part of the transaction.
+			Consistency: The database will always be consistent. On Reddit, a link has a score, and the user submitting the link has a karma score that gets updated at the same time. Consistency means we don't update the score without also updating the karma.
+			Isolation: No transaction can interfere with another's. Lets say a link on Reddit gets an up and down vote at the same time. Isolation means the computation of the up vote wont interfere with the computation of the down vote. Each transaction cannot affect other transactions. Sometimes this is accomplished through locking, but the database needs a way to resolve these types of conflicts.
+			Durability: Once a transaction is committed, it won't be lost. This means if we update our database and update some rows, and the database says ok, successful, that even if the database is turned off or crashes or is unplugged, we won't lose that transaction.
+			Its hard to have a database that meets all these criteria. There are always trade offs.</div>
+		</div>
+
+		<div class="concept" id="stage-4-8-15">
+			<div class="concept-title">Google App Engine Datastore</div>
+			<div class="concept-content">This is the database provided by App Engine that we'll be using.
+			What we've been referring to as tables are known as entities in Datastore. They serve basically the same purpose, which is how you organize things of the same data type together.
+			Some important things about entities: Columns are not fixed. In a table you have a fixed number of columns that you define when you create a table. In an entity, you can have whatever columns you want, even entities of the same type don't have to have the same columns. This makes development much easier. When you're working with tables, you often realize you need to add a column, which can be very troublesome. With Datastore, you can change the columns as you're developing.
+			Entities all have an ID. The ID can be assigned automatically, or you can make up your own, integers, strings, whatever you want.
+			Entities have parents and ancestors. This is a relationship to other entities with a couple of specific use cases. If we had an entity, link, it might have a parent, Reddit. We can do queries like get me all the links that are a child of Reddit.</div>
+		</div>
+
+
+
+
 {% endblock %}
