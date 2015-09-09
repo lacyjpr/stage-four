@@ -82,7 +82,7 @@ class MainPage(Handler):
         }
 
         template = jinja_env.get_template('IPND_notes.html')
-        self.response.write(template.render(template_values))
+        self.write(template.render(template_values))
 #        self.render("IPND_notes.html")
 
 class Guestbook(webapp2.RequestHandler):
