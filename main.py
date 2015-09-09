@@ -39,6 +39,7 @@ class StageFour(Handler):
 
 DEFAULT_BULLETINBOARD_NAME = 'stage_four'
 
+# Copied from Udacity's wallbook example
 def bulletinboard_key(bulletinboard_name=DEFAULT_BULLETINBOARD_NAME):
     """Constructs a Datastore key for a Bulletinboard entity.
 
@@ -68,15 +69,17 @@ class MainPage(Handler):
         bulletinboard_name = self.request.get('bulletinboard_name',
                                           DEFAULT_BULLETINBOARD_NAME)
 
-# Query Datastore for comments ordered by date ascending
+# Query Datastore for comments ordered by date descending
 # store the results in comments_query
         comments_query = Comment.query(
             ancestor=bulletinboard_key(bulletinboard_name)).order(-Comment.date)
 
-#Fetch comments from our query, store them in the variable comments
+# Fetch comments from our query, store them in the variable comments
         comments_to_fetch = 20
         comments = comments_query.fetch(comments_to_fetch)
 
+# Check if the user is logged in to Google. If so, give them the option to log out
+# If not, give them the option to log in
         user = users.get_current_user()
         if user:
             url = users.create_logout_url(self.request.uri)
@@ -85,7 +88,7 @@ class MainPage(Handler):
             url = users.create_login_url(self.request.uri)
             url_linktext = 'Login'
 
-# Parameters to pass to the template
+# Variables to pass to the template
         template_values = {
             'user': user,
             'comments': comments,
@@ -95,7 +98,7 @@ class MainPage(Handler):
             'error': error,
         }
 
-# Render our page
+# Render our page with the variables above
         template = jinja_env.get_template('IPND_notes.html')
         self.write(template.render(template_values))
 
@@ -103,7 +106,7 @@ class MainPage(Handler):
 class BulletinBoard(Handler):
     """Takes input from the form and adds it to Datastore"""
     def post(self):
-        # We set the same parent key on the 'Greeting' to ensure each
+        # We set the same parent key on the 'Comment' to ensure each
         # Comment is in the same entity group. Queries across the
         # single entity group will be consistent. However, the write
         # rate to a single entity group should be limited to
@@ -118,6 +121,7 @@ class BulletinBoard(Handler):
                     identity=users.get_current_user().user_id(),
                     email=users.get_current_user().email())
 
+# Get the content of the comment.
         comment.content = self.request.get('content')
 # Validate content exists and is not blank, if so put to Datastore
         if comment.content and comment.content.isspace() == False:
