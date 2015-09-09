@@ -101,6 +101,7 @@ class MainPage(Handler):
 
 #largely borrowed from Google's example code
 class BulletinBoard(Handler):
+    """Takes input from the form and adds it to Datastore"""
     def post(self):
         # We set the same parent key on the 'Greeting' to ensure each
         # Greeting is in the same entity group. Queries across the
@@ -123,9 +124,8 @@ class BulletinBoard(Handler):
             greeting.put()
             self.redirect('/')
         else:
-# Mark's error message from the Udacity webcase
+# Mark's error message from the Udacity webcast
             self.redirect('/?error=Error, please input text!')
-
 
 app = webapp2.WSGIApplication([('/', MainPage),
                                ('/stage1', StageOne),
