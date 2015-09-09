@@ -58,6 +58,7 @@ class Greeting(ndb.Model):
 
 class MainPage(Handler):
     def get(self):
+        error = self.request.get('error','')
         guestbook_name = self.request.get('guestbook_name',
                                           DEFAULT_GUESTBOOK_NAME)
         greetings_query = Greeting.query(
@@ -72,13 +73,13 @@ class MainPage(Handler):
         else:
             url = users.create_login_url(self.request.uri)
             url_linktext = 'Login'
-
         template_values = {
             'user': user,
             'greetings': greetings,
             'guestbook_name': urllib.quote_plus(guestbook_name),
             'url': url,
             'url_linktext': url_linktext,
+            'error': error,
         }
 
         template = jinja_env.get_template('IPND_notes.html')
@@ -104,9 +105,10 @@ class Guestbook(webapp2.RequestHandler):
         greeting.content = self.request.get('content')
         if greeting.content and greeting.content.isspace() == False:
             greeting.put()
+            self.redirect('/')
+        else:
+            self.redirect('/?error=Error, please input text!')
 
-        #query_params = {'guestbook_name': guestbook_name}
-        self.redirect('/') #+ urllib.urlencode(query_params))
 
 app = webapp2.WSGIApplication([('/', MainPage),
                                ('/stage1', StageOne),
