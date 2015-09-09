@@ -76,17 +76,11 @@
 
 
 			<form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
-				<div><textarea name="content" rows="3" cols="60"></textarea></div>
-				<div><input type="submit" value="Sign Guestbook"></div>
+				<div><textarea name="content" rows="4" cols="96"></textarea></div>
+				<div><input type="submit" value="comment"></div>
 			</form>
 
 			<hr>
-
-			<!--<form>Guestbook name:
-				<input value="{{ guestbook_name }}" name="guestbook_name">
-				<input type="submit" value="switch">
-			</form>-->
-
 	<a href="{{ url|safe }}">{{ url_linktext }}</a>
 			<hr>
 			{% for greeting in greetings %}
@@ -97,14 +91,11 @@
 						{% endif %}
 					</b> wrote:
 				{% else %}
-				An anonymous person wrote:
+				<b>Anonymous</b> wrote:
 				{% endif %}
 				<blockquote>{{ greeting.content }}</blockquote>
-			{% endfor %}
-
-
-
-
+			{% endfor %}</div>
+		</div>
 	</div>
 
 {% endblock %}
