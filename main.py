@@ -47,10 +47,11 @@ def bulletinboard_key(bulletinboard_name=DEFAULT_BULLETINBOARD_NAME):
     """
     return ndb.Key('Bulletinboard', bulletinboard_name)
 
-# Copied from Udacity's wallbook example. Eliminated name for simplicity.
+# Copied from Udacity's wallbook example.
 class Author(ndb.Model):
     """Sub model for representing an author."""
-    identity = ndb.StringProperty(indexed=False)
+    identity = ndb.StringProperty(indexed=True)
+    name = ndb.StringProperty(indexed=False)
     email = ndb.StringProperty(indexed=False)
 
 # Copied from Udacity's wallbook example
