@@ -101,10 +101,11 @@ class Guestbook(webapp2.RequestHandler):
                     email=users.get_current_user().email())
 
         greeting.content = self.request.get('content')
-        greeting.put()
+        if greeting.content and greeting.content.isspace() == False:
+            greeting.put()
 
-        query_params = {'guestbook_name': guestbook_name}
-        self.redirect('/?' + urllib.urlencode(query_params))
+        #query_params = {'guestbook_name': guestbook_name}
+        self.redirect('/') #+ urllib.urlencode(query_params))
 
 app = webapp2.WSGIApplication([('/', MainPage),
                                ('/stage1', StageOne),
