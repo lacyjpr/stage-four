@@ -56,7 +56,7 @@
 
 	<div class="lesson">
 		<h2>Welcome!</h2>
-		<div class="concept">
+		<div class="concept" id="1">
 			<div class="concept-title">Great to See You Here!</div>
 			<div class="concept-content">
 			<p>Welcome to my Introduction to Programming Nanodegree Notes Page!</p>
@@ -70,11 +70,11 @@
 			<p>You can find the code for this site at <a target="_blank" href="https://github.com/lacyjpr/stage-four">https://github.com/lacyjpr/stage-four</a></p></div>
 		</div>
 
-		<div class="concept">
+		<div class="concept" id=2>
 			<div class="concept-title">Comments</div>
 			<div class="concept-content">
 
-			<form action="/sign?bulletinboard_name={{ bulletinboard_name }}" method="post">
+			<form action="/post?bulletinboard_name={{ bulletinboard_name }}" method="post">
 				<div><textarea name="content" rows="4" cols="96"></textarea></div>
 				<div><input type="submit" value="comment"></div>
 			</form>
@@ -83,13 +83,13 @@
 			<a href="{{ url|safe }}">{{ url_linktext }}</a>
 			<hr>
 
-			{% for greeting in greetings %}
-				{% if greeting.author %}
-					<b>{{ greeting.author.email }}</b> wrote:
+			{% for comment in comments %}
+				{% if comment.author %}
+					<b>{{ comment.author.email }}</b> wrote:
 				{% else %}
 				<b>Anonymous</b> wrote:
 				{% endif %}
-				<blockquote>{{ greeting.content }}</blockquote>
+				<blockquote>{{ comment.content }}</blockquote>
 			{% endfor %}</div>
 		</div>
 	</div>

@@ -53,7 +53,7 @@ class Author(ndb.Model):
     email = ndb.StringProperty(indexed=False)
 
 # Copied from Udacity's wallbook example
-class Greeting(ndb.Model):
+class Comment(ndb.Model):
     """A main model for representing an individual Bulletinboard entry."""
     author = ndb.StructuredProperty(Author)
     content = ndb.StringProperty(indexed=False)
@@ -70,12 +70,12 @@ class MainPage(Handler):
 
 # Query Datastore for comments ordered by date ascending
 # store the results in comments_query
-        greetings_query = Greeting.query(
-            ancestor=bulletinboard_key(bulletinboard_name)).order(-Greeting.date)
+        comments_query = Comment.query(
+            ancestor=bulletinboard_key(bulletinboard_name)).order(-Comment.date)
 
 #Fetch comments from our query, store them in the variable comments
-        greetings_to_fetch = 20
-        greetings = greetings_query.fetch(greetings_to_fetch)
+        comments_to_fetch = 20
+        comments = comments_query.fetch(comments_to_fetch)
 
         user = users.get_current_user()
         if user:
@@ -88,7 +88,7 @@ class MainPage(Handler):
 # Parameters to pass to the template
         template_values = {
             'user': user,
-            'greetings': greetings,
+            'comments': comments,
             'bulletinboard_name': urllib.quote_plus(bulletinboard_name),
             'url': url,
             'url_linktext': url_linktext,
@@ -104,24 +104,24 @@ class BulletinBoard(Handler):
     """Takes input from the form and adds it to Datastore"""
     def post(self):
         # We set the same parent key on the 'Greeting' to ensure each
-        # Greeting is in the same entity group. Queries across the
+        # Comment is in the same entity group. Queries across the
         # single entity group will be consistent. However, the write
         # rate to a single entity group should be limited to
         # ~1/second.
         bulletinboard_name = self.request.get('bulletinboard_name',
                                           DEFAULT_BULLETINBOARD_NAME)
-        greeting = Greeting(parent=bulletinboard_key(bulletinboard_name))
+        comment = Comment(parent=bulletinboard_key(bulletinboard_name))
 
-# If the user is logged in instantiate the Author class
+# If the user is logged in, instantiate the Author class
         if users.get_current_user():
-            greeting.author = Author(
+            comment.author = Author(
                     identity=users.get_current_user().user_id(),
                     email=users.get_current_user().email())
 
-        greeting.content = self.request.get('content')
+        comment.content = self.request.get('content')
 # Validate content exists and is not blank, if so put to Datastore
-        if greeting.content and greeting.content.isspace() == False:
-            greeting.put()
+        if comment.content and comment.content.isspace() == False:
+            comment.put()
             self.redirect('/')
         else:
 # Mark's error message from the Udacity webcast
@@ -132,6 +132,6 @@ app = webapp2.WSGIApplication([('/', MainPage),
                                ('/stage2', StageTwo),
                                ('/stage3', StageThree),
                                ('/stage4', StageFour),
-                               ('/sign', BulletinBoard)
+                               ('/post', BulletinBoard)
                                ],
                               debug=True)
