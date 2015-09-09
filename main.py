@@ -62,7 +62,8 @@ class MainPage(Handler):
                                           DEFAULT_GUESTBOOK_NAME)
         greetings_query = Greeting.query(
             ancestor=guestbook_key(guestbook_name)).order(-Greeting.date)
-        greetings = greetings_query.fetch(10)
+        greetings_to_fetch = 20
+        greetings = greetings_query.fetch(greetings_to_fetch)
 
         user = users.get_current_user()
         if user:
