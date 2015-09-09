@@ -36,14 +36,14 @@ class StageFour(Handler):
     def get(self):
         self.render("stage_four.html")
 
-DEFAULT_GUESTBOOK_NAME = 'default_guestbook'
+DEFAULT_BULLETINBOARD_NAME = 'stage_four'
 
-def guestbook_key(guestbook_name=DEFAULT_GUESTBOOK_NAME):
-    """Constructs a Datastore key for a Guestbook entity.
+def bulletinboard_key(bulletinboard_name=DEFAULT_BULLETINBOARD_NAME):
+    """Constructs a Datastore key for a Bulletinboard entity.
 
-    We use guestbook_name as the key.
+    We use bulletinboard_name as the key.
     """
-    return ndb.Key('Guestbook', guestbook_name)
+    return ndb.Key('Bulletinboard', bulletinboard_name)
 
 class Author(ndb.Model):
     """Sub model for representing an author."""
@@ -51,7 +51,7 @@ class Author(ndb.Model):
     email = ndb.StringProperty(indexed=False)
 
 class Greeting(ndb.Model):
-    """A main model for representing an individual Guestbook entry."""
+    """A main model for representing an individual Bulletinboard entry."""
     author = ndb.StructuredProperty(Author)
     content = ndb.StringProperty(indexed=False)
     date = ndb.DateTimeProperty(auto_now_add=True)
@@ -59,10 +59,11 @@ class Greeting(ndb.Model):
 class MainPage(Handler):
     def get(self):
         error = self.request.get('error','')
-        guestbook_name = self.request.get('guestbook_name',
-                                          DEFAULT_GUESTBOOK_NAME)
+        bulletinboard_name = self.request.get('bulletinboard_name',
+                                          DEFAULT_BULLETINBOARD_NAME)
         greetings_query = Greeting.query(
-            ancestor=guestbook_key(guestbook_name)).order(-Greeting.date)
+            ancestor=bulletinboard_key(bulletinboard_name)).order(-Greeting.date)
+
         greetings_to_fetch = 20
         greetings = greetings_query.fetch(greetings_to_fetch)
 
@@ -76,7 +77,7 @@ class MainPage(Handler):
         template_values = {
             'user': user,
             'greetings': greetings,
-            'guestbook_name': urllib.quote_plus(guestbook_name),
+            'bulletinboard_name': urllib.quote_plus(bulletinboard_name),
             'url': url,
             'url_linktext': url_linktext,
             'error': error,
@@ -84,18 +85,17 @@ class MainPage(Handler):
 
         template = jinja_env.get_template('IPND_notes.html')
         self.write(template.render(template_values))
-#        self.render("IPND_notes.html")
 
-class Guestbook(webapp2.RequestHandler):
+class Guestbook(Handler):
     def post(self):
         # We set the same parent key on the 'Greeting' to ensure each
         # Greeting is in the same entity group. Queries across the
         # single entity group will be consistent. However, the write
         # rate to a single entity group should be limited to
         # ~1/second.
-        guestbook_name = self.request.get('guestbook_name',
-                                          DEFAULT_GUESTBOOK_NAME)
-        greeting = Greeting(parent=guestbook_key(guestbook_name))
+        bulletinboard_name = self.request.get('bulletinboard_name',
+                                          DEFAULT_BULLETINBOARD_NAME)
+        greeting = Greeting(parent=bulletinboard_key(bulletinboard_name))
 
         if users.get_current_user():
             greeting.author = Author(
