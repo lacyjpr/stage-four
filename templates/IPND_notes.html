@@ -85,11 +85,7 @@
 
 			{% for greeting in greetings %}
 				{% if greeting.author %}
-					<b>{{ greeting.author.email }}
-						{% if user and user.user_id() == greeting.author.identity %}
-							(You)
-						{% endif %}
-					</b> wrote:
+					<b>{{ greeting.author.email }}</b> wrote:
 				{% else %}
 				<b>Anonymous</b> wrote:
 				{% endif %}
