@@ -125,13 +125,13 @@ class BulletinBoard(Handler):
                                           DEFAULT_BULLETINBOARD_NAME)
         comment = Comment(parent=bulletinboard_key(bulletinboard_name))
 
-        # If the user is logged in, instantiate the Author class.
+        # If the user is logged in to Google, instantiate the Author class.
         if users.get_current_user():
             comment.author = Author(
                     identity=users.get_current_user().user_id(),
                     email=users.get_current_user().email())
 
-        # Get the content of the comment.
+        # Get the content of the comment from the form.
         comment.content = self.request.get('content')
 
         # Validate content exists and is not blank, if so put to Datastore.
