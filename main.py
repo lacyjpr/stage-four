@@ -18,12 +18,12 @@ class Handler(webapp2.RequestHandler):
         self.response.out.write(*a, **kw)
 
     def render_str(self, template, **params):
-        """Use jinja to return a rendered template object"""
+        """Use jinja to return a rendered template object."""
         t = jinja_env.get_template(template)
         return t.render(params)
 
     def render(self, template, **kw):
-        """Renders the template to the browser."""
+        """Renders the template to the browser. Calls render_str above."""
         self.write(self.render_str(template, **kw))
 
 class StageOne(Handler):
@@ -46,17 +46,15 @@ class StageFour(Handler):
     def get(self):
         self.render("stage_four.html")
 
-DEFAULT_BULLETINBOARD_NAME = 'stage_four'
-
 # Copied from Udacity's wallbook example.
-def bulletinboard_key(bulletinboard_name=DEFAULT_BULLETINBOARD_NAME):
+def bulletinboard_key(bulletinboard_name= "ipnd_bb"):
     """Constructs a Datastore key for a Bulletinboard entity.
 
     We use bulletinboard_name as the key.
     """
     return ndb.Key('Bulletinboard', bulletinboard_name)
 
-# Copied from Udacity's wallbook example. Removed name because its unused
+# Copied from Udacity's wallbook example. Removed name because its unused.
 class Author(ndb.Model):
     """Sub model for representing an author."""
     identity = ndb.StringProperty(indexed=True)
@@ -75,8 +73,8 @@ class MainPage(Handler):
     def get(self):
         # Mark's error variable from the Udacity webcast.
         error = self.request.get('error','')
-        bulletinboard_name = self.request.get('bulletinboard_name',
-                                          DEFAULT_BULLETINBOARD_NAME)
+        # Set the bulletinboard_name.
+        bulletinboard_name = "ipnd_bb"
 
         # Query Datastore for comments ordered by date descending.
         # Store the results in comments_query.
@@ -87,7 +85,7 @@ class MainPage(Handler):
         comments_to_fetch = 20
         comments = comments_query.fetch(comments_to_fetch)
 
-        # Check if the user is logged in to Google. If so, 
+        # Check if the user is logged in to Google. If so,
         # give them the option to log out.
         # If not, give them the option to log in.
         user = users.get_current_user()
@@ -102,15 +100,13 @@ class MainPage(Handler):
         template_values = {
             'user': user,
             'comments': comments,
-            'bulletinboard_name': urllib.quote_plus(bulletinboard_name),
             'url': url,
             'url_linktext': url_linktext,
             'error': error,
         }
 
         # Render our page with the values above.
-        template = jinja_env.get_template('IPND_notes.html')
-        self.write(template.render(template_values))
+        self.render("IPND_notes.html", **template_values)
 
 # Largely borrowed from Google's example code.
 class BulletinBoard(Handler):
@@ -121,8 +117,7 @@ class BulletinBoard(Handler):
         # single entity group will be consistent. However, the write
         # rate to a single entity group should be limited to
         # ~1/second.
-        bulletinboard_name = self.request.get('bulletinboard_name',
-                                          DEFAULT_BULLETINBOARD_NAME)
+        bulletinboard_name = "ipnd_bb"
         comment = Comment(parent=bulletinboard_key(bulletinboard_name))
 
         # If the user is logged in to Google, instantiate the Author class.
@@ -137,6 +132,7 @@ class BulletinBoard(Handler):
         # Validate content exists and is not blank, if so put to Datastore.
         if comment.content and comment.content.isspace() == False:
             comment.put()
+            # Redirect to the main page to view comment.
             self.redirect('/')
         else:
             # Mark's error message from the Udacity webcast.
