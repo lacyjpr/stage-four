@@ -145,6 +145,6 @@ app = webapp2.WSGIApplication([('/', MainPage),
                                ('/stage2', StageTwo),
                                ('/stage3', StageThree),
                                ('/stage4', StageFour),
-                               ('/post', BulletinBoard)
+                               ('/entry', BulletinBoard)
                                ],
                               debug=True)
