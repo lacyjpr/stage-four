@@ -1,5 +1,6 @@
 import jinja2
 import os
+import time
 import urllib
 import webapp2
 from google.appengine.api import users
@@ -132,6 +133,8 @@ class BulletinBoard(Handler):
         # Validate content exists and is not blank, if so put to Datastore.
         if comment.content and comment.content.isspace() == False:
             comment.put()
+            # Wait for the database to update before redirecting.
+            time.sleep(0.1)
             # Redirect to the main page to view comment.
             self.redirect('/')
         else:
