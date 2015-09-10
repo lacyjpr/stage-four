@@ -18,12 +18,12 @@ class Handler(webapp2.RequestHandler):
         self.response.out.write(*a, **kw)
 
     def render_str(self, template, **params):
-        """Use jinja to get the template, return rendered template object"""
+        """Use jinja to return a rendered template object"""
         t = jinja_env.get_template(template)
         return t.render(params)
 
     def render(self, template, **kw):
-        """Renders template to the browser."""
+        """Renders the template to the browser."""
         self.write(self.render_str(template, **kw))
 
 class StageOne(Handler):
@@ -87,8 +87,8 @@ class MainPage(Handler):
         comments_to_fetch = 20
         comments = comments_query.fetch(comments_to_fetch)
 
-        # Check if the user is logged in to Google. If so, use their user info
-        # and give them the option to log out.
+        # Check if the user is logged in to Google. If so, 
+        # give them the option to log out.
         # If not, give them the option to log in.
         user = users.get_current_user()
         if user:
@@ -139,9 +139,10 @@ class BulletinBoard(Handler):
             comment.put()
             self.redirect('/')
         else:
-        # Mark's error message from the Udacity webcast.
+            # Mark's error message from the Udacity webcast.
             self.redirect('/?error=Error, please input text!')
 
+#Receive URLs and dispatch the appropriate handler
 app = webapp2.WSGIApplication([('/', MainPage),
                                ('/stage1', StageOne),
                                ('/stage2', StageTwo),
