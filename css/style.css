@@ -94,6 +94,11 @@ textarea {
 	margin: 8px;
 }
 
+.error {
+	color: red;
+	font-weight: bold;
+}
+
 .sidebar {
 	float: left;
 	background-color: cyan;
