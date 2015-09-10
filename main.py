@@ -110,7 +110,7 @@ class MainPage(Handler):
 
 # Largely borrowed from Google's example code.
 class BulletinBoard(Handler):
-    """Takes input from the form and adds it to Datastore"""
+    """Takes input from the form, adds it to Datastore and updates the page."""
     def post(self):
         # We set the same parent key on the 'Comment' to ensure each
         # Comment is in the same entity group. Queries across the
