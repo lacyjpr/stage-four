@@ -85,7 +85,7 @@
 
 			{% for comment in comments %}
 				{% if comment.author %}
-					<b>{{ comment.author.name }}</b> {{ comment.author.email }} wrote:
+					<b>{{ comment.author.email }}</b> wrote:
 				{% else %}
 				<b>Anonymous</b> wrote:
 				{% endif %}
