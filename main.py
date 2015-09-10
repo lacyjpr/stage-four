@@ -135,8 +135,9 @@ class BulletinBoard(Handler):
             # Redirect to the main page to view comment.
             self.redirect('/')
         else:
-            # Mark's error message from the Udacity webcast.
+            # Error message, error variable added to URL.
             self.redirect('/?error=Error, please input text!')
+
 
 #Receive URLs and dispatch the appropriate handler
 app = webapp2.WSGIApplication([('/', MainPage),
