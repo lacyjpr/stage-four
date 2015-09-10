@@ -56,10 +56,11 @@ def bulletinboard_key(bulletinboard_name=DEFAULT_BULLETINBOARD_NAME):
     """
     return ndb.Key('Bulletinboard', bulletinboard_name)
 
-# Copied from Udacity's wallbook example. Removed name because its unused.
+# Copied from Udacity's wallbook example.
 class Author(ndb.Model):
     """Sub model for representing an author."""
     identity = ndb.StringProperty(indexed=True)
+    name = ndb.StringProperty(indexed=False)
     email = ndb.StringProperty(indexed=False)
 
 # Copied from Udacity's wallbook example.
@@ -129,10 +130,12 @@ class BulletinBoard(Handler):
         if users.get_current_user():
             comment.author = Author(
                     identity=users.get_current_user().user_id(),
+                    name=users.get_current_user().nickname(),
                     email=users.get_current_user().email())
 
         # Get the content of the comment.
         comment.content = self.request.get('content')
+
         # Validate content exists and is not blank, if so put to Datastore.
         if comment.content and comment.content.isspace() == False:
             comment.put()
