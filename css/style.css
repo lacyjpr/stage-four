@@ -56,7 +56,7 @@ sup {
 	font-size: 0.6em; /*adjust font size to account for vertical-align: top*/
 }
 
-textarea {
+textarea#styled1 {
 	width: 99%;
 	height: 40px;
 }
@@ -96,7 +96,7 @@ textarea {
 
 .error {
 	color: red;
-	font-weight: bold;     
+	font-weight: bold;
 }
 
 .sidebar {
